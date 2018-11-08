@@ -435,10 +435,10 @@ SUBROUTINE DAILY (RAIN, TMAX, TMIN, RAD, IDAYS, K)
             RR (I) = 0.
         end do
         DO I = 1, 3
-            DO 1120 J = 1, 3
+            DO J = 1, 3
                 R (I) = R (I) + B (I, J) * E (J)
                 RR (I) = RR (I) + A (I, J) * XIM1 (J)
-            1120    CONTINUE
+            end do
         end do
         DO KK = 1, 3
             X (KK) = R (KK) + RR (KK)

@@ -1,23 +1,23 @@
       PROGRAM SCANT
-C
-C
-C********************************************************************
-C    THIS ROUTINE CONVERTS AN ASCII FILE TO A FORMATTED FILE
-C    CONTAINING DAILY VALUES.  EACH LINE OF OUTPUT CONSISTS OF
-C    THE YEAR,  TEN DATA VALUES, AND THE LINE NUMBER.
-C********************************************************************
+!
+!
+!********************************************************************
+!    THIS ROUTINE CONVERTS AN ASCII FILE TO A FORMATTED FILE
+!    CONTAINING DAILY VALUES.  EACH LINE OF OUTPUT CONSISTS OF
+!    THE YEAR,  TEN DATA VALUES, AND THE LINE NUMBER.
+!********************************************************************
 
-      INTEGER*2 IFLAG, NL, NH
+      INTEGER(kind=2) IFLAG, NL, NH
       CHARACTER TXT*80, INFILE*60, CITY*20, STATE*20
       CHARACTER CITY2*20, STATE2*20, OUTFILE*12
       LOGICAL LVAL
       REAL INDATA(370), RVALUE
-      DATA TXT/'
-     *                        '/
+      DATA TXT/'& 
+                        '/
 
-C
-C  INITIALIZE VARIBLES
-C
+!
+!  INITIALIZE VARIBLES
+!
       INFILE = TXT(1:60)
       CITY = TXT(1:20)
       STATE = TXT(1:20)
@@ -25,26 +25,26 @@ C
       STATE2 = TXT(1:20)
       LVAL = .FALSE.
       ICONVERT = 0
-C
-C READ INPUT PARAMETERS - CITY, STATE, AND DATA UNITS.
-C
+!
+! READ INPUT PARAMETERS - CITY, STATE, AND DATA UNITS.
+!
       INQUIRE(FILE='SCAN.TMP', EXIST=LVAL)
       IF (.NOT. LVAL) THEN
          CALL UTLTY (256,1,1,NL,NH,1,' ')
-         CALL UTLTY (8+16,2,16,NL,NH,43,'<<< SCAN.TMP INPUT FILE DOES NO
-     *T EXIST! >>>')
+         CALL UTLTY (8+16,2,16,NL,NH,43,'<<< SCAN.TMP INPUT FILE DOES NO& 
+T EXIST! >>>')
          CALL UTLTY (8, 6, 1, NL, NH, 1, ' ')
          WRITE (6, 41)
-41       FORMAT(
-     *15x,'ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»',/,
-     *15x,'º                                              º',/,
-     *15x,'º         Enter the following information:     º',/,
-     *15x,'º                                              º',/,
-     *15x,'º        CITY  :                               º',/,
-     *15x,'º        STATE :                               º',/,
-     *15x,'º        UNITS (1=U.S.  2=METRIC) :            º',/,
-     *15x,'º                                              º',/,
-     *15x,'ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼')
+41       FORMAT(& 
+15x,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½         Enter the following information:     ï¿½',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½        CITY  :                               ï¿½',/,& 
+15x,'ï¿½        STATE :                               ï¿½',/,& 
+15x,'ï¿½        UNITS (1=U.S.  2=METRIC) :            ï¿½',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼')
          CALL ACELL (11, 33, 20, CITY, NL, NH, 1)
          CALL ACELL (12, 33, 20, STATE, NL, NH, 1)
 50       CALL CELL (13,52,4, NL, NH, RVALUE, IFLAG, TXT)
@@ -64,9 +64,9 @@ C
       CALL TOUPPER(STATE,20)
       IUNIT2 = IUNIT
 
-C
-C       SEE IF THEY WANT TO ADD DATA TO EXISTING FILE
-C
+!
+!       SEE IF THEY WANT TO ADD DATA TO EXISTING FILE
+!
       OUTFILE(1:9) = 'DATA7.TMP'
       INQUIRE(FILE=OUTFILE, EXIST=LVAL)
       IF (LVAL) THEN
@@ -82,36 +82,36 @@ C
             IF(CITY .NE. CITY2 .OR. STATE .NE. STATE2) THEN
                CALL UTLTY (8+256,10,10,NL,NH,1,' ')
                WRITE(6,145) CITY2, STATE2, CITY, STATE
-145            FORMAT(5x,'CITY AND STATE IN MASTER FILE  < ',A20,A20,'>'
-     *,/,5x,'******* DOES NOT MATCH *******',/,5x,'CITY AND STATE IN INP
-     *UT FILE   < ',A20,A20,'>')
-               CALL UTLTY (8+18+128,18,25,NL,NH,30,'PRESS ANY KEY TO EXI
-     *T PROGRAM!')
+145            FORMAT(5x,'CITY AND STATE IN MASTER FILE  < ',A20,A20,'>'& 
+,/,5x,'******* DOES NOT MATCH *******',/,5x,'CITY AND STATE IN INP& 
+UT FILE   < ',A20,A20,'>')
+               CALL UTLTY (8+18+128,18,25,NL,NH,30,'PRESS ANY KEY TO EXI& 
+T PROGRAM!')
                GOTO 999
             ENDIF
             IF (IUNIT .NE. IUNIT2) THEN
                ICONVERT = IUNIT2
                CALL UTLTY (256,1,1,NL,NH,1,' ')
-               CALL UTLTY (8+16,10,12,NL,NH,56,' DATA WILL BE CONVERTED 
-     *TO UNITS PRESENT IN MASTER FILE.')
+               CALL UTLTY (8+16,10,12,NL,NH,56,' DATA WILL BE CONVERTED & 
+TO UNITS PRESENT IN MASTER FILE.')
                IF(ICONVERT .EQ. 1) THEN
-                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM METRIC TO U.S. 
-     *UNITS)')
+                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM METRIC TO U.S. & 
+UNITS)')
                ELSE
-                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM U.S. TO METRIC 
-     *UNITS)')
+                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM U.S. TO METRIC & 
+UNITS)')
                ENDIF
-               CALL UTLTY (8+16+128,14,27,NL,NH,26,'PRESS ANY KEY TO CON
-     *TINUE!')
+               CALL UTLTY (8+16+128,14,27,NL,NH,26,'PRESS ANY KEY TO CON& 
+TINUE!')
                GOTO 180
             ENDIF
             GOTO 180
          ENDIF
       ENDIF
 
-C
-C  CREATE NEW MASTER FILE
-C
+!
+!  CREATE NEW MASTER FILE
+!
 
       CALL ERASE(OUTFILE(1:12),*151)
 151   OPEN (10, FILE=OUTFILE, STATUS='NEW')
@@ -122,66 +122,66 @@ C
 180   CLOSE(10)
       OPEN (10, FILE=OUTFILE, STATUS='OLD', ACCESS='APPEND')
 
-C
-C       WRITE FIRST SCREEN TO INPUT FILE NAME THE USER WISHES TO USE AS
-C       INPUT - FILE IS ASSUMED TO BE ASCII FILE AND WILL BE OUTPUT AS
-C       FORMATTED FILE CALLED "DATA?.TMP". ? = (4=rain 7=temp 13=srad)
-C
+!
+!       WRITE FIRST SCREEN TO INPUT FILE NAME THE USER WISHES TO USE AS
+!       INPUT - FILE IS ASSUMED TO BE ASCII FILE AND WILL BE OUTPUT AS
+!       FORMATTED FILE CALLED "DATA?.TMP". ? = (4=rain 7=temp 13=srad)
+!
 
 200   CALL UTLTY (8+256, 6, 1, NL, NH, 1, ' ')
       WRITE (6, 241) CHAR(39)
-241   FORMAT(
-     *15x,'ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»',/,
-     *15x,'º                                              º',/,
-     *15x,'º    Enter the name of the data set for the    º',/,
-     *15x,'º             current year',A1,'s data.             º',/,
-     *15x,'º                                              º',/,
-     *15x,'º      Temperature input values should         º')
+241   FORMAT(& 
+15x,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½    Enter the name of the data set for the    ï¿½',/,& 
+15x,'ï¿½             current year',A1,'s data.             ï¿½',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½      Temperature input values should         ï¿½')
       IF (IUNIT .EQ. 1) WRITE (6, 261)
-261      FORMAT(
-     *15x,'º             be in fahrenheit.                º')
+261      FORMAT(& 
+15x,'ï¿½             be in fahrenheit.                ï¿½')
       IF (IUNIT .EQ. 2) WRITE (6, 271)
-271      FORMAT(
-     *15x,'º              be in celsius.                  º')
+271      FORMAT(& 
+15x,'ï¿½              be in celsius.                  ï¿½')
       WRITE (*, 281)
-281   FORMAT(
-     *15x,'º                                              º',/,
-     *15x,'ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼',/,
-     *15x,'          Enter ESC to exit this session. ')
+281   FORMAT(& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼',/,& 
+15x,'          Enter ESC to exit this session. ')
 
       CALL ACELL (14, 18, 40, INFILE, NL, NH, 1)
-C
-C   CHECK FOR ESC TO EXIT
-C
+!
+!   CHECK FOR ESC TO EXIT
+!
       IF (NL .EQ. 27) GO TO 999
       INQUIRE (FILE=INFILE, EXIST=LVAL)
       IF(.NOT. LVAL) THEN
          CALL UTLTY (256,1,1,NL,NH,1,' ')
-         CALL UTLTY (8+16,10,20,NL,NH,39,'<<< INPUT DATA FILE DOES NOT E
-     *XIST! >>>')
-         CALL UTLTY (8+16+128,15,27,NL,NH,26,'PRESS ANY KEY TO CONTINUE!
-     *')
+         CALL UTLTY (8+16,10,20,NL,NH,39,'<<< INPUT DATA FILE DOES NOT E& 
+XIST! >>>')
+         CALL UTLTY (8+16+128,15,27,NL,NH,26,'PRESS ANY KEY TO CONTINUE!& 
+')
          GO TO 200
       ENDIF         
 
 300   CALL UTLTY (8+256, 7, 1, NL, NH, 1, ' ')
       WRITE (6, 341)
-341   FORMAT(
-     *15x,'ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»',/,
-     *15x,'º                                              º',/,
-     *15x,'º    Enter the year of the temperature data    º',/,
-     *15x,'º     contained in this file being added.      º',/,
-     *15x,'º                                              º',/,
-     *15x,'º                                              º',/,
-     *15x,'ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼')
+341   FORMAT(& 
+15x,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½    Enter the year of the temperature data    ï¿½',/,& 
+15x,'ï¿½     contained in this file being added.      ï¿½',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½                                              ï¿½',/,& 
+15x,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼')
 
       CALL CELL (13,18,4, NL, NH, RVALUE, IFLAG, TXT)
       IF(RVALUE .EQ. 0) GOTO 300
       IYEAR = (RVALUE + 0.001)
 
-C
-C     Check for leap year.
-C
+!
+!     Check for leap year.
+!
 
       IF (((IYEAR/4)*4) .NE. IYEAR) THEN
          INUMDAYS = 365
@@ -189,13 +189,13 @@ C
          INUMDAYS = 366
       ENDIF
 
-C
-C     INITIALIZE ARRAY AND READ INPUT FILE
-C
+!
+!     INITIALIZE ARRAY AND READ INPUT FILE
+!
 
-      DO 361 I=1, INUMDAYS
+      DO I=1, INUMDAYS
          INDATA(I) = 9999.0
-361   CONTINUE
+      end do
       DO 366 I=INUMDAYS+1, 370
          INDATA(I) = 0.0
 366   CONTINUE
@@ -203,18 +203,18 @@ C
       READ(11,*, END = 410) (INDATA(I), I=1, INUMDAYS+1)
       CLOSE(11)
 
-C
-C  TO MUCH DATA IN INPUT FILE
-C
+!
+!  TO MUCH DATA IN INPUT FILE
+!
 
       CALL KEEPER(IFLAG,2)
       IF(IFLAG .EQ. 0) GOTO 200
       INDATA(INUMDAYS+1) = 0.0
       GOTO 500
 
-C
-C  CHECK IF NOT ENOUGH DATA
-C
+!
+!  CHECK IF NOT ENOUGH DATA
+!
 
 410   CLOSE(11)
       DO 411 I=1, INUMDAYS
@@ -222,23 +222,23 @@ C
 411   CONTINUE
       GOTO 500
 
-C
-C  NOT ENOUGH DATA IN INPUT FILE
-C
+!
+!  NOT ENOUGH DATA IN INPUT FILE
+!
 
 420   CALL UTLTY (256,1,1,NL,NH,1,' ')
-      CALL UTLTY (8+16,8,23,NL,NH,36,'NOT ENOUGH DATA FOUND IN INPUT FIL
-     *E!')
+      CALL UTLTY (8+16,8,23,NL,NH,36,'NOT ENOUGH DATA FOUND IN INPUT FIL& 
+E!')
       WRITE(6, 446) I-1, INUMDAYS
-446   FORMAT(23x,'-------------------------------------',/,23x,'TOTAL NU
-     *MBER OF VALUES READ  ---> ',I4,/,23x,'TOTAL NUMBER OF DAYS IN YEAR
-     * ---> ',I4)
+446   FORMAT(23x,'-------------------------------------',/,23x,'TOTAL NU& 
+MBER OF VALUES READ  ---> ',I4,/,23x,'TOTAL NUMBER OF DAYS IN YEAR& 
+ ---> ',I4)
       CALL UTLTY (8+16+128,16,27,NL,NH,26,'PRESS ANY KEY TO CONTINUE!')
       GOTO 200
 
-C
-C  CHECK IF DATA NEEDS UNITS CONVERTED
-C
+!
+!  CHECK IF DATA NEEDS UNITS CONVERTED
+!
 
 500   IF(ICONVERT .EQ. 1) THEN
          DO 531 I=1, INUMDAYS
@@ -250,9 +250,9 @@ C
 541      CONTINUE
       ENDIF
 
-C
-C  WRITE DATA TO MASTER FILE FORMATTED
-C
+!
+!  WRITE DATA TO MASTER FILE FORMATTED
+!
                  
       IF (IUNIT2 .EQ. 1) THEN
          DO 551 I=1, INUMDAYS, 10
@@ -266,6 +266,3 @@ C
 571      CONTINUE
       ENDIF
       GOTO 200
-999   STOP
-      END
-

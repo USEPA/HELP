@@ -147,7 +147,7 @@ C
          WRITE (7, 5010) (KNAME (L), L = 1, 10)
          WRITE (7, 5070) (TM (I), I = 1, 12)
          D1 = TXMD - TXMW
-      DO 2150 J = 1, 366
+      DO J = 1, 366
          XJ = J
          DT = COS (.0172*(XJ - 200. + (IH * 183)))
          TXM (J) = TXMD + ATX*DT
@@ -160,7 +160,7 @@ C
          XCR2 = CVTN + ACVTN*DT
          IF (XCR2 .LT. 0.0) XCR2 = 0.06
          TNS (J) = TNM (J)*XCR2
- 2150 CONTINUE
+      end do
       DO 2160 IM = 1, 12
          IF (IUNITS .EQ. 2) TM (IM) = (1.8 * TM (IM)) + 32.0
          TCFMAX (IM) = 0.0
