@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b77c6fe9-81a8-4324-abd4-f38933532157" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/ASCISRAD.f90" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/ASCITEMP.f90" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/HELP3O.f90" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/SYNGEN.f90" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/HELP/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/HELP/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ASCIPREC.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCIPREC.f90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ASCISRAD.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCISRAD.f90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ASCITEMP.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCITEMP.f90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/HELP3O.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/HELP3O.f90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/SYNGEN.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/SYNGEN.f90" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,12 +19,12 @@
     <session id="-1196112502">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="4" />
-          <entry key="project.open.time.2" value="5" />
+          <entry key="project.open.time.2" value="6" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -77,9 +76,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="147" />
-    <option name="y" value="141" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2432" />
+    <option name="y" value="40" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -159,9 +158,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="2432" y="40" width="1400" height="1000" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -175,7 +174,7 @@
       <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.49946696" weight="0.32827735" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="9" sideWeight="0.84808105" visible="true" weight="0.2524377" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.15191898" side_tool="true" visible="true" weight="0.2524377" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.15191898" side_tool="true" visible="true" weight="0.2687428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -218,9 +217,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Removing VS solution files." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/ASCIMISC.f90">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source/ASCIMISC.f90" />
     <entry file="file://$PROJECT_DIR$/source/ASCIPREC.f90">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -238,13 +235,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/SYNGEN.f90">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1541677784702" expanded="true" signature="17079:17092" ph="..." />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
