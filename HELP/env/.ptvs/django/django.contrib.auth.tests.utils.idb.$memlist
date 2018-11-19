@@ -1,0 +1,11 @@
+skipIf
+__spec__
+__file__
+RemovedInDjango20Warning
+warnings
+__name__
+__builtins__
+__cached__
+skipIfCustomUser
+settings
+__package__

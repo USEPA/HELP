@@ -1,0 +1,13 @@
+findstatic
+runserver
+__spec__
+__file__
+__future__
+__package__
+__name__
+collections
+django
+__builtins__
+__cached__
+collectstatic
+__path__

@@ -1,0 +1,14 @@
+BaseDatabaseIntrospection
+FieldInfo
+TableInfo
+__spec__
+__file__
+force_text
+warnings
+__name__
+RemovedInDjango21Warning
+cx_Oracle
+__builtins__
+__cached__
+DatabaseIntrospection
+__package__

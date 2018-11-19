@@ -1,0 +1,17 @@
+partial
+DumbDBMTestCase
+stat
+__name__
+__builtins__
+__file__
+support
+__cached__
+io
+_fname
+dumbdbm
+os
+_delete_files
+operator
+__package__
+unittest
+__spec__

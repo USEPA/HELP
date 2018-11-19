@@ -19,9 +19,9 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
         XLM (ICOL) = CHAR (NL)
     end do
     IF (NS < 80) THEN
-        DO 1010 ICOL = NS + 1, 80
+        DO ICOL = NS + 1, 80
             XLM (ICOL) = BLNK
-        1010    CONTINUE
+        end do
     END IF
     ICOL = N1
     1020 CONTINUE
@@ -32,11 +32,11 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
         IF (NL >= 33 .and. NL <= 122) THEN
             NF = N2 + N8 + N64
             IF (FIRST) THEN
-                DO 1030 I = N1, NS
+                DO I = N1, NS
                     NB = NBSTART + I - N1
                     CALL UTLTY (NF, NA, NB, IBLNK, NH, NC, TXT)
                     XLM (I) = BLNK
-                1030          CONTINUE
+                end do
             END IF
             NB = NBSTART + ICOL - N1
             CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
@@ -48,7 +48,7 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
             IF (ICOL < N1) THEN
                 ICOL = N1
             ELSE
-                DO 1040 I = ICOL, NS
+                DO I = ICOL, NS
                     NF = N8 + N32
                     NB = NBSTART + I
                     CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
@@ -56,7 +56,7 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
                     NB = NB - N1
                     CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
                     XLM (I) = CHAR (NL)
-                1040          CONTINUE
+                end do
                 XLM (NS) = BLNK
                 NB = NBSTART + NS - N1
                 CALL UTLTY (NF, NA, NB, IBLNK, NH, NC, TXT)
@@ -72,7 +72,7 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
             IF (ICOL > NS) THEN
                 ICOL = NS
             ELSE
-                DO 1050 I = NS, ICOL, - N1
+                DO I = NS, ICOL, - N1
                     NF = N8 + N32
                     NB = NBSTART + I - N2
                     CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
@@ -80,7 +80,7 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
                     NB = NB + N1
                     CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
                     XLM (I) = CHAR (NL)
-                1050          CONTINUE
+                end do
                 XLM (ICOL - N1) = BLNK
                 NB = ICOL + NBSTART - N2
                 CALL UTLTY (NF, NA, NB, IBLNK, NH, NC, TXT)
@@ -97,11 +97,11 @@ SUBROUTINE ACELL (NROW, NBSTART, NS, TXT, NL, NH, NWRITE)
         !        ... Change cell to normal video
         !
         NF = 4 + 8 + 64
-        DO 1060 ICOL = 1, NS
+        DO ICOL = 1, NS
             NB = NBSTART - 1 + ICOL
             NLTMP = ICHAR (XLM (ICOL))
             CALL UTLTY (NF, NA, NB, NLTMP, NH, NC, TXT)
-        1060    CONTINUE
+        end do
         TXT = XLM (1) // XLM (2) // XLM (3) // XLM (4) // XLM&
                 (5) // XLM (6) // XLM (7) // &
                 XLM (8) // XLM (9) // XLM (10) // XLM (11) // XLM (12) // XLM (13) // &
@@ -128,18 +128,18 @@ SUBROUTINE CELL (NA, NBSTART, NS, NL, NH, VARI, NO, TXT)
     CHARACTER TXT*80
     CHARACTER*1 XLM (80)
     ICOL1 = NS
-    DO 1000 ICOL = N1, NS
+    DO ICOL = N1, NS
         NB = NBSTART - N1 + ICOL
         NF = N8 + 32
         CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
         NF = N2 + N64
         CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
         XLM (ICOL) = CHAR (NL)
-    1000 CONTINUE
-    DO 1010 ICOL = NS, N1, - N1
+    end do
+    DO ICOL = NS, N1, - N1
         IF (ICHAR (XLM (ICOL)) < 46 .OR. ICHAR (XLM&
                 (ICOL)) > 57) GO TO 1020
-    1010 CONTINUE
+    end do
     IF (ICOL <= N1 .OR. ICOL > NS) ICOL = N1
     1020 CONTINUE
     ICOL = ICOL + N1
@@ -159,15 +159,15 @@ SUBROUTINE CELL (NA, NBSTART, NS, NL, NH, VARI, NO, TXT)
         IF (ICOL < NS) ICOL1 = ICOL
         IF (ICOL == NS) THEN
             IF (ICOL1 <= NS) GO TO 1040
-            DO 1050 J = N2, NS
+            DO J = N2, NS
                 XLM (J - N1) = XLM (J)
-            1050       CONTINUE
+            end do
             NF = N2 + N8 + N64
-            DO 1060 ICOL = N1, NS - N1
+            DO ICOL = N1, NS - N1
                 NL = ICHAR (XLM (ICOL))
                 NB = NBSTART - N1 + ICOL
                 CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
-            1060       CONTINUE
+            end do
             ICOL = NS
         END IF
         1040    CONTINUE
@@ -205,14 +205,14 @@ SUBROUTINE CELL (NA, NBSTART, NS, NL, NH, VARI, NO, TXT)
         !        ... Change cell to normal video
         !
         NF = 4 + 8 + 64
-        DO 1070 ICOL = 1, NS
+        DO ICOL = 1, NS
             NB = NBSTART - 1 + ICOL
             NLTMP = ICHAR (XLM (ICOL))
             CALL UTLTY (NF, NA, NB, NLTMP, NH, NC, TXT)
-        1070    CONTINUE
-        DO 1080 ICOL = N1, NS
+        end do
+        DO ICOL = N1, NS
             TXT (ICOL:ICOL) = XLM (ICOL)
-        1080    CONTINUE
+        end do
         VARI = VAR1 (TXT)
     ELSE
         GO TO 1030
@@ -233,18 +233,18 @@ FUNCTION VAR1 (VAR)
     RNUM = 0.
     NEXP = N0
     K = N1
-    DO 1000 I = N1, 80
+    DO I = N1, 80
         IF (VAR (I:I) /= BLK) GO TO 1010
         K = K + N1
-    1000 CONTINUE
+    end do
     VAR1 = RNUM
     RETURN
     1010 CONTINUE
     IB = K
-    DO 1020 I = IB, 80
+    DO I = IB, 80
         IF (VAR (I:I) == BLK) GO TO 1030
         K = K + N1
-    1020 CONTINUE
+    end do
     1030 CONTINUE
     IE = K - N1
     IF (VAR (IB:IB) /= MINUS) GO TO 1040
@@ -254,9 +254,9 @@ FUNCTION VAR1 (VAR)
     1040 CONTINUE
     IF (VAR (IB:IB) == PLUS) IB = IB + N1
     1050 CONTINUE
-    DO 1060 I = IE, IB, - N1
+    DO I = IE, IB, - N1
         IF (VAR (I:I) == E .OR. VAR (I:I) == Ee) GO TO 1070
-    1060 CONTINUE
+    end do
     GO TO 1080
     1070 CONTINUE
     IXS = N1
@@ -267,31 +267,33 @@ FUNCTION VAR1 (VAR)
     I = I + N1
     1090 CONTINUE
     IF (VAR (I:I) == PLUS) I = I + N1
-    DO 1100 J = IE, I, - N1
-        DO 1110 K = N1, N10
+    DO J = IE, I, - N1
+        DO K = N1, N10
             IF (VAR (J:J) == NUM (K)) GO TO 1100
-        1110    CONTINUE
+        end do
         NEXP = NEXP + (K - N1) * N10**(IE - J)
     1100 CONTINUE
+    end do
     NEXP = NEXP * IXS
     IE = IX - N1
     1080 CONTINUE
-    DO 1120 I = IB, IE
+    DO I = IB, IE
         IF (VAR (I:I) == PERIOD) GO TO 1130
-    1120 CONTINUE
+    end do
     IE = I
     1130 CONTINUE
     IP = I
     K = N1
-    DO 1140 I = IB, IE
-        DO 1150 J = N1, N10
+    DO I = IB, IE
+        DO J = N1, N10
             IF (VAR (I:I) == NUM (J)) GO TO 1160
-        1150    CONTINUE
+        end do
         K = N0
         GO TO 1140
         1160    CONTINUE
         RNUM = RNUM + FLOAT (J - N1) * 10.**(IP - I - K)
     1140 CONTINUE
+    end do
     VAR1 = RNUM * SIGN
     IF (NEXP /= N0) VAR1 = SIGN * RNUM * 10.**NEXP
     RETURN
@@ -456,9 +458,9 @@ SUBROUTINE BOXER2 (LR, LC, LN, LW, NF1, NL, NH, ICAP)
     !
     !     ...Initialize TXT
     !
-    DO 1000 I = 1, 80
+    DO I = 1, 80
         TXT (I:I) = ' '
-    1000 CONTINUE
+    end do
     !
     !     ...Initialize box type
     !
@@ -468,16 +470,16 @@ SUBROUTINE BOXER2 (LR, LC, LN, LW, NF1, NL, NH, ICAP)
         TXT2 (1:1) = CHAR (192)
         TXT2 (LW:LW) = CHAR (217)
         TXT3 = CHAR (179)
-        DO 1010 I = 2, LW - 1
+        DO I = 2, LW - 1
             TXT1 (I:I) = CHAR (196)
             TXT2 (I:I) = CHAR (196)
-        1010    CONTINUE
+        end do
     ELSE
         TXT3 = ' '
-        DO 1020 I = 1, LW
+        DO I = 1, LW
             TXT1 (I:I) = ' '
             TXT2 (I:I) = ' '
-        1020    CONTINUE
+        end do
     END IF
     NFR = NF1
     IF (NFR == 0) NFR = 4
@@ -486,33 +488,33 @@ SUBROUTINE BOXER2 (LR, LC, LN, LW, NF1, NL, NH, ICAP)
     !
     NF = NFR + 8 + 64
     NA = LR
-    DO 1030 I = 1, LW
+    DO I = 1, LW
         NB = I + LC - 1
         NL = ICHAR (TXT1 (I:I))
         CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
-    1030 CONTINUE
+    end do
     !
     !     ...Draw side bars
     !
     NL = ICHAR (TXT3)
     NF = NFR + 8 + 64
-    DO 1040 I = LR, LN + LR
+    DO I = LR, LN + LR
         NA = I + 1
         NB = LC
         CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
         NB = LC + LW - 1
         CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
-    1040 CONTINUE
+    end do
     !
     !     ...Draw bottom bar
     !
     NF = NFR + 8 + 64
     NA = LR + LN + 1
-    DO 1050 I = 1, LW
+    DO I = 1, LW
         NB = I + LC - 1
         NL = ICHAR (TXT2 (I:I))
         CALL UTLTY (NF, NA, NB, NL, NH, NC, TXT)
-    1050 CONTINUE
+    end do
     !
     !     ...Capture a key and return it to the calling subroutine
     !
@@ -622,9 +624,9 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     DATA IPOINT, IPLUS, MINUS/'.', '+', '-'/
     DATA NUM/'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'/
     K7 = M7 + 1
-    DO 1000 I = 1, 366
+    DO I = 1, 366
         VALUE (I) = 0.
-    1000 CONTINUE
+    end do
     NCOL = 1
     N = 1
     KPT = 0
@@ -634,7 +636,6 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     exp = 0
     1010 CONTINUE
     IF (KLM (NCOL) /= MINUS) GO TO 1020
-    CONTINUE
     SGN = - 1.
     GO TO 1040
     1020 CONTINUE
@@ -646,7 +647,6 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     GO TO 1070
     1050 CONTINUE
     IF (KLM (NCOL) /= IPOINT) GO TO 1080
-    1090 CONTINUE
     KPT = 1
     GO TO 1060
     1080 CONTINUE
@@ -654,7 +654,6 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     ICOMP = NUM (1)
     1100 CONTINUE
     IF (KLM (NCOL) == ICOMP) GO TO 1110
-    1120 CONTINUE
     K = K + 1
     ICOMP = NUM (K + 1)
     IF (K - 10) 1100, 1130, 1130
@@ -674,7 +673,6 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     1160 CONTINUE
     !      IF (KLM (NCOL) .NE. IPOINT) GO TO 1180
     IF (KLM (NCOL) /= IPOINT) GO TO 1180
-    1190 CONTINUE
     KPT = 1
     GO TO 1070
     !
@@ -697,12 +695,10 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     !
     ncol = ncol + 1
     IF (KLM (NCOL) /= MINUS) GO TO 1210
-    1220 CONTINUE
     esgn = - 1.
     GO TO 1230
     1210 CONTINUE
     IF (KLM (NCOL) /= IPLUS) GO TO 1240
-    1250 CONTINUE
     esgn = 1.
     1230 CONTINUE
     !
@@ -723,7 +719,6 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     ICOMP = NUM (1)
     1270 CONTINUE
     IF (KLM (NCOL) == ICOMP) GO TO 1280
-    1290 CONTINUE
     Kk = Kk + 1
     ICOMP = NUM (Kk + 1)
     IF (Kk - 10) 1270, 1300, 1300
@@ -750,7 +745,6 @@ SUBROUTINE SCANIT (NO, VALUE, M7, KLM, NCOL)
     ICOMP = NUM (1)
     1310 CONTINUE
     IF (KLM (NCOL) == ICOMP) GO TO 1320
-    1330 CONTINUE
     K = K + 1
     ICOMP = NUM (K + 1)
     IF (K - 10) 1310, 1170, 1170
@@ -777,11 +771,11 @@ SUBROUTINE TOUPPER (LETTERS, INUM_CHAR)
     IMPLICIT INTEGER(kind=2) (I - N)
     CHARACTER LETTERS*80
 
-    DO 101 I = 1, INUM_CHAR
+    DO I = 1, INUM_CHAR
         K = ICHAR(LETTERS(I:I))
         IF (K>=97 .AND. K<=122) THEN
             K = K - 32
             LETTERS(I:I) = CHAR(K)
         END IF
-    101   CONTINUE
+    end do
 END

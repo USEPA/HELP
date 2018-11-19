@@ -1,0 +1,16 @@
+sys
+cookie_pickles_properly
+unicode_literals
+force_str
+_cookie_allows_colon_in_names
+SimpleCookie
+__builtins__
+six
+__file__
+__cached__
+parse_cookie
+Morsel
+__name__
+http_cookies
+__package__
+__spec__

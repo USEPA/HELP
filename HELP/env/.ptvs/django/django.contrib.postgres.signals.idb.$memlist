@@ -1,0 +1,11 @@
+register_hstore
+psycopg2
+__spec__
+__file__
+ProgrammingError
+__name__
+six
+__builtins__
+__cached__
+register_type_handlers
+__package__

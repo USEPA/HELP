@@ -1,0 +1,17 @@
+connections
+unicode_literals
+BaseCommand
+re
+CommandError
+__builtins__
+__file__
+keyword
+DEFAULT_DB_ALIAS
+LOOKUP_SEP
+Command
+__name__
+force_text
+OrderedDict
+__package__
+__cached__
+__spec__

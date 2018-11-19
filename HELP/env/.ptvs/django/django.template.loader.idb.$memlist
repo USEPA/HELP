@@ -1,0 +1,17 @@
+render_to_string
+DeprecationInstanceCheck
+select_template
+get_template
+__builtins__
+six
+__file__
+__cached__
+RemovedInDjango20Warning
+TemplateDoesNotExist
+_engine_list
+Origin
+engines
+LoaderOrigin
+__name__
+__package__
+__spec__

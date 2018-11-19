@@ -1,0 +1,15 @@
+LocaleRegexURLResolver
+urlpatterns
+set_language
+__spec__
+__file__
+lru_cache
+__package__
+__name__
+url
+is_language_prefix_patterns_used
+__builtins__
+__cached__
+i18n_patterns
+get_resolver
+settings

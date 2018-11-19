@@ -1,0 +1,15 @@
+inject_rename_contenttypes_operations
+_
+post_migrate
+__spec__
+__file__
+AppConfig
+create_contenttypes
+__name__
+ContentTypesConfig
+checks
+pre_migrate
+__builtins__
+__cached__
+check_generic_foreign_keys
+__package__

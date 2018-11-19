@@ -1,0 +1,17 @@
+ManagerDescriptor
+copy
+BaseManager
+__builtins__
+six
+__file__
+__package__
+inspect
+Manager
+EmptyManager
+router
+import_module
+__name__
+QuerySet
+python_2_unicode_compatible
+__cached__
+__spec__

@@ -1,0 +1,16 @@
+schema
+models
+cx_Oracle
+features
+__builtins__
+__file__
+__package__
+__path__
+base
+adapter
+django
+__name__
+introspection
+operations
+__cached__
+__spec__

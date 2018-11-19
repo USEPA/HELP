@@ -1143,7 +1143,6 @@ SUBROUTINE SCAN (NO, VALUE, M7, KLM)
     ICOMP = NUM (1)
     1100 CONTINUE
     IF (KLM (NCOL) == ICOMP) GO TO 1110
-    CONTINUE
     K = K + 1
     ICOMP = NUM (K + 1)
     IF (K - 10) 1100, 1130, 1130
@@ -1162,7 +1161,7 @@ SUBROUTINE SCAN (NO, VALUE, M7, KLM)
     IF (NCOL - K7) 1160, 1170, 1170
     1160 CONTINUE
     IF (KLM (NCOL) /= IPOINT) GO TO 1180
-    1190 CONTINUE
+    CONTINUE
     KPT = 1
     GO TO 1070
     1180 CONTINUE
@@ -1170,7 +1169,7 @@ SUBROUTINE SCAN (NO, VALUE, M7, KLM)
     ICOMP = NUM (1)
     1200 CONTINUE
     IF (KLM (NCOL) == ICOMP) GO TO 1210
-    1220 CONTINUE
+    CONTINUE
     K = K + 1
     ICOMP = NUM (K + 1)
     IF (K - 10) 1200, 1170, 1170
@@ -4160,7 +4159,7 @@ SUBROUTINE SNOW (IT)
     END IF
     !
     !     DOWNSHIFT WATER IN EXLAG().
-    290 DO I = 2, 4
+    DO I = 2, 4
         EXLAG(I - 1) = EXLAG(I)
     end do
     EXLAG(4) = 0.0
@@ -4555,7 +4554,7 @@ SUBROUTINE AVROUT (DRIN, E, DSUB, DRCR, BALY, BALT, SWULY, DT, &
                     TOLER = 0.003D0 * (DUL(J) - DRSUL(J))
                     X0 = (SWMAX + SWMIN) / 2.D0
                     !
-                    1060   CONTINUE
+                    CONTINUE
                     DO ITER = 1, 100
                         FX0 = F(X0)
                         IF (FX0 <= (0.3 * TOLER)) GO TO 1061
@@ -8280,7 +8279,7 @@ SUBROUTINE OUTAV
     6160 FORMAT(1X/4X, ' STD. DEVIATIONS', 5X, 6F9.4/25X, 6F9.4)
     6170 FORMAT(1X/'   SUBSURFACE INFLOW INTO', &
             ' LAYER', I3, /3X, 31('-'), /4X, ' TOTALS', 14X, 6F9.4/25X, 6F9.4)
-    6180 FORMAT(1X/4X, ' STD. DEVIATIONS', 5X, 6F9.4/25X, 6F9.4)
+    FORMAT(1X/4X, ' STD. DEVIATIONS', 5X, 6F9.4/25X, 6F9.4)
     6191 FORMAT(1X//1X, 79('-')/16X, 'AVERAGES OF MONTHLY AVERAGED DAILY ', &
             'HEADS (INCHES)'/1X, 79('-')/)
     6192 FORMAT(1X//1X, 79('-')/18X, 'AVERAGES OF MONTHLY AVERAGED DAILY ', &

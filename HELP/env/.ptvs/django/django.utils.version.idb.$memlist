@@ -1,0 +1,16 @@
+unicode_literals
+get_version
+os
+__builtins__
+__file__
+subprocess
+datetime
+get_git_changeset
+lru_cache
+get_complete_version
+get_main_version
+__name__
+get_docs_version
+__package__
+__cached__
+__spec__

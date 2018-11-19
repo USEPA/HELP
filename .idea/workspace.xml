@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b77c6fe9-81a8-4324-abd4-f38933532157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HELP/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/HELP/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ASCIMISC.FOR" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCIMISC.f90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ASCIPREC.FOR" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCIPREC.f90" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/ASCIMISC.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCIMISC.f90" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/ASCIPREC.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCIPREC.f90" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/ASCISRAD.FOR" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCISRAD.FOR" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/ASCITEMP.FOR" beforeDir="false" afterPath="$PROJECT_DIR$/source/ASCITEMP.FOR" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/HELP3O.FOR" beforeDir="false" afterPath="$PROJECT_DIR$/source/HELP3O.FOR" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/HELP3O.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/HELP3O.f90" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/MESSAGES.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/MESSAGES.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/SYNGEN.FOR" beforeDir="false" afterPath="$PROJECT_DIR$/source/SYNGEN.FOR" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/SYNGEN.f90" beforeDir="false" afterPath="$PROJECT_DIR$/source/SYNGEN.f90" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +24,12 @@
     <session id="-1196112502">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.2" value="6" />
-          <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.open.time.4" value="4" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -62,60 +62,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/ASCIMISC.f90">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/ASCIPREC.f90">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/ASCISRAD.f90">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/ASCISRAD.FOR">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/ASCITEMP.f90">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/ASCITEMP.FOR">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/HELP3O.f90">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/HELP3O.FOR">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -225,7 +172,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20735608" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -237,9 +184,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.7148188" weight="0.32827735" />
       <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.49946696" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Inspection Results" order="9" sideWeight="0.84754795" visible="true" weight="0.18959913" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" order="9" sideWeight="0.84648186" visible="true" weight="0.18959913" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.15245202" side_tool="true" visible="true" weight="0.18959913" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.15351813" side_tool="true" visible="true" weight="0.18959913" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -282,8 +229,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Removing VS solution files." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/ASCIMISC.f90" />
-    <entry file="file://$PROJECT_DIR$/source/ASCIPREC.f90" />
     <entry file="file://$PROJECT_DIR$/source/SYNGEN.f90">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -305,21 +250,21 @@
     <entry file="file://$PROJECT_DIR$/source/ASCITEMP.FOR">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+          <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/HELP3O.f90">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/HELP3O.FOR">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="323">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
         </state>
       </provider>
     </entry>

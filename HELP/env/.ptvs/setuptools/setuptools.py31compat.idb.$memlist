@@ -1,0 +1,13 @@
+TemporaryDirectory
+__spec__
+__all__
+__file__
+__name__
+shutil
+get_path
+get_config_vars
+__builtins__
+__cached__
+get_python_lib
+tempfile
+__package__

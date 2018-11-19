@@ -48,7 +48,7 @@ PROGRAM SCANR
         CALL ACELL (11, 33, 20, CITY, NL, NH, 1)
         CALL ACELL (12, 33, 20, STATE, NL, NH, 1)
         50       CALL CELL (13, 52, 4, NL, NH, RVALUE, IFLAG, TXT)
-        IF (RVALUE .NE. 1.0 .AND. RVALUE .NE. 2.0) GOTO 50
+        IF (RVALUE /= 1.0 .AND. RVALUE /= 2.0) GOTO 50
         IUNIT = RVALUE
     ELSE
         OPEN (20, FILE = 'SCAN.TMP', STATUS = 'OLD')
@@ -71,7 +71,7 @@ PROGRAM SCANR
     INQUIRE(FILE = OUTFILE, EXIST = LVAL)
     IF (LVAL) THEN
         CALL APPEND (IFLAG)
-        IF (IFLAG .EQ. 1) THEN
+        IF (IFLAG == 1) THEN
             OPEN (10, FILE = OUTFILE, STATUS = 'OLD')
             READ(10, 106) ITMP
             READ(10, 106) IUNIT2
@@ -80,7 +80,7 @@ PROGRAM SCANR
             135         FORMAT(A20, A20)
             CALL TOUPPER(CITY2, 20)
             CALL TOUPPER(STATE2, 20)
-            IF(CITY .NE. CITY2 .OR. STATE .NE. STATE2) THEN
+            IF(CITY /= CITY2 .OR. STATE /= STATE2) THEN
                 CALL UTLTY (8 + 256, 10, 10, NL, NH, 1, ' ')
                 WRITE(6, 145) CITY2, STATE2, CITY, STATE
                 145            FORMAT(5x, 'CITY AND STATE IN MASTER FILE  < ', A20, A20, '>'&
@@ -90,12 +90,12 @@ PROGRAM SCANR
                         T PROGRAM!')
                 GOTO 999
             ENDIF
-            IF (IUNIT .NE. IUNIT2) THEN
+            IF (IUNIT /= IUNIT2) THEN
                 ICONVERT = IUNIT2
                 CALL UTLTY (256, 1, 1, NL, NH, 1, ' ')
                 CALL UTLTY (8 + 16, 10, 12, NL, NH, 56, ' DATA WILL BE CONVERTED &
                         TO UNITS PRESENT IN MASTER FILE.')
-                IF(ICONVERT .EQ. 1) THEN
+                IF(ICONVERT == 1) THEN
                     CALL UTLTY (8 + 16, 11, 27, NL, NH, 27, '(FROM METRIC TO U.S. &
                             UNITS)')
                 ELSE
@@ -138,10 +138,10 @@ PROGRAM SCANR
             15x, '�             current year', A1, 's data.             �', /, &
             15x, '�                                              �', /, &
             15x, '�       Rainfall input values should           �')
-    IF (IUNIT .EQ. 1) WRITE (6, 261)
+    IF (IUNIT == 1) WRITE (6, 261)
     261      FORMAT(&
             15x, '�               be in inches.                  �')
-    IF (IUNIT .EQ. 2) WRITE (6, 271)
+    IF (IUNIT == 2) WRITE (6, 271)
     271      FORMAT(&
             15x, '�          be in millimeters (mm).             �')
     WRITE (*, 281)
@@ -154,7 +154,7 @@ PROGRAM SCANR
     !
     !   CHECK FOR ESC TO EXIT
     !
-    IF (NL .EQ. 27) GO TO 999
+    IF (NL == 27) GO TO 999
     INQUIRE (FILE = INFILE, EXIST = LVAL)
     IF(.NOT. LVAL) THEN
         CALL UTLTY (256, 1, 1, NL, NH, 1, ' ')
@@ -177,14 +177,14 @@ PROGRAM SCANR
             15x, '����������������������������������������������ͼ')
 
     CALL CELL (13, 18, 4, NL, NH, RVALUE, IFLAG, TXT)
-    IF(RVALUE .EQ. 0) GOTO 300
+    IF(RVALUE == 0) GOTO 300
     IYEAR = (RVALUE + 0.001)
 
     !
     !     Check for leap year.
     !
 
-    IF (((IYEAR / 4) * 4) .NE. IYEAR) THEN
+    IF (((IYEAR / 4) * 4) /= IYEAR) THEN
         INUMDAYS = 365
     ELSE
         INUMDAYS = 366
@@ -197,9 +197,9 @@ PROGRAM SCANR
     DO I = 1, INUMDAYS
         INDATA(I) = 9999.0
     end do
-    DO 366 I = INUMDAYS + 1, 370
+    DO I = INUMDAYS + 1, 370
         INDATA(I) = 0.0
-    366   CONTINUE
+    end do
     OPEN(11, FILE = INFILE, STATUS = 'OLD')
     READ(11, *, END = 410) (INDATA(I), I = 1, INUMDAYS + 1)
     CLOSE(11)
@@ -209,7 +209,7 @@ PROGRAM SCANR
     !
 
     CALL KEEPER(IFLAG, 2)
-    IF(IFLAG .EQ. 0) GOTO 200
+    IF(IFLAG == 0) GOTO 200
     INDATA(INUMDAYS + 1) = 0.0
     GOTO 500
 
@@ -218,9 +218,9 @@ PROGRAM SCANR
     !
 
     410   CLOSE(11)
-    DO 411 I = 1, INUMDAYS
-        IF(INDATA(I) .EQ. 9999) GOTO 420
-    411   CONTINUE
+    DO I = 1, INUMDAYS
+        IF(INDATA(I) == 9999) GOTO 420
+    end do
     GOTO 500
 
     !
@@ -241,30 +241,30 @@ PROGRAM SCANR
     !  CHECK IF DATA NEEDS UNITS CONVERTED
     !
 
-    500   IF(ICONVERT .EQ. 1) THEN
-        DO 531 I = 1, INUMDAYS
+    500   IF(ICONVERT == 1) THEN
+        DO I = 1, INUMDAYS
             INDATA(I) = INDATA(I) / 25.4
-        531      CONTINUE
-    ELSE IF(ICONVERT .EQ. 2) THEN
-        DO 541 I = 1, INUMDAYS
+        end do
+    ELSE IF(ICONVERT == 2) THEN
+        DO I = 1, INUMDAYS
             INDATA(I) = INDATA(I) * 25.4
-        541      CONTINUE
+        end do
     ENDIF
 
     !
     !  WRITE DATA TO MASTER FILE FORMATTED
     !
 
-    IF (IUNIT2 .EQ. 1) THEN
-        DO 551 I = 1, INUMDAYS, 10
+    IF (IUNIT2 == 1) THEN
+        DO I = 1, INUMDAYS, 10
             WRITE(10, 546) IYEAR, (INDATA(J), J = I, I + 9), (J / 10)
             546         FORMAT(I10, 10F5.2, I10)
-        551      CONTINUE
+        end do
     ELSE
-        DO 571 I = 1, INUMDAYS, 10
+        DO I = 1, INUMDAYS, 10
             WRITE(10, 566) IYEAR, (INDATA(J), J = I, I + 9), (J / 10)
             566         FORMAT(I10, 10F5.1, I10)
-        571      CONTINUE
+        end do
     ENDIF
     GOTO 200
     999   STOP

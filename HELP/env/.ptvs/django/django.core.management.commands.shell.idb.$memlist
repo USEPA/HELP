@@ -1,0 +1,15 @@
+select
+CommandError
+os
+__spec__
+__file__
+OrderedSet
+warnings
+__name__
+Command
+BaseCommand
+__builtins__
+__cached__
+RemovedInDjango20Warning
+sys
+__package__

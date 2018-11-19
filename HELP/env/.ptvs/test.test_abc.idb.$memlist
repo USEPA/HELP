@@ -1,0 +1,17 @@
+test_factory
+abc
+TestABCWithInitSubclass_C
+TestABCWithInitSubclass_Py
+isabstract
+__builtins__
+TestABC_C
+__file__
+unittest
+_py_abc
+__package__
+TestLegacyAPI_C
+__name__
+TestABC_Py
+__cached__
+TestLegacyAPI_Py
+__spec__

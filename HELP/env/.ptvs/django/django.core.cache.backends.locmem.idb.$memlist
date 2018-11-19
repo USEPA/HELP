@@ -1,0 +1,17 @@
+DEFAULT_TIMEOUT
+_expire_info
+pickle
+dummy
+_caches
+__builtins__
+__file__
+BaseCache
+__package__
+RWLock
+contextmanager
+time
+__name__
+_locks
+LocMemCache
+__cached__
+__spec__

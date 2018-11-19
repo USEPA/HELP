@@ -1,0 +1,13 @@
+parse_requirements
+__spec__
+absolute_import
+__file__
+InstallRequirement
+Command
+__name__
+UninstallCommand
+canonicalize_name
+__builtins__
+__cached__
+InstallationError
+__package__

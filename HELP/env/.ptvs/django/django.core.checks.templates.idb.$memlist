@@ -1,0 +1,17 @@
+unicode_literals
+check_setting_app_dirs_loaders
+copy
+E001
+__builtins__
+six
+__file__
+check_string_if_invalid_is_string
+register
+__cached__
+settings
+E002
+Tags
+__name__
+Error
+__package__
+__spec__

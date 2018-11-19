@@ -1,0 +1,16 @@
+T_CV2
+USING_STRINGS
+T_IV3
+IV
+__builtins__
+T_IV2
+__file__
+__cached__
+T_CV3
+dataclass
+CV
+__name__
+InitVar
+ClassVar
+__package__
+__spec__

@@ -167,7 +167,7 @@
 !   SMX FOR FROZEN SOIL CONDITIONS
 !
       CN22 = 95.0
-      IF (CN2 .GE. 80) CN22 = 98.0
+      IF (CN2 >= 80) CN22 = 98.0
       C22 = CN22*CN22
       C33 = CN22*C22
       C44 = CN22*C33
@@ -189,65 +189,65 @@
 !    INITIALIZES ACCOUNTING VARIABLES.
 !
       SWULE = 0.0
-      DO 1010 J = 1, 7
+      DO J = 1, 7
         SWULE = SWULE + SWUL(J)
- 1010 CONTINUE
+      end do
       OSWULE = 0.0
-      DO 1020 J = 1, NSEG
+      DO J = 1, NSEG
         OSWULE = OSWULE + SWUL(J)
         DSWUL(J) = SWUL(J)
         SWULI(J) = SWUL(J)
- 1020 CONTINUE
+      end do
       NSEG1B = 1
       NSEG1E = NSEG1
       NSEG1D = NSEG1E
-      IF (LSEG(NSEG1) .GT. 2) NSEG1D = NSEG1E - 1
+      IF (LSEG(NSEG1) > 2) NSEG1D = NSEG1E - 1
       LAY1B = 1
       LAY1E = LP(1)
-      IF (NSEG2 .GT. 0) THEN       
+      IF (NSEG2 > 0) THEN
         NSEG2B = NSEG1 + 1
         NSEG2E = NSEG1 + NSEG2
         NSEG2D = NSEG2E
-        IF (LSEG(NSEG2E) .GT. 2) NSEG2D = NSEG2E-1
+        IF (LSEG(NSEG2E) > 2) NSEG2D = NSEG2E-1
         LAY2B = LP(1) + 1
         LAY2E = LP(2)
       END IF
-      IF (NSEG3 .GT. 0) THEN 
+      IF (NSEG3 > 0) THEN
         NSEG3B = NSEG2E+1
         NSEG3E = NSEG2E + NSEG3
         NSEG3D = NSEG3E
-        IF (LSEG(NSEG3E) .GT. 2) NSEG3D = NSEG3E-1
+        IF (LSEG(NSEG3E) > 2) NSEG3D = NSEG3E-1
         LAY3B = LP(2) + 1
         LAY3E = LP(3)
       END IF
-      IF (NSEG4 .GT. 0) THEN
+      IF (NSEG4 > 0) THEN
         NSEG4B = NSEG3E+1
         NSEG4E = NSEG3E + NSEG4
         NSEG4D = NSEG4E
-        IF (LSEG(NSEG4E) .GT. 2) NSEG4D = NSEG4E-1
+        IF (LSEG(NSEG4E) > 2) NSEG4D = NSEG4E-1
         LAY4B = LP(3) + 1
         LAY4E = LP(4)
       END IF
-      IF (NSEG5 .GT. 0) THEN
+      IF (NSEG5 > 0) THEN
         NSEG5B = NSEG4E+1
         NSEG5E = NSEG4E + NSEG5
         NSEG5D = NSEG5E
-        IF (LSEG(NSEG5E) .GT. 2) NSEG5D = NSEG5E-1
+        IF (LSEG(NSEG5E) > 2) NSEG5D = NSEG5E-1
         LAY5B = LP(4) + 1
         LAY5E = LP(5)
       END IF
-      IF (NSEG6 .GT. 0) THEN
+      IF (NSEG6 > 0) THEN
         NSEG6B = NSEG5E+1
         NSEG6E = NSEG
         NSEG6D = NSEG
         LAY6B = LP(5) + 1
         LAY6E = LP(6)
       END IF
-      DO 1040 J = 1, 67
+      DO J = 1, 67
         BALT(J) = 0.0D0
         BALY(J) = 0.0D0
         ET(J) = 0.0
- 1040 CONTINUE
+      end do
       IODAY = 0
       RUN = 0.0
       ES1T = 0.0
@@ -319,18 +319,18 @@
 !
 !    PRINTS SOIL CHARACTERISTICS AND DESIGN INFORMATION.
 !
-      IF (IPRE .GE. 2) CALL OUTDAT (SWULL)
+      IF (IPRE >= 2) CALL OUTDAT (SWULL)
 !
 !   INITIALIZING VARIABLES
 !
       OSWULE = 0.0
-      DO 2230 J = 1, NSEG
+      DO J = 1, NSEG
         OSWULE = OSWULE + DSWUL(J) 
- 2230 CONTINUE
+      end do
       SWULE = 0.0
-      DO 1077 J = 1, 7
+      DO J = 1, 7
         SWULE = SWULE + SWUL(J)
- 1077 CONTINUE
+      end do
       PSW = SWULE/EDEPTH
       DSW = SWULE/EDEPTH
       IMO = 0
@@ -385,12 +385,12 @@
       PREA2 = 0.0
       ETA2  = 0.0
       STOR2 = 0.0
-      DO 1081 K = 1, 20
+      DO K = 1, 20
         RCRIA(K) = 0.0
         RCRIA1(K) = 0.0
         RCRIA2(K) = 0.0
         SUBINA(K) = 0.0
- 1081 CONTINUE
+      end do
       PPRC1 = 0.0
       PPRC2 = 0.0
       PPRC3 = 0.0
@@ -415,7 +415,7 @@
       PHED3 = 0.0
       PHED4 = 0.0
       PHED5 = 0.0
-      DO 1070 I = 1, MAXMO
+      DO I = 1, MAXMO
         PREM1(I)  = 0.0 
         RUNM1(I)  = 0.0 
         ETM1(I)   = 0.0 
@@ -440,12 +440,12 @@
         PRC4M1(I) = 0.0 
         PRC5M1(I) = 0.0
         PRC6M1(I) = 0.0
-        DO 1071 K = 1, 20
+        DO K = 1, 20
           RCRIM1(K,I) = 0.0
           RCRIM(K,I) = 0.0
           SUBINM(K,I) = 0.0
           RCRIM2(K,I) = 0.0
- 1071   CONTINUE
+      end do
         PREM2(I)  = 0.0 
         RUNM2(I)  = 0.0 
         ETM2(I)   = 0.0 
@@ -470,7 +470,7 @@
         PRC4M2(I) = 0.0  
         PRC5M2(I) = 0.0
         PRC6M2(I) = 0.0
- 1070 CONTINUE
+      end do
 !
 !    START YEARLY LOOP FOR SIMULATION. IYR IS THE NUMBER
 !    OF THE YEAR.
@@ -502,7 +502,7 @@
         ETA   = 0.0
         BAL   = 0.0
         STOR  = 0.0
-      DO 1072 I = 1, 12
+      DO I = 1, 12
         HED1M(I) = 0.0
         HED2M(I) = 0.0
         HED3M(I) = 0.0
@@ -519,9 +519,9 @@
         RCR3M(I) = 0.0
         RCR4M(I) = 0.0
         RCR5M(I) = 0.0
-        DO 1171 K = 1, 20
+        DO K = 1, 20
           RCRIM(K,I) = 0.0
- 1171   CONTINUE
+      end do
         DRN1M(I) = 0.0
         DRN2M(I) = 0.0
         DRN3M(I) = 0.0
@@ -530,10 +530,10 @@
         RUNM(I) = 0.0
         PREM(I) = 0.0
         ETM(I) = 0.0
- 1072 CONTINUE
-      DO 1173 K = 1, 20
+      end do
+      DO K = 1, 20
         RCRIA(K) = 0.0
- 1173 CONTINUE
+      end do
 !  
 !    IMO IS THE NUMBER OF THE MONTH.
 !    MO1 IS THE NUMBER OF THE MONTH OF THE YEAR.
@@ -551,7 +551,7 @@
         NAAA = 0
         NBBB = 0
         CALL UTLTY(NFFF,NAAA,NBBB,NLLL,NHHH,NCCC,TXT)
-        IF (IPRE .LT. 2) THEN
+        IF (IPRE < 2) THEN
           WRITE (*, 6000)
  6000     FORMAT(/////////& 
  12X,' PERFORMING CALCULATIONS FOR INITIALIZATION.'/& 
@@ -573,7 +573,7 @@
 !    START DAILY LOOP FOR SIMULATION.
 !    IDA IS THE DAY OF THE YEAR OF SIMULATION.
 !
-        DO 1100 IDA = 1, ND
+        DO IDA = 1, ND
 !
 !    COMPUTES THE MONTH OF YEAR FOR THE DAY OF SIMULATION, MO
 !    1OMPARES IT WITH YESTERDAY'S MONTH, MO1 AND INCREMENTS
@@ -583,12 +583,12 @@
 !
           IDAMO = IDAMO + 1
           MO = MONTH (IDA, NT)
-          IF (MO .NE. MO1) IMO = IMO + 1
-          IF (MO .NE. MO1) IDAMO = 1
+          IF (MO /= MO1) IMO = IMO + 1
+          IF (MO /= MO1) IDAMO = 1
           MO1 = MO
           PREM(IMO) = PREM(IMO) + PRE(IDA)
           PREA = PREA + PRE(IDA)
-          IF (PRE(IDA) .GT. PPRE) PPRE = PRE(IDA)
+          IF (PRE(IDA) > PPRE) PPRE = PRE(IDA)
 !
 !    DETERMINES IF SOIL IS FROZEN
 !
@@ -597,13 +597,13 @@
 !    SSTAR INDICATES FROZEN SOIL
 !
           SSTAR = ISTAR(2)
-          IF (IFREZ .EQ. 1) SSTAR = ISTAR(1)
+          IF (IFREZ == 1) SSTAR = ISTAR(1)
 !
 !    COMPUTES SNOWFALL AND SNOWMELT AND ADJUSTS RAIN
 !    ACCORDINGLY.
 !
           CALL SNOW (IT)
-          IF (SNO .GT. PSNO) PSNO = SNO
+          IF (SNO > PSNO) PSNO = SNO
 !
 !    ASTAR INDICATES FREEZING TEMPERATURES.
 !
@@ -612,7 +612,7 @@
 !    COMPUTES RUNOFF.
 !
           SMX = SMXN
-          IF (IFREZ .GT. 0) SMX = SMXF
+          IF (IFREZ > 0) SMX = SMXF
           CALL RUNOFF
 !
 !   COMPUTES SOIL TEMPERATURE AT BOTTOM OF EACH SEGMENT
@@ -623,9 +623,9 @@
 !    TRANSPIRATION.
 !
           CALL EVAPOT
-          DO 1120 J = 1, 19
-            IF (DABS (BALT(J)) .LT. 1.E-08) BALT(J) = 0.0
- 1120     CONTINUE
+          DO J = 1, 19
+            IF (DABS (BALT(J)) < 1.E-08) BALT(J) = 0.0
+      end do
 !
 !    COMPUTES DAILY LEAF AREA INDEX , PLANT TRANSPIRATION
 !    WHEN SOIL WATER CONTENT LIMITS
@@ -644,64 +644,64 @@
 !
 !    ACCOUNTING IS PERFORMED.
 !
-          IF (HED1 .GT. PHED1) PHED1 = HED1
+          IF (HED1 > PHED1) PHED1 = HED1
           SWULE = 0.0
           EXET = 0.0
-          DO 1130 J = 1, 7
-            IF ((DSWUL(J) + (BALT(J)/2.0D0)) .LT. DWPUL(J)) THEN
+          DO J = 1, 7
+            IF ((DSWUL(J) + (BALT(J)/2.0D0)) < DWPUL(J)) THEN
               EXET2 = EXET + DWPUL(J) - DSWUL(J) - (BALT(J)/2.0D0)
-              IF (EXET .LE. ETT) THEN
+              IF (EXET <= ETT) THEN
                 DSWUL(J) = DWPUL(J) - (BALT(J)/2.0D0)
                 SWULY(J) = DSWUL(J)
                 EXET = EXET2
               END IF
             END IF         
             SWULE = SWULE + DSWUL(J) + BALT(J)/2.0D0
- 1130     CONTINUE
+      end do
           SWE = SWULE/EDEPTH
-          IF (SWE .LT. DSW) DSW = SWE
-          IF (SWE .GT. PSW) PSW = SWE
+          IF (SWE < DSW) DSW = SWE
+          IF (SWE > PSW) PSW = SWE
 !
 !    EXCESS WATER ADDED TO THE TOP SEGMENT IS DIVERTED TO RUNOFF.
 !
           RUN = RUN + ADDRUN*FRUNOF
           ADDRUN = ADDRUN*(1.0 - FRUNOF)
-          IF (SNO .GT. 0.0) THEN
+          IF (SNO > 0.0) THEN
             SNO = SNO + ADDRUN
             TWE = TWE + ADDRUN * 25.4
             XLIQW = XLIQW + ADDRUN * 25.4
             ADDRUN = 0.0
           END IF 
-          DO 1140 J = 1, NSEG1D
+          DO J = 1, NSEG1D
             SWUL(J) = DSWUL(J)
- 1140     CONTINUE
+      end do
 !
 !     PERFORM ACCOUNTING OF MONTHLY AND ANNUAL TOTALS AND
 !     PEAK VALUES FOR THE TOP SUBPROFILE.
 !
           RUNM(IMO) = RUNM(IMO) + RUN
           RUNA = RUNA + RUN
-          IF (RUN .GT. PRUN) PRUN = RUN
+          IF (RUN > PRUN) PRUN = RUN
           ETT = ETT - EXET
           ETM(IMO) = ETM(IMO) + ETT
           ETA = ETA + ETT
           HED1S(IDAMO) = HED1
           HED1M(IMO) = HED1M(IMO) + HED1
-          IF(LD(1) .GT. 0) THEN
+          IF(LD(1) > 0) THEN
              RCR1 = RECIR(LD(1)) * DRN1 / 100.0
              DRN1 = DRN1 - RCR1
              RCR1M(IMO) = RCR1M(IMO) + RCR1
              RCR1A = RCR1A + RCR1
-             IF (RCR1 .GT. PRCR1) PRCR1 = RCR1
+             IF (RCR1 > PRCR1) PRCR1 = RCR1
           END IF
           DRN1M(IMO) = DRN1M(IMO) + DRN1
           DRN1A = DRN1A + DRN1
-          IF (DRN1 .GT. PDRN1) PDRN1 = DRN1
-          IF (PRC1 .GT. PPRC1) PPRC1 = PRC1
+          IF (DRN1 > PDRN1) PDRN1 = DRN1
+          IF (PRC1 > PPRC1) PPRC1 = PRC1
           PRC1M(IMO) = PRC1M(IMO) + PRC1
           PRC1A = PRC1A + PRC1
           FIN2 = PRC1 + EXWAT2
-          IF (NSEG2 .LE. 0) GO TO 1150
+          IF (NSEG2 <= 0) GO TO 1150
 !
 !     SETS INFLOW EQUAL TO PERCOLATION FROM TOP SUBPROFILE.
 !
@@ -716,35 +716,35 @@
          
           CALL DRAIN (FIN2, DRN2, PRC2, HED2, BALY, BALT, EXWAT2,& 
        NPROF, NSEG2B, NSEG2E, LAY2B, LAY2E, DRIN, SWULY)
-          IF (HED2 .GT. PHED2) PHED2 = HED2
+          IF (HED2 > PHED2) PHED2 = HED2
 !
 !     COMPUTES SOIL WATER CONTENT IN THE
 !     SECOND SUBPROFILE FROM THE TOP.
 !
-          DO 1160 J = NSEG2B, NSEG2D
+          DO J = NSEG2B, NSEG2D
             SWUL(J) = DSWUL(J)
- 1160     CONTINUE
+      end do
 !
 !     PERFORM ACCOUNTING OF MONTHLY AND ANNUAL TOTALS AND
 !     PEAK VALUES FOR THE SECOND SUBPROFILE FROM THE TOP.
 !
           HED2S(IDAMO) = HED2
           HED2M(IMO) = HED2M(IMO) + HED2
-          IF(LD(2) .GT. 0) THEN
+          IF(LD(2) > 0) THEN
              RCR2 = RECIR(LD(2)) * DRN2 / 100.0
              DRN2 = DRN2 - RCR2
              RCR2M(IMO) = RCR2M(IMO) + RCR2
              RCR2A = RCR2A + RCR2
-             IF (RCR2 .GT. PRCR2) PRCR2 = RCR2
+             IF (RCR2 > PRCR2) PRCR2 = RCR2
           END IF
           DRN2M(IMO) = DRN2M(IMO) + DRN2
           DRN2A = DRN2A + DRN2
-          IF (DRN2 .GT. PDRN2) PDRN2 = DRN2
+          IF (DRN2 > PDRN2) PDRN2 = DRN2
           PRC2M(IMO) = PRC2M(IMO) + PRC2
           PRC2A = PRC2A + PRC2
-          IF (PRC2 .GT. PPRC2) PPRC2 = PRC2
+          IF (PRC2 > PPRC2) PPRC2 = PRC2
           FIN3 = PRC2 + EXWAT3
-          IF (NSEG3 .LE. 0) GO TO 1150
+          IF (NSEG3 <= 0) GO TO 1150
 !
 !     SETS INFLOW EQUAL TO PERCOLATION FROM
 !     SECOND SUBPROFILE FROM THE TOP.
@@ -759,31 +759,31 @@
           EXWAT3 = 0.0
           CALL DRAIN (FIN3, DRN3, PRC3, HED3, BALY, BALT, EXWAT3,& 
        NPROF, NSEG3B, NSEG3E, LAY3B, LAY3E, DRIN, SWULY)
-          IF (HED3 .GT. PHED3) PHED3 = HED3
-          DO 1170 J = NSEG3B, NSEG3D
+          IF (HED3 > PHED3) PHED3 = HED3
+          DO J = NSEG3B, NSEG3D
             SWUL(J) = DSWUL(J)
- 1170     CONTINUE
+      end do
 !
 !     PERFORM ACCOUNTING OF MONTHLY AND ANNUAL TOTALS AND
 !     PEAK VALUES FOR THE THIRD SUBPROFILE FROM THE TOP.
 !
           HED3S(IDAMO) = HED3
           HED3M(IMO) = HED3M(IMO) + HED3
-          IF(LD(3) .GT. 0) THEN
+          IF(LD(3) > 0) THEN
              RCR3 = RECIR(LD(3)) * DRN3 /100.0
              DRN3 = DRN3 - RCR3
              RCR3M(IMO) = RCR3M(IMO) + RCR3
              RCR3A = RCR3A + RCR3
-             IF (RCR3 .GT. PRCR3) PRCR3 = RCR3
+             IF (RCR3 > PRCR3) PRCR3 = RCR3
           END IF
           DRN3M(IMO) = DRN3M(IMO) + DRN3
           DRN3A = DRN3A + DRN3
-          IF (DRN3 .GT. PDRN3) PDRN3 = DRN3
+          IF (DRN3 > PDRN3) PDRN3 = DRN3
           PRC3M(IMO) = PRC3M(IMO) + PRC3
           PRC3A = PRC3A + PRC3
-          IF (PRC3 .GT. PPRC3) PPRC3 = PRC3
+          IF (PRC3 > PPRC3) PPRC3 = PRC3
           FIN4 = PRC3 + EXWAT4
-          IF (NSEG4 .LE. 0) GO TO 1150
+          IF (NSEG4 <= 0) GO TO 1150
 !
 !     SETS INFLOW EQUAL TO PERCOLATION FROM
 !     THIRD SUBPROFILE FROM THE TOP.
@@ -799,35 +799,35 @@
           EXWAT4 = 0.0
           CALL DRAIN (FIN4, DRN4, PRC4, HED4, BALY, BALT, EXWAT4,& 
        NPROF, NSEG4B, NSEG4E, LAY4B, LAY4E, DRIN, SWULY)
-          IF (HED4 .GT. PHED4) PHED4 = HED4
+          IF (HED4 > PHED4) PHED4 = HED4
 !
 !     COMPUTES SOIL WATER CONTENT IN THE THIRD
 !     SUBPROFILE FROM THE TOP.
 !
-          DO 1180 J = NSEG4B, NSEG4D
+          DO J = NSEG4B, NSEG4D
             SWUL(J) = DSWUL(J)
- 1180     CONTINUE
+      end do
 !
 !     PERFORM ACCOUNTING OF MONTHLY AND ANNUAL TOTALS AND
 !     PEAK VALUES FOR THE THIRD SUBPROFILE FROM THE TOP.
 !
           HED4S(IDAMO) = HED4
           HED4M(IMO) = HED4M(IMO) + HED4
-          IF(LD(4) .GT. 0) THEN
+          IF(LD(4) > 0) THEN
              RCR4 = RECIR(LD(4)) * DRN4 / 100.0
              DRN4 = DRN4 - RCR4
              RCR4M(IMO) = RCR4M(IMO) + RCR4
              RCR4A = RCR4A + RCR4
-             IF (RCR4 .GT. PRCR4) PRCR4 = RCR4
+             IF (RCR4 > PRCR4) PRCR4 = RCR4
           END IF
           DRN4M(IMO) = DRN4M(IMO) + DRN4
           DRN4A = DRN4A + DRN4
-          IF (DRN4 .GT. PDRN4) PDRN4 = DRN4
+          IF (DRN4 > PDRN4) PDRN4 = DRN4
           PRC4M(IMO) = PRC4M(IMO) + PRC4
           PRC4A = PRC4A + PRC4
-          IF (PRC4 .GT. PPRC4) PPRC4 = PRC4
+          IF (PRC4 > PPRC4) PPRC4 = PRC4
           FIN5 = PRC4 + EXWAT5
-          IF (NSEG5 .LE. 0) GO TO 1150
+          IF (NSEG5 <= 0) GO TO 1150
 !
 !     SETS INFLOW EQUAL TO PERCOLATION FROM
 !     FOURTH SUBPROFILE FROM THE TOP.
@@ -842,31 +842,31 @@
           EXWAT5 = 0.0
           CALL DRAIN (FIN5, DRN5, PRC5, HED5, BALY, BALT, EXWAT5,& 
        NPROF, NSEG5B, NSEG5E, LAY5B, LAY5E, DRIN, SWULY)
-          IF (HED5 .GT. PHED5) PHED5 = HED5
-          DO 1190 J = NSEG5B, NSEG5D
+          IF (HED5 > PHED5) PHED5 = HED5
+          DO J = NSEG5B, NSEG5D
             SWUL(J) = DSWUL(J)
- 1190     CONTINUE
+      end do
 !
 !     PERFORM ACCOUNTING OF MONTHLY AND ANNUAL TOTALS AND
 !     PEAK VALUES FOR THE THIRD SUBPROFILE FROM THE TOP.
 !
           HED5S(IDAMO) = HED5
           HED5M(IMO) = HED5M(IMO) + HED5
-          IF(LD(5) .GT. 0) THEN
+          IF(LD(5) > 0) THEN
              RCR5 = RECIR(LD(5)) * DRN5 / 100.0
              DRN5 = DRN5 - RCR5
              RCR5M(IMO) = RCR5M(IMO) + RCR5
              RCR5A = RCR5A + RCR5
-             IF (RCR5 .GT. PRCR5) PRCR5 = RCR5
+             IF (RCR5 > PRCR5) PRCR5 = RCR5
           END IF
           DRN5M(IMO) = DRN5M(IMO) + DRN5
           DRN5A = DRN5A + DRN5
-          IF (DRN5 .GT. PDRN5) PDRN5 = DRN5
+          IF (DRN5 > PDRN5) PDRN5 = DRN5
           PRC5M(IMO) = PRC5M(IMO) + PRC5
           PRC5A = PRC5A + PRC5
-          IF (PRC5 .GT. PPRC5) PPRC5 = PRC5
+          IF (PRC5 > PPRC5) PPRC5 = PRC5
           FIN6 = PRC5 + EXWAT6
-          IF (NSEG6 .LE. 0) GO TO 1150
+          IF (NSEG6 <= 0) GO TO 1150
 !
 !     SETS INFLOW EQUAL TO PERCOLATION FROM
 !     SECOND SUBPROFILE FROM THE TOP.
@@ -881,43 +881,43 @@
           EXWAT6 = 0.0
           CALL DRAIN (FIN6, DUMMY1, PRC6, DUMMY2, BALY, BALT, EXWAT6,& 
         NPROF, NSEG6B, NSEG6E, LAY6B, LAY6E, DRIN, SWULY)
-          DO 1200 J = NSEG6B, NSEG6D
+          DO J = NSEG6B, NSEG6D
             SWUL(J) = DSWUL(J)
- 1200     CONTINUE
+      end do
 !
 !     PERFORM ACCOUNTING OF MONTHLY AND ANNUAL TOTALS AND
 !     PEAK VALUES FOR THE THIRD SUBPROFILE FROM THE TOP.
 !
           PRC6M(IMO) = PRC6M(IMO) + PRC6
           PRC6A = PRC6A + PRC6
-          IF (PRC6 .GT. PPRC6) PPRC6 = PRC6
+          IF (PRC6 > PPRC6) PPRC6 = PRC6
 !
 !     CALLS SUBROUTINE OUTDAY IF DAILY OUTPUT IS DESIRED.
 !
  1150     CONTINUE
           CALL RECIRC (IMO)
-          IF (IOD .EQ. 1 .AND. IPRE .GE. 2) CALL OUTDAY (SWE,& 
+          IF (IOD == 1 .AND. IPRE >= 2) CALL OUTDAY (SWE,&
        IODAY, ASTAR, SSTAR, NVAR)
 !
 !     END OF DAILY LOOP.
 !
-          IF (IDA .EQ. ND) GO TO 1210
+          IF (IDA == ND) GO TO 1210
           IDAP1 = IDA + 1
           MO = MONTH (IDAP1, NT)
-          IF (MO .EQ. MO1) GO TO 1100
+          IF (MO == MO1) GO TO 1100
  1210     CONTINUE
           HD1M2 = 0.0
           HD2M2 = 0.0
           HD3M2 = 0.0
           HD4M2 = 0.0
           HD5M2 = 0.0
-          DO 1220 I = 1, IDAMO
+          DO I = 1, IDAMO
             HD1M2 = HD1M2 + (HED1S(I)*HED1S(I))
             HD2M2 = HD2M2 + (HED2S(I)*HED2S(I))
             HD3M2 = HD3M2 + (HED3S(I)*HED3S(I))
             HD4M2 = HD4M2 + (HED4S(I)*HED4S(I))
             HD5M2 = HD5M2 + (HED5S(I)*HED5S(I))
- 1220     CONTINUE
+      end do
           HD1M2 = ((IDAMO*HD1M2) - (HED1M(IMO)*HED1M(IMO)))/& 
       (IDAMO*(IDAMO - 1))
           HD2M2 = ((IDAMO*HD2M2) - (HED2M(IMO)*HED2M(IMO)))/& 
@@ -938,12 +938,13 @@
           SHED3(MO1) = 0.0
           SHED4(MO1) = 0.0
           SHED5(MO1) = 0.0
-          IF (HD1M2 .GT. 0.0) SHED1(MO1) = HD1M2**0.5
-          IF (HD2M2 .GT. 0.0) SHED2(MO1) = HD2M2**0.5
-          IF (HD3M2 .GT. 0.0) SHED3(MO1) = HD3M2**0.5
-          IF (HD4M2 .GT. 0.0) SHED4(MO1) = HD4M2**0.5
-          IF (HD5M2 .GT. 0.0) SHED5(MO1) = HD5M2**0.5
+          IF (HD1M2 > 0.0) SHED1(MO1) = HD1M2**0.5
+          IF (HD2M2 > 0.0) SHED2(MO1) = HD2M2**0.5
+          IF (HD3M2 > 0.0) SHED3(MO1) = HD3M2**0.5
+          IF (HD4M2 > 0.0) SHED4(MO1) = HD4M2**0.5
+          IF (HD5M2 > 0.0) SHED5(MO1) = HD5M2**0.5
  1100   CONTINUE
+      end do
         PSWULE =  EXWAT2 + EXWAT3 + EXWAT4 + EXWAT5 + EXWAT6
 !
 !     COMPUTES TOTAL SOIL WATER STORAGE.
@@ -951,9 +952,9 @@
         SSNO = ADDRUN + SNO
 !        XLIQW = XLIQW + ADDRUN*25.4
 !        ADDRUN = 0.0
-        DO 1230 J = 1, NSEG
+        DO J = 1, NSEG
           PSWULE = PSWULE + DSWUL(J) + (BALT(J)/2.0D0)
- 1230   CONTINUE
+      end do
 !
 !     COMPUTES YEARLY WATER BUDGET BALANCE CHECK.
 !
@@ -962,15 +963,15 @@
         BAL = PREA - RUNA - ETA - STOR& 
     - DRN1A - DRN2A - DRN3A - DRN4A& 
     - DRN5A + SUBINY
-        IF (NSEG6 .GT. 0) THEN
+        IF (NSEG6 > 0) THEN
           BAL = BAL - PRC6A
-        ELSE IF (NSEG5 .GT. 0) THEN
+        ELSE IF (NSEG5 > 0) THEN
           BAL = BAL - PRC5A
-        ELSE IF (NSEG4 .GT. 0) THEN
+        ELSE IF (NSEG4 > 0) THEN
           BAL = BAL - PRC4A
-        ELSE IF (NSEG3 .GT. 0) THEN
+        ELSE IF (NSEG3 > 0) THEN
           BAL = BAL - PRC3A
-        ELSE IF (NSEG2 .GT. 0) THEN
+        ELSE IF (NSEG2 > 0) THEN
           BAL = BAL - PRC2A
         ELSE
           BAL = BAL - PRC1A
@@ -978,12 +979,12 @@
 !
 !     CALLS SUBROUTINE OUTMO IF MONTHLY OUTPUT IS DESIRED.
 !
-        IF (IPRE .GE. 2 .AND. (IOM .EQ. 1 .OR. IOS .EQ. 1))& 
+        IF (IPRE >= 2 .AND. (IOM == 1 .OR. IOS == 1))&
     CALL OUTMO
 !
 !     CALLS SUBROUTINE OUTYR TO PRINT ANNUAL TOTALS.
 !
-        IF (IPRE .GE. 2 .AND. (IOA .EQ. 1 .OR. IOS .EQ. 1))& 
+        IF (IPRE >= 2 .AND. (IOA == 1 .OR. IOS == 1))&
     CALL OUTYR
 !
 !     INITIALIZES VARIABLES FOR THE NEXT YEAR.
@@ -993,15 +994,15 @@
 !
 !     END OF YEARLY LOOP.
 !
-        IF (IPRE .LT. 2) THEN
+        IF (IPRE < 2) THEN
           IPRE = IPRE + 2
-          DO 1139 INSEG = 1, NSEG
+          DO INSEG = 1, NSEG
             DSWUL(INSEG) = DSWUL(INSEG) + DCHG(INSEG)/2.D0
             SWUL(INSEG) = DSWUL(INSEG)
             DCHG(INSEG) = 0.0D0
             BALT(INSEG) = 0.0D0
             BALY(INSEG) = 0.0D0
- 1139     CONTINUE
+      end do
           GO TO 1060
         END IF
  1090 CONTINUE
@@ -1015,11 +1016,11 @@
       CLOSE (13)
 !    COMPILER CORRECTIONS BELOW
 !     Do subprofiles exist? (NSEGnB not initialized, use NSEGn)
-      IF (NSEG2 .GT. 0) DSWUL(NSEG2B) = DSWUL(NSEG2B) +  EXWAT2
-      IF (NSEG3 .GT. 0) DSWUL(NSEG3B) = DSWUL(NSEG3B) +  EXWAT3
-      IF (NSEG4 .GT. 0) DSWUL(NSEG4B) = DSWUL(NSEG4B) +  EXWAT4
-      IF (NSEG5 .GT. 0) DSWUL(NSEG5B) = DSWUL(NSEG5B) +  EXWAT5
-      IF (NSEG6 .GT. 0) DSWUL(NSEG6B) = DSWUL(NSEG6B) +  EXWAT6
+      IF (NSEG2 > 0) DSWUL(NSEG2B) = DSWUL(NSEG2B) +  EXWAT2
+      IF (NSEG3 > 0) DSWUL(NSEG3B) = DSWUL(NSEG3B) +  EXWAT3
+      IF (NSEG4 > 0) DSWUL(NSEG4B) = DSWUL(NSEG4B) +  EXWAT4
+      IF (NSEG5 > 0) DSWUL(NSEG5B) = DSWUL(NSEG5B) +  EXWAT5
+      IF (NSEG6 > 0) DSWUL(NSEG6B) = DSWUL(NSEG6B) +  EXWAT6
 !     COMPILER CORRECTIONS ABOVE
       EXWAT2 = 0.0
       EXWAT3 = 0.0
@@ -1030,12 +1031,12 @@
 !     CALLS SUBROUTINE OUTAV TO PRINT AVERAGE
 !     RESULTS FOR THE SIMULATION PERIOD.
 !
-      IF (IOS .EQ. 1) CALL OUTAV
+      IF (IOS == 1) CALL OUTAV
 !
 !     CALLS SUBROUTINE OUTPEK TO PRINT PEAK
 !     RESULTS FOR THE SIMULATION PERIOD.
 !
-      IF (IOS .EQ. 1) CALL OUTPEK
+      IF (IOS == 1) CALL OUTPEK
       CALL OUTSW
 !
       CLOSE (8)
@@ -1056,7 +1057,7 @@
 !     IF DIVISIBLE BY FOUR, NYEAR IS A LEAP YEAR AND NT IS SET
 !     TO 1; ELSE, NYEAR IS NOT A LEAP YEAR AND NT = 0.
 !
-      IF (MOD (NYEAR, 4) .NE. 0) THEN
+      IF (MOD (NYEAR, 4) /= 0) THEN
          LEAP = 365
          NT = 0
       ELSE
@@ -1086,14 +1087,14 @@
 !
 !     ADJUSTS JULIAN DATE FOR JULIAN DATES AFTER JANUARY.
 !
-      IF (JDAY .GT. ICAL (2)) JTMP = JDAY - NT
+      IF (JDAY > ICAL (2)) JTMP = JDAY - NT
 !
 !     COMPARES ADJUSTED JULIAN DATE WITH ARRAY OF JULIAN DATES
 !     FOR THE LAST DAY OF EACH MONTH TO DETERMINE MONTH.
 !
-      DO 1000 I = 1, 12
-        IF (JTMP .LE. ICAL (I)) GO TO 1010
- 1000 CONTINUE
+      DO I = 1, 12
+        IF (JTMP <= ICAL (I)) GO TO 1010
+      end do
       I = 1
  1010 CONTINUE
       MONTH = I
@@ -1116,35 +1117,34 @@
       DATA IPOINT, IPLUS, MINUS/'.', '+', '-'/
       DATA NUM/'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'/
       K7 = M7 + 1
-      DO 1000 I = 1, 10
+      DO I = 1, 10
         VALUE (I) = 0.
- 1000 CONTINUE
+      end do
       NCOL = 1
       N = 1
       KPT = 0
  1010 CONTINUE
-      IF (KLM (NCOL) .NE. MINUS) GO TO 1020
-      CONTINUE
+      IF (KLM (NCOL) /= MINUS) GO TO 1020
       SGN = - 1.
       GO TO 1040
  1020 CONTINUE
-      IF (KLM (NCOL) .NE. IPLUS) GO TO 1050
+      IF (KLM (NCOL) /= IPLUS) GO TO 1050
  1060 CONTINUE
       SGN = 1.
  1040 CONTINUE
       VALUE (N) = 0.
       GO TO 1070
  1050 CONTINUE
-      IF (KLM (NCOL) .NE. IPOINT) GO TO 1080
- 1090 CONTINUE
+      IF (KLM (NCOL) /= IPOINT) GO TO 1080
+      CONTINUE
       KPT = 1
       GO TO 1060
  1080 CONTINUE
       K = 0
       ICOMP = NUM (1)
  1100 CONTINUE
-      IF (KLM (NCOL) .EQ. ICOMP) GO TO 1110
- 1120 CONTINUE
+      IF (KLM (NCOL) == ICOMP) GO TO 1110
+      CONTINUE
       K = K + 1
       ICOMP = NUM (K + 1)
       IF (K - 10) 1100, 1130, 1130
@@ -1162,16 +1162,16 @@
       NCOL = NCOL + 1
       IF (NCOL - K7) 1160, 1170, 1170
  1160 CONTINUE
-      IF (KLM (NCOL) .NE. IPOINT) GO TO 1180
- 1190 CONTINUE
+      IF (KLM (NCOL) /= IPOINT) GO TO 1180
+      CONTINUE
       KPT = 1
       GO TO 1070
  1180 CONTINUE
       K = 0
       ICOMP = NUM (1)
  1200 CONTINUE
-      IF (KLM (NCOL) .EQ. ICOMP) GO TO 1210
- 1220 CONTINUE
+      IF (KLM (NCOL) == ICOMP) GO TO 1210
+      CONTINUE
       K = K + 1
       ICOMP = NUM (K + 1)
       IF (K - 10) 1200, 1170, 1170
@@ -1205,12 +1205,12 @@
 !
 !    READS PRECIPITATION DATA.
 !
-      DO 1000 K = 1, 37
+      DO K = 1, 37
         J = 10*K
         I = J - 9
         READ (4, 5000) NYEAR, (PRE (N), N = I, J)
  5000   FORMAT(I10,10F5.2)
- 1000 CONTINUE
+      end do
 !
 !    DETERMINES IF THE YEAR IS A LEAP YEAR.
 !
@@ -1219,38 +1219,38 @@
 !    READS DAILY TEMPERATURE VALUES AND DAILY RADIATION VALUES.
 !    TEMPERATURE IN DEG F, SOLAR RADIATION VALUES IN LANGLEYS PER DAY.
 !
-      DO 1010 K = 1, 37
+      DO K = 1, 37
         J = 10*K
         I = J - 9
-        IF (J .GT. 366) J = 366
+        IF (J > 366) J = 366
         READ (7, 5010) MYEAR, (TMPF (N), N = I, J)
-        IF (IU13 .EQ. 1) READ (13, 5010) LYEAR, (RAD (N), N = I, J)
-        IF (IU13 .NE. 1) READ (13, 5011) LYEAR, (RAD (N), N = I, J)
+        IF (IU13 == 1) READ (13, 5010) LYEAR, (RAD (N), N = I, J)
+        IF (IU13 /= 1) READ (13, 5011) LYEAR, (RAD (N), N = I, J)
  5010    FORMAT(I5,10F6.1)
  5011    FORMAT(I5,10F6.0)
- 1010 CONTINUE
-      IF (MYEAR .NE. NYEAR) WRITE (*, 6000) MYEAR, NYEAR
-      IF (MYEAR .NE. NYEAR) WRITE (8, 6000) MYEAR, NYEAR
+      end do
+      IF (MYEAR /= NYEAR) WRITE (*, 6000) MYEAR, NYEAR
+      IF (MYEAR /= NYEAR) WRITE (8, 6000) MYEAR, NYEAR
  6000 FORMAT(1X/' WARNING:  TEMPERATURE FOR YEAR',I5,' USED ',& 
  'WITH PRECIPITATION FOR YEAR',I5/)
-      IF (LYEAR .NE. NYEAR) WRITE (*, 6010) LYEAR, NYEAR
-      IF (LYEAR .NE. NYEAR) WRITE (8, 6010) LYEAR, NYEAR
+      IF (LYEAR /= NYEAR) WRITE (*, 6010) LYEAR, NYEAR
+      IF (LYEAR /= NYEAR) WRITE (8, 6010) LYEAR, NYEAR
  6010 FORMAT(1X/' WARNING:  SOLAR RADIATION FOR YEAR',I5,' USED ',& 
  'WITH PRECIPITATION FOR YEAR',I5/)
-      IF (IU4 .NE. 1) THEN
-        DO 1030 N = 1, 366
+      IF (IU4 /= 1) THEN
+        DO N = 1, 366
           PRE(N) = PRE(N) / 25.4
- 1030   CONTINUE
+      end do
       END IF
-      IF (IU7 .NE. 1) THEN
-        DO 1040 N = 1, 366
+      IF (IU7 /= 1) THEN
+        DO N = 1, 366
           TMPF(N) = (TMPF(N) * 1.8) + 32.0
- 1040   CONTINUE
+      end do
       END IF
-      IF (IU13 .NE. 1) THEN
-        DO 1050 N = 1, 366
+      IF (IU13 /= 1) THEN
+        DO N = 1, 366
           RAD(N) = RAD(N) * 23.89
- 1050   CONTINUE
+      end do
       END IF
       RETURN
       END
@@ -1298,7 +1298,7 @@
       OPEN (11, FILE = F11, STATUS = 'OLD', ERR = 1060)
 !
  1070 CONTINUE
-      IF (IERR .GT. 0) THEN
+      IF (IERR > 0) THEN
         WRITE (*, 6000)
  6000    FORMAT (1X/' CORRECT THE DOS PATH AND FILE NAMES BEFORE ',& 
     'RESTARTING.'/)
@@ -1324,25 +1324,25 @@
  5060 FORMAT (F10.2,I4,I4,F7.0,F8.0,5F5.0)
       CLOSE (11)
 !
-      IF (IU7 .EQ. 1) THEN
-        DO 1075 I = 1, 12
+      IF (IU7 == 1) THEN
+        DO I = 1, 12
           TM (I) = (TM (I) - 32.0) / 1.8
- 1075   CONTINUE
+      end do
       END IF
-      IF (IU11 .NE. 1) EDEPTH = EDEPTH / 2.54
-      IF (IU11 .NE. 1) WIND = WIND / 1.609
-      DO 1080 I = 1, 91
+      IF (IU11 /= 1) EDEPTH = EDEPTH / 2.54
+      IF (IU11 /= 1) WIND = WIND / 1.609
+      DO I = 1, 91
         RH (I) = HUM1
- 1080 CONTINUE
-      DO 1090 I = 92, 182
+      end do
+      DO I = 92, 182
         RH (I) = HUM2
- 1090 CONTINUE
-      DO 1100 I = 183, 274
+      end do
+      DO I = 183, 274
         RH (I) = HUM3
- 1100 CONTINUE
-      DO 1110 I = 275, 366
+      end do
+      DO I = 275, 366
         RH (I) = HUM4
- 1110 CONTINUE
+      end do
 !
 !   READS DATA10
 !
@@ -1353,9 +1353,9 @@
       ITSOIL = 0
       LAY = 0
 !    COMPILER CORRECTIONS BELOW
-      DO 3000 I = 1, 20
+      DO I = 1, 20
         LAYR (I) = 0
- 3000 CONTINUE
+      end do
 !     COMPILER CORRECTIONS ABOVE
       OPEN (10, FILE = F10, STATUS = 'OLD', ERR = 1120)
       REWIND 10
@@ -1363,20 +1363,20 @@
  5070 FORMAT(A60)
       READ (10, 5080) IU10, IPRE, OSNO, AREA, FRUNOF, IRUN
  5080 FORMAT(I2,I2,2F10.0,F6.0,I2)
-      IF (IRUN .EQ. 1) READ (10, 5090) CN2
-      IF (IRUN .EQ. 2) READ (10, 5100) OCN2, SSLOPE, SLENG, CN2
-      IF (IRUN .EQ. 3) READ (10, 5110) SSLOPE, SLENG, ITSOIL, IVEG, CN2
+      IF (IRUN == 1) READ (10, 5090) CN2
+      IF (IRUN == 2) READ (10, 5100) OCN2, SSLOPE, SLENG, CN2
+      IF (IRUN == 3) READ (10, 5110) SSLOPE, SLENG, ITSOIL, IVEG, CN2
  5090 FORMAT(F7.0)
  5100 FORMAT(4F7.0)
  5110 FORMAT(2F7.0,2I3,F7.0)
 !
-      DO 1130 J = 1, 20
+      DO J = 1, 20
         READ (10, 5120, END = 1140) LAYER (J), THICK (J), ISOIL (J),& 
     PORO (J), FC (J), WP (J), SW (J), RC (J)
         LAY = LAY + 1
         READ (10, 5130, END = 1140) XLENG (J), SLOPE (J), RECIR (J),& 
     LAYR (J), SUBIN (J), PHOLE (J), DEFEC (J), IPQ (J), TRANS (J)
- 1130 CONTINUE
+      end do
  5120 FORMAT(I2,F7.0,I4,4F6.0,F16.0)
  5130 FORMAT(F7.0,2F6.0,I3,F13.0,2F7.0,I2,G14.6)
  1140 CONTINUE
@@ -1385,40 +1385,40 @@
 !
 !   DETERMINES THE BROOKS-COREY PARAMETERS AND EVAPORATION COEFFICIENT
 !
-      DO 1150 J = 1, LAY
-        IF (LAYER (J) .EQ. 4) THEN
+      DO J = 1, LAY
+        IF (LAYER (J) == 4) THEN
           PORO (J) = .04
           FC (J) = .03
           WP (J) = .02
           SW (J) = .04
         END IF
-        IF (WP(J) .LT. 0.04) THEN
+        IF (WP(J) < 0.04) THEN
           RS(J) = 0.6 * WP(J)
         ELSE
           RS (J) = 0.014 + 0.253*WP (J)
         END IF
-        IF (WP (J) .LT. 0.02) RS (J) = 0.75*WP (J)
-        IF (WP (J) .LE. 0.0) WP (J) = 0.001
-        IF (FC (J) .LE. WP(J)) FC(J) = WP(J) + 0.001
-        IF (PORO (J) .LE. FC(J)) PORO(J) = FC(J) + 0.001
+        IF (WP (J) < 0.02) RS (J) = 0.75*WP (J)
+        IF (WP (J) <= 0.0) WP (J) = 0.001
+        IF (FC (J) <= WP(J)) FC(J) = WP(J) + 0.001
+        IF (PORO (J) <= FC(J)) PORO(J) = FC(J) + 0.001
         XLAMBD (J) = ALOG ((FC (J) - RS (J))/(WP (J) - RS& 
     (J)))/ALOG (45.)
         RELFC = (FC (J) - RS (J))/(PORO (J) - RS (J))
         BUB(J) = (RELFC**(1./XLAMBD (J)))*1033.4/3.
-        IF (BUB(J) .GT. 103.34) BUB(J) = 103.34
+        IF (BUB(J) > 103.34) BUB(J) = 103.34
         CON (J) = 2.44 + (1485216.*RC (J)*((BUB(J)/103.34)**& 
     ((3.*XLAMBD (J)) + 2.)))
-        IF (RELFC .LT. 0.20) CON (J) = 3.30
-        IF (RC (J) .LT. 0.000005) CON (J) = 3.30
-        IF (CON (J) .LT. 3.30) CON (J) = 3.30
-        IF (CON (J) .GT. 5.50) CON (J) = 5.50
-        IF (LAYER (J) .EQ. 4) THEN
+        IF (RELFC < 0.20) CON (J) = 3.30
+        IF (RC (J) < 0.000005) CON (J) = 3.30
+        IF (CON (J) < 3.30) CON (J) = 3.30
+        IF (CON (J) > 5.50) CON (J) = 5.50
+        IF (LAYER (J) == 4) THEN
           PORO (J) = .0
           FC (J) = .0
           WP (J) = .0
           SW (J) = .0
         END IF
- 1150 CONTINUE
+      end do
 !
 !     INITIALIZE FROZEN SOIL MODEL PARAMETERS
 !
@@ -1427,32 +1427,32 @@
       TMPAVG = 33.0
       TMPSUM = 990.0
       RADTOT = 0.0
-      DO 1390 I = 1, 30
+      DO I = 1, 30
         TAVG(I) = 33.0
- 1390 CONTINUE
-      DO 1400 I = 1, 100
-        IF (ULAT .GE. 0.0) THEN
+      end do
+      DO I = 1, 100
+        IF (ULAT >= 0.0) THEN
           READ(13,5400,END=1410) (DRAD(N), N = 1, 31)
         ELSE
           READ(13,5410,END=1410) (DRAD(N), N = 1, 31)
           READ(13,5420,END=1410)
         END IF
-        DO 1405 N = 1, 31
+        DO N = 1, 31
           RADTOT = RADTOT + DRAD(N)
- 1405   CONTINUE
+      end do
         NYRS = I
- 1400 CONTINUE
+      end do
  5400 FORMAT(33(/),29X,6F6.1/2(5X,10F6.1/),5X,5F6.1)
  5410 FORMAT(15(/),11X,9F6.1/2(5X,10F6.1/),5X,2F6.1)
  5420 FORMAT(17(/))
- 1410 IF (NYRS .GT. 1) THEN
+ 1410 IF (NYRS > 1) THEN
         RADAVG = RADTOT / NYRS / 31
       ELSE
         RADAVG = RADTOT / 31
       END IF
-      IF (IU13 .NE. 1) RADAVG = RADAVG * 23.89
+      IF (IU13 /= 1) RADAVG = RADAVG * 23.89
       IDFS = 35.4 - (0.154 * RADAVG)
-      IF (IDFS .LT. 1) IDFS = 1
+      IF (IDFS < 1) IDFS = 1
       MXKCNT = (IDFS + 2) / 3
 !
       REWIND 13
@@ -1531,20 +1531,20 @@
       NSEG4 = 0
       NSEG5 = 0
       NSEG6 = 0
-      DO 1002 N = 1, 5
+      DO N = 1, 5
         LCASE(N) = 0
- 1002 CONTINUE
+      end do
       THICK1 = 0.0
       CORECT = 1.0
-      IF (ISOIL(1).LE.34 .AND. ISOIL(1).GE.1)THEN
+      IF (ISOIL(1)<=34 .AND. ISOIL(1)>=1)THEN
             CORECT = 1.0 + 0.5966 * ULAI + 0.132659 * ULAI**2 +& 
         0.1123454 * ULAI**3 - 0.04777627 * ULAI**4 +& 
         0.004325035 * ULAI**5
-         IF (CORECT .GT. 5.0) CORECT = 5.0
+         IF (CORECT > 5.0) CORECT = 5.0
       END IF
-      DO 1000 J = 1, 67
+      DO J = 1, 67
         STHICK(J) = 0.0
- 1000 CONTINUE
+      end do
 !
 !    INITIALIZES THE MOISTURE CONTENTS OF THE LAYERS TO NEAR STEADY-
 !    STATE WHEN USER REQUESTS PROGRAM TO INITIALIZE SOIL MOISTURES.
@@ -1553,39 +1553,39 @@
 !    ALSO SUMS TOTAL ANNUAL SUBSURFACE INFLOW  (SUBINF)
 !
       SUBINF = 0.0
-      DO 1010 K = 1, LAY
+      DO K = 1, LAY
         LSEGS(K,1) = 0
         LSEGS(K,2) = 0
         SUBIN(K) = SUBIN(K)/365.0
         SUBINF = SUBINF + SUBIN(K)
-        IF (IPRE .EQ. 0 .OR. IPRE.EQ.2) SW(K) = FC(K)
-        IF (LAYER(K) .EQ. 4) SW(K) = 0.0
-        IF (LAYER(K) .EQ. 3) SW(K) = PORO(K)
- 1010 CONTINUE
+        IF (IPRE == 0 .OR. IPRE==2) SW(K) = FC(K)
+        IF (LAYER(K) == 4) SW(K) = 0.0
+        IF (LAYER(K) == 3) SW(K) = PORO(K)
+      end do
       FRUNOF = FRUNOF / 100.0
-      IF (IU10 .EQ. 2) OSNO = OSNO / 25.4
+      IF (IU10 == 2) OSNO = OSNO / 25.4
       OLDSNO = OSNO
-      IF (IU10 .EQ. 2) THEN
+      IF (IU10 == 2) THEN
         SLENG = SLENG * 3.281
         SUBINF = SUBINF / 25.4
-        DO 1090 J = 1, LAY
+        DO J = 1, LAY
           DEFEC(J) = DEFEC(J) / 2.471
           PHOLE(J) = PHOLE(J) / 2.471
           THICK(J) = THICK(J) / 2.54
           XLENG(J) = XLENG(J) * 3.281
           SUBIN(J) = SUBIN(J) / 25.4 
 !         TRANS(J) = TRANS(J) / 2.54 / 2.54
- 1090   CONTINUE
+      end do
       END IF
 !
 !    COMPUTES DEPTH TO SURFACE OF TOP LINER TO LIMIT EVAPORATIVE DEPTH
 !
-      DO 1100 J = 1, LP(1)
-        IF (LAYER(J) .EQ. 3 .OR. LAYER(J) .EQ. 4) GO TO 1110
+      DO J = 1, LP(1)
+        IF (LAYER(J) == 3 .OR. LAYER(J) == 4) GO TO 1110
         THICK1 = THICK1 + THICK(J)
- 1100 CONTINUE
+      end do
  1110 CONTINUE
-      IF (THICK1 .LT. EDEPTH) EDEPTH = THICK1
+      IF (THICK1 < EDEPTH) EDEPTH = THICK1
 !
 !    SETS THE EVAPORATIVE ZONE TO SEVEN SEGMENTS AND ASSIGNS
 !    THE THICKNESS OF THE TOP SEVEN SEGMENTS.
@@ -1593,10 +1593,10 @@
       STHICK(1) = EDEPTH/36.0
       STHICK(2) = 5.0*EDEPTH/36.0
       TTHICK = STHICK(1) + STHICK(2)
-      DO 1120 J = 3, 6
+      DO J = 3, 6
         STHICK(J) = EDEPTH/6.0
         TTHICK = TTHICK + STHICK(J)
- 1120 CONTINUE
+      end do
       STHICK(7) = EDEPTH - TTHICK
 !
 !    LAYSEG(#, 1) = # OF TOP LAYER IN SEGMENT & SOIL LAYER PROPERTIES
@@ -1605,17 +1605,17 @@
       J = 1
       THICK1 = THICK(J)
       THICK2 = 0.0
-      DO 1130 K = 1, 7
+      DO K = 1, 7
         THICK2 = THICK2 + STHICK(K)
         LAYSEG(K, 1) = J
  1140   CONTINUE
-        IF (THICK2 .LE. THICK1) LAYSEG(K, 2) = J
-        IF (THICK2 .GT. THICK1) THEN
+        IF (THICK2 <= THICK1) LAYSEG(K, 2) = J
+        IF (THICK2 > THICK1) THEN
           J = J + 1
           THICK1 = THICK1 + THICK(J)
           GO TO 1140
         END IF
- 1130 CONTINUE
+      end do
 !
 !    SEGMENT ABOVE LINER LIMITED TO 18 INCHES
 !
@@ -1636,24 +1636,24 @@
       NSEGS = 7
       THICK1 = 0.0
       THICK2 = EDEPTH + 0.0002
-      DO 1150 J = 1, LP(1)
+      DO J = 1, LP(1)
         LAYSEG(NSEGS + 1, 2) = J
         THICK1 = THICK1 + THICK(J)
-        IF (THICK1 .GT. (EDEPTH + 0.0001)) THEN
+        IF (THICK1 > (EDEPTH + 0.0001)) THEN
           THICKL = THICK1 - THICK2
-          IF (LAYER(J) .EQ. 3) THEN
+          IF (LAYER(J) == 3) THEN
             STHICK(NSEGS + 1) = THICKL
             LAYSEG(NSEGS + 1, 1) = J
             LSEG(NSEGS + 1) = LAYER(J)
-            IF (J .NE. LP(1)) LSEG(NSEGS + 1) = 5
-            IF (LAYER(J - 1) .EQ. 4) LSEG(NSEGS + 1) = 4
+            IF (J /= LP(1)) LSEG(NSEGS + 1) = 5
+            IF (LAYER(J - 1) == 4) LSEG(NSEGS + 1) = 4
             NSEGS = NSEGS + 1
-          ELSE IF (LAYER(J) .EQ. 4) THEN
-            IF (J .EQ. LP(1)) THEN
-              IF (LAYER(J - 1) .NE. 3) THEN
-                IF ((J + 1) .LE. LAY) THEN
-                  IF (RC(J + 1) .LT. RC(J - 1)) THEN
-                    IF (THICK(J + 1) .GT. 18.) THEN
+          ELSE IF (LAYER(J) == 4) THEN
+            IF (J == LP(1)) THEN
+              IF (LAYER(J - 1) /= 3) THEN
+                IF ((J + 1) <= LAY) THEN
+                  IF (RC(J + 1) < RC(J - 1)) THEN
+                    IF (THICK(J + 1) > 18.) THEN
                       STHICK(NSEGS + 1) = 12.
                     ELSE
                       STHICK(NSEGS + 1) = THICK(J + 1)
@@ -1673,7 +1673,7 @@
                 NSEGS = NSEGS + 1
               END IF
             END IF
-          ELSE IF (THICKL .GT. 36.) THEN
+          ELSE IF (THICKL > 36.) THEN
             STHICK(NSEGS + 1) = 12.
             STHICK(NSEGS + 2) = THICKL - 12. - 12.
             STHICK(NSEGS + 3) = 12.
@@ -1687,7 +1687,7 @@
             LSEG(NSEGS + 2) = LAYER(J)
             LSEG(NSEGS + 3) = LAYER(J)
             NSEGS = NSEGS + 3
-          ELSE IF (THICKL .GT. 18.) THEN
+          ELSE IF (THICKL > 18.) THEN
             STHICK(NSEGS + 1) = 12.
             STHICK(NSEGS + 2) = THICKL - 12.
             LAYSEG(NSEGS + 1, 1) = J
@@ -1706,24 +1706,24 @@
           END IF
           THICK2 = THICK1
         END IF
- 1150 CONTINUE
+      end do
       NSEG1 = NSEGS
-      IF (LAY .LE. LP(1)) GO TO 1160
-      DO 1170 J = (LP(1) + 1), LP(2)
+      IF (LAY <= LP(1)) GO TO 1160
+      DO J = (LP(1) + 1), LP(2)
         LAYSEG(NSEGS + 1, 2) = J
-        IF (LAYER(J) .EQ. 3) THEN
+        IF (LAYER(J) == 3) THEN
           STHICK(NSEGS + 1) = THICK(J)
           LAYSEG(NSEGS + 1, 1) = J
            LSEG(NSEGS + 1) = LAYER(J)
-          IF (J .NE. LP(2)) LSEG(NSEGS + 1) = 5
-          IF (LAYER(J - 1) .EQ. 4) LSEG(NSEGS + 1) = 4
+          IF (J /= LP(2)) LSEG(NSEGS + 1) = 5
+          IF (LAYER(J - 1) == 4) LSEG(NSEGS + 1) = 4
           NSEGS = NSEGS + 1
-        ELSE IF (LAYER(J) .EQ. 4) THEN
-          IF (J .EQ. LP(2)) THEN
-            IF (LAYER(J - 1) .NE. 3) THEN
-              IF ((J + 1) .LE. LAY) THEN
-                IF (RC(J + 1) .LT. RC(J - 1)) THEN
-                  IF (THICK(J + 1) .GT. 18.) THEN
+        ELSE IF (LAYER(J) == 4) THEN
+          IF (J == LP(2)) THEN
+            IF (LAYER(J - 1) /= 3) THEN
+              IF ((J + 1) <= LAY) THEN
+                IF (RC(J + 1) < RC(J - 1)) THEN
+                  IF (THICK(J + 1) > 18.) THEN
                     STHICK(NSEGS + 1) = 12.
                   ELSE
                     STHICK(NSEGS + 1) = THICK(J + 1)
@@ -1743,7 +1743,7 @@
               NSEGS = NSEGS + 1
             END IF
           END IF
-        ELSE IF (THICK(J) .GT. 36.) THEN
+        ELSE IF (THICK(J) > 36.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12. - 12.
           STHICK(NSEGS + 3) = 12.
@@ -1757,7 +1757,7 @@
           LSEG(NSEGS + 2) = LAYER(J)
           LSEG(NSEGS + 3) = LAYER(J)
           NSEGS = NSEGS + 3
-        ELSE IF (THICK(J) .GT. 18.) THEN
+        ELSE IF (THICK(J) > 18.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12.
           LAYSEG(NSEGS + 1, 1) = J
@@ -1774,24 +1774,24 @@
           LSEG(NSEGS + 1) = LAYER(J)
           NSEGS = NSEGS + 1
         END IF
- 1170 CONTINUE
+      end do
       NSEG2 = NSEGS - NSEG1
-      IF (LAY .LE. LP(2)) GO TO 1160
-      DO 1180 J = (LP(2) + 1), LP(3)
+      IF (LAY <= LP(2)) GO TO 1160
+      DO J = (LP(2) + 1), LP(3)
         LAYSEG(NSEGS + 1, 2) = J
-        IF (LAYER(J) .EQ. 3) THEN
+        IF (LAYER(J) == 3) THEN
           STHICK(NSEGS + 1) = THICK(J)
           LAYSEG(NSEGS + 1, 1) = J
           LSEG(NSEGS + 1) = LAYER(J)
-          IF (J .NE. LP(3)) LSEG(NSEGS + 1) = 5
-          IF (LAYER(J - 1) .EQ. 4) LSEG(NSEGS + 1) = 4
+          IF (J /= LP(3)) LSEG(NSEGS + 1) = 5
+          IF (LAYER(J - 1) == 4) LSEG(NSEGS + 1) = 4
           NSEGS = NSEGS + 1
-        ELSE IF (LAYER(J) .EQ. 4) THEN
-          IF (J .EQ. LP(3)) THEN
-            IF (LAYER(J - 1) .NE. 3) THEN
-              IF ((J + 1) .LE. LAY) THEN
-                IF (RC(J + 1) .LT. RC(J - 1)) THEN
-                  IF (THICK(J + 1) .GT. 18.) THEN
+        ELSE IF (LAYER(J) == 4) THEN
+          IF (J == LP(3)) THEN
+            IF (LAYER(J - 1) /= 3) THEN
+              IF ((J + 1) <= LAY) THEN
+                IF (RC(J + 1) < RC(J - 1)) THEN
+                  IF (THICK(J + 1) > 18.) THEN
                     STHICK(NSEGS + 1) = 12.
                   ELSE
                     STHICK(NSEGS + 1) = THICK(J + 1)
@@ -1811,7 +1811,7 @@
               NSEGS = NSEGS + 1
             END IF
           END IF
-        ELSE IF (THICK(J) .GT. 36.) THEN
+        ELSE IF (THICK(J) > 36.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12. - 12.
           STHICK(NSEGS + 3) = 12.
@@ -1825,7 +1825,7 @@
           LSEG(NSEGS + 2) = LAYER(J)
           LSEG(NSEGS + 3) = LAYER(J)
           NSEGS = NSEGS + 3
-        ELSE IF (THICK(J) .GT. 18.) THEN
+        ELSE IF (THICK(J) > 18.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12.
           LAYSEG(NSEGS + 1, 1) = J
@@ -1842,24 +1842,24 @@
           LSEG(NSEGS + 1) = LAYER(J)
           NSEGS = NSEGS + 1
         END IF
- 1180 CONTINUE
+      end do
       NSEG3 = NSEGS - NSEG1 - NSEG2
-      IF (LAY .LE. LP(3)) GO TO 1160
-      DO 1190 J = (LP(3) + 1), LP(4)
+      IF (LAY <= LP(3)) GO TO 1160
+      DO J = (LP(3) + 1), LP(4)
         LAYSEG(NSEGS + 1, 2) = J
-        IF (LAYER(J) .EQ. 3) THEN
+        IF (LAYER(J) == 3) THEN
           STHICK(NSEGS + 1) = THICK(J)
           LAYSEG(NSEGS + 1, 1) = J
           LSEG(NSEGS + 1) = LAYER(J)
-          IF (J .NE. LP(4)) LSEG(NSEGS + 1) = 5
-          IF (LAYER(J - 1) .EQ. 4) LSEG(NSEGS + 1) = 4
+          IF (J /= LP(4)) LSEG(NSEGS + 1) = 5
+          IF (LAYER(J - 1) == 4) LSEG(NSEGS + 1) = 4
           NSEGS = NSEGS + 1
-        ELSE IF (LAYER(J) .EQ. 4) THEN
-          IF (J .EQ. LP(4)) THEN
-            IF (LAYER(J - 1) .NE. 3) THEN
-              IF ((J + 1) .LE. LAY) THEN
-                IF (RC(J + 1) .LT. RC(J - 1)) THEN
-                  IF (THICK(J + 1) .GT. 18.) THEN
+        ELSE IF (LAYER(J) == 4) THEN
+          IF (J == LP(4)) THEN
+            IF (LAYER(J - 1) /= 3) THEN
+              IF ((J + 1) <= LAY) THEN
+                IF (RC(J + 1) < RC(J - 1)) THEN
+                  IF (THICK(J + 1) > 18.) THEN
                     STHICK(NSEGS + 1) = 12.
                   ELSE
                     STHICK(NSEGS + 1) = THICK(J + 1)
@@ -1879,7 +1879,7 @@
               NSEGS = NSEGS + 1
             END IF
           END IF
-        ELSE IF (THICK(J) .GT. 36.) THEN
+        ELSE IF (THICK(J) > 36.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12. - 12.
           STHICK(NSEGS + 3) = 12.
@@ -1893,7 +1893,7 @@
           LSEG(NSEGS + 2) = LAYER(J)
           LSEG(NSEGS + 3) = LAYER(J)
           NSEGS = NSEGS + 3
-        ELSE IF (THICK(J) .GT. 18.) THEN
+        ELSE IF (THICK(J) > 18.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12.
           LAYSEG(NSEGS + 1, 1) = J
@@ -1910,24 +1910,24 @@
           LSEG(NSEGS + 1) = LAYER(J)
           NSEGS = NSEGS + 1
         END IF
- 1190 CONTINUE
+      end do
       NSEG4 = NSEGS - NSEG1 - NSEG2 - NSEG3
-      IF (LAY .LE. LP(4)) GO TO 1160
-      DO 1200 J = (LP(4) + 1), LP(5)
+      IF (LAY <= LP(4)) GO TO 1160
+      DO J = (LP(4) + 1), LP(5)
         LAYSEG(NSEGS + 1, 2) = J
-        IF (LAYER(J) .EQ. 3) THEN
+        IF (LAYER(J) == 3) THEN
           STHICK(NSEGS + 1) = THICK(J)
           LAYSEG(NSEGS + 1, 1) = J
           LSEG(NSEGS + 1) = LAYER(J)
-          IF (J .NE. LP(5)) LSEG(NSEGS + 1) = 5
-          IF (LAYER(J - 1) .EQ. 4) LSEG(NSEGS + 1) = 4
+          IF (J /= LP(5)) LSEG(NSEGS + 1) = 5
+          IF (LAYER(J - 1) == 4) LSEG(NSEGS + 1) = 4
           NSEGS = NSEGS + 1
-        ELSE IF (LAYER(J) .EQ. 4) THEN
-          IF (J .EQ. LP(5)) THEN
-            IF (LAYER(J - 1) .NE. 3) THEN
-              IF ((J + 1) .LE. LAY) THEN
-                IF (RC(J + 1) .LT. RC(J - 1)) THEN
-                  IF (THICK(J + 1) .GT. 18.) THEN
+        ELSE IF (LAYER(J) == 4) THEN
+          IF (J == LP(5)) THEN
+            IF (LAYER(J - 1) /= 3) THEN
+              IF ((J + 1) <= LAY) THEN
+                IF (RC(J + 1) < RC(J - 1)) THEN
+                  IF (THICK(J + 1) > 18.) THEN
                     STHICK(NSEGS + 1) = 12.
                   ELSE
                     STHICK(NSEGS + 1) = THICK(J + 1)
@@ -1947,7 +1947,7 @@
               NSEGS = NSEGS + 1
             END IF
           END IF
-        ELSE IF (THICK(J) .GT. 36.) THEN
+        ELSE IF (THICK(J) > 36.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12. - 12.
           STHICK(NSEGS + 3) = 12.
@@ -1961,7 +1961,7 @@
           LSEG(NSEGS + 2) = LAYER(J)
           LSEG(NSEGS + 3) = LAYER(J)
           NSEGS = NSEGS + 3
-        ELSE IF (THICK(J) .GT. 18.) THEN
+        ELSE IF (THICK(J) > 18.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12.
           LAYSEG(NSEGS + 1, 1) = J
@@ -1978,11 +1978,11 @@
           LSEG(NSEGS + 1) = LAYER(J)
           NSEGS = NSEGS + 1
         END IF
- 1200 CONTINUE
+      end do
       NSEG5 = NSEGS - NSEG1 - NSEG2 - NSEG3 - NSEG4
-      IF (LAY .LE. LP(5)) GO TO 1160
-      DO 1210 J = (LP(5) + 1), LP(6)
-        IF (THICK(J) .GT. 36.) THEN
+      IF (LAY <= LP(5)) GO TO 1160
+      DO J = (LP(5) + 1), LP(6)
+        IF (THICK(J) > 36.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12. - 12.
           STHICK(NSEGS + 3) = 12.
@@ -1996,7 +1996,7 @@
           LSEG(NSEGS + 2) = LAYER(J)
           LSEG(NSEGS + 3) = LAYER(J)
           NSEGS = NSEGS + 3
-        ELSE IF (THICK(J) .GT. 18.) THEN
+        ELSE IF (THICK(J) > 18.) THEN
           STHICK(NSEGS + 1) = 12.
           STHICK(NSEGS + 2) = THICK(J) - 12.
           LAYSEG(NSEGS + 1, 1) = J
@@ -2013,7 +2013,7 @@
           LSEG(NSEGS + 1) = LAYER(J)
           NSEGS = NSEGS + 1
         END IF
- 1210 CONTINUE
+      end do
  1160 CONTINUE
 !
       NSEG6 = NSEGS - NSEG1 - NSEG2 - NSEG3 - NSEG4 - NSEG5
@@ -2031,7 +2031,7 @@
       LSEGS(K,1) = 1
       RC1 = RC(1)
       RC(1) = RC(1)*CORECT
-      DO 1220 J = 1, 7
+      DO J = 1, 7
         UL(J) = 0.0
         WPUL(J) = 0.0
         FCUL(J) = 0.0
@@ -2042,8 +2042,8 @@
         RCULS(J) = 0.0
         BUBUL(J) = 0.0
         SUBINS(J) = 0.0
-        IF (J .EQ. 5) RC(1) = RC1
-        IF (DEPSEG .GE. DEPTHL) THEN
+        IF (J == 5) RC(1) = RC1
+        IF (DEPSEG >= DEPTHL) THEN
           K = K + 1
           LSEGS(K,1) = J
           DEPTHL = DEPTHL + THICK(K)
@@ -2051,9 +2051,9 @@
         DEPTHS = DEPTHS + STHICK(J)
  1230   CONTINUE
         LSEG(J) = LAYER(K)
-        IF (DEPTHS .LE. DEPTHL) GO TO 1240
+        IF (DEPTHS <= DEPTHL) GO TO 1240
         DSEG = DEPTHL - DEPSEG
-        IF(DSEG.GT.0.0001) LSEGS(K,2) = J
+        IF(DSEG>0.0001) LSEGS(K,2) = J
         DEPSEG = DEPTHL
         UL(J) = PORO(K)*DSEG + UL(J)
         FCUL(J) = FC(K)*DSEG + FCUL(J)
@@ -2071,7 +2071,7 @@
         GO TO 1230
  1240   CONTINUE
         DSEG = DEPTHS - DEPSEG
-        IF(DSEG.GT.0.0001) LSEGS(K,2) = J
+        IF(DSEG>0.0001) LSEGS(K,2) = J
         UL(J) = PORO(K)*DSEG + UL(J)
         FCUL(J) = FC(K)*DSEG + FCUL(J)
         WPUL(J) = WP(K)*DSEG + WPUL(J)
@@ -2083,11 +2083,11 @@
         SUBINS(J) = SUBIN(K)*DSEG/THICK(K) + SUBINS(J)
         SWUL(J) = SW(K)*DSEG + SWUL(J)
         DEPSEG = DEPTHS
- 1220 CONTINUE
-      IF (NSEG .GT. 7) THEN
+      end do
+      IF (NSEG > 7) THEN
         K = LAYSEG(7,2)
-        DO 1250 J = 8, NSEG
-          IF (LAYSEG(J,2) .NE. K) THEN
+        DO J = 8, NSEG
+          IF (LAYSEG(J,2) /= K) THEN
             K = LAYSEG(J,2)
             LSEGS(K,1) = J
           END IF
@@ -2100,21 +2100,21 @@
           RCULS(J) = RC(LAYSEG(J, 1))*STHICK(J)
           RSUL(J) = RS(LAYSEG(J, 1))*STHICK(J)
           XLAMBU(J) = XLAMBD(LAYSEG(J, 1))*STHICK(J)
-          IF (LSEG(J) .LT. 3) THEN 
+          IF (LSEG(J) < 3) THEN
           SUBINS(J) = SUBIN(LAYSEG(J, 2))*STHICK(J)/THICK(LAYSEG(J,2))
           ELSE
             SUBINS(J) = SUBIN(LAYSEG(J, 2))
           END IF
-          IF (LSEG(J) .EQ. 4) THEN
+          IF (LSEG(J) == 4) THEN
             SUBINS(J) = SUBINS(J) + SUBIN(LAYSEG(J, 2)-1)
           END IF
           SWUL(J) = SW(LAYSEG(J, 1))*STHICK(J)
- 1250   CONTINUE
+      end do
       END IF
 !
 !    CONVERTS THE HYDRAULIC CONDUCTIVITY FROM CM/SEC TO IN/DAY.
 !
-      DO 1260 J = 1, NSEG
+      DO J = 1, NSEG
         RCUL(J) = (RCULS(J)*24.*1417.3)/STHICK(J)
         XLAMBU(J) = XLAMBU(J)/STHICK(J)
         BUBUL(J) = BUBUL(J)/STHICK(J)
@@ -2129,254 +2129,254 @@
         DTHICK(J) = STHICK(J)
         DSWUL(J) = SWUL(J)
         DFCUL(J) = FCUL(J)
- 1260 CONTINUE
-      DO 1270 K = 1, LAY
-        IF (LAYR(K) .GT. 0) THEN
-          IF (LAYER(LAYR(K)) .LE. 2) THEN
-            DO 1275 II = 1, 5
-              IF (K .EQ. LD(II)) THEN
+      end do
+      DO K = 1, LAY
+        IF (LAYR(K) > 0) THEN
+          IF (LAYER(LAYR(K)) <= 2) THEN
+            DO II = 1, 5
+              IF (K == LD(II)) THEN
                 TTHICK = 0.0
-                DO 1280 J = LSEGS(LAYR(K),1), LSEGS(LAYR(K),2)
+                DO J = LSEGS(LAYR(K),1), LSEGS(LAYR(K),2)
                   TTHICK = TTHICK + STHICK(J)
- 1280           CONTINUE
+      end do
               END IF
- 1275       CONTINUE
+      end do
           END IF
         END IF
- 1270 CONTINUE
+      end do
       N = 1
       NSEGE = NSEG1
-      IF (LP(1) .EQ. LAY) THEN
+      IF (LP(1) == LAY) THEN
          DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(1))
          SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(1))
          DSUBIN(NSEGE) = 0.0D0
          SUBINS(NSEGE) = 0.0
-         IF ((LP(1)-1) .EQ. 3 .OR. (LP(1)-1) .EQ. 4) THEN
+         IF ((LP(1)-1) == 3 .OR. (LP(1)-1) == 4) THEN
             DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(1)-1)
             SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(1)-1)
          END IF
-      ELSE IF (LSEG(NSEGE) .EQ. 5) THEN
+      ELSE IF (LSEG(NSEGE) == 5) THEN
          DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(1)-1)
          SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(1)-1)
          DSUBIN(NSEGE) = SUBIN (LP(1))
          SUBINS(NSEGE) = SUBIN (LP(1))
       END IF
-      IF (LSEG(NSEGE) .GT. 3) THEN
-        IF (LSEG(NSEGE) .EQ. 4) LCASE(N) = 3
-        IF (LSEG(NSEGE) .EQ. 5) LCASE(N) = 4
-        IF (LSEG(NSEGE) .EQ. 6) THEN
-          IF (RC(LAYSEG(NSEGE,1)) .GT. 0.0999) THEN
+      IF (LSEG(NSEGE) > 3) THEN
+        IF (LSEG(NSEGE) == 4) LCASE(N) = 3
+        IF (LSEG(NSEGE) == 5) LCASE(N) = 4
+        IF (LSEG(NSEGE) == 6) THEN
+          IF (RC(LAYSEG(NSEGE,1)) > 0.0999) THEN
             LCASE(N) = 1
-          ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+          ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
             LCASE(N) = 3
           ELSE
             LCASE(N) = 2
           END IF
         END IF
-        IF (LSEG(NSEGE) .EQ. 7) THEN
-          IF (RC(LAYSEG(NSEGE,1)) .GT. 0.0999) THEN
+        IF (LSEG(NSEGE) == 7) THEN
+          IF (RC(LAYSEG(NSEGE,1)) > 0.0999) THEN
             LCASE(N) = 1
-          ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+          ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
             LCASE(N) = 4
           ELSE
             LCASE(N) = 2
           END IF
         END IF
-        IF (LPQ(N) .EQ. 6) THEN
-          IF (LCASE(N) .EQ. 2 .OR. LCASE(N) .EQ. 3) THEN
+        IF (LPQ(N) == 6) THEN
+          IF (LCASE(N) == 2 .OR. LCASE(N) == 3) THEN
             LCASE(N) = 5
-          ELSE IF (LCASE(N) .EQ. 4) THEN
+          ELSE IF (LCASE(N) == 4) THEN
             LCASE(N) = 6
           END IF
         END IF
       END IF
       N = 2
-      IF (LP(N) .GT. 0) THEN
+      IF (LP(N) > 0) THEN
         NSEGE = NSEGE + NSEG2
-        IF (LP(2) .EQ. LAY) THEN
+        IF (LP(2) == LAY) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(2))
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(2))
           DSUBIN(NSEGE) = 0.0D0
           SUBINS(NSEGE) = 0.0
-          IF ((LP(2)-1) .EQ. 3 .OR. (LP(2)-1) .EQ. 4) THEN
+          IF ((LP(2)-1) == 3 .OR. (LP(2)-1) == 4) THEN
             DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(2)-1)
             SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(2)-1)
           END IF
-        ELSE IF (LSEG(NSEGE) .EQ. 5) THEN
+        ELSE IF (LSEG(NSEGE) == 5) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(2)-1)
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(2)-1)
           DSUBIN(NSEGE) = SUBIN (LP(2))
           SUBINS(NSEGE) = SUBIN (LP(2))
         END IF
-        IF (LSEG(NSEGE) .GT. 3) THEN
-          IF (LSEG(NSEGE) .EQ. 4) LCASE(N) = 3
-          IF (LSEG(NSEGE) .EQ. 5) LCASE(N) = 4
-          IF (LSEG(NSEGE) .EQ. 6) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.0999) THEN
+        IF (LSEG(NSEGE) > 3) THEN
+          IF (LSEG(NSEGE) == 4) LCASE(N) = 3
+          IF (LSEG(NSEGE) == 5) LCASE(N) = 4
+          IF (LSEG(NSEGE) == 6) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.0999) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 3
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LSEG(NSEGE) .EQ. 7) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.099) THEN
+          IF (LSEG(NSEGE) == 7) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.099) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 4
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LPQ(N) .EQ. 6) THEN
-            IF (LCASE(N) .EQ. 2 .OR. LCASE(N) .EQ. 3) THEN
+          IF (LPQ(N) == 6) THEN
+            IF (LCASE(N) == 2 .OR. LCASE(N) == 3) THEN
               LCASE(N) = 5
-            ELSE IF (LCASE(N) .EQ. 4) THEN
+            ELSE IF (LCASE(N) == 4) THEN
               LCASE(N) = 6
             END IF
           END IF
         END IF
       END IF
       N = 3
-      IF (LP(N) .GT. 0) THEN
+      IF (LP(N) > 0) THEN
         NSEGE = NSEGE + NSEG3
-        IF (LP(3) .EQ. LAY) THEN
+        IF (LP(3) == LAY) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(3))
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(3))
           DSUBIN(NSEGE) = 0.0D0
           SUBINS(NSEGE) = 0.0
-          IF ((LP(3)-1) .EQ. 3 .OR. (LP(3)-1) .EQ. 4) THEN
+          IF ((LP(3)-1) == 3 .OR. (LP(3)-1) == 4) THEN
             DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(3)-1)
             SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(3)-1)
           END IF
-        ELSE IF (LSEG(NSEGE) .EQ. 5) THEN
+        ELSE IF (LSEG(NSEGE) == 5) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(3)-1)
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(3)-1)
           DSUBIN(NSEGE) = SUBIN (LP(3))
           SUBINS(NSEGE) = SUBIN (LP(3))
         END IF
-        IF (LSEG(NSEGE) .GT. 3) THEN
-          IF (LSEG(NSEGE) .EQ. 4) LCASE(N) = 3
-          IF (LSEG(NSEGE) .EQ. 5) LCASE(N) = 4
-          IF (LSEG(NSEGE) .EQ. 6) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.0999) THEN
+        IF (LSEG(NSEGE) > 3) THEN
+          IF (LSEG(NSEGE) == 4) LCASE(N) = 3
+          IF (LSEG(NSEGE) == 5) LCASE(N) = 4
+          IF (LSEG(NSEGE) == 6) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.0999) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 3
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LSEG(NSEGE) .EQ. 7) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.099) THEN
+          IF (LSEG(NSEGE) == 7) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.099) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 4
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LPQ(N) .EQ. 6) THEN
-            IF (LCASE(N) .EQ. 2 .OR. LCASE(N) .EQ. 3) THEN
+          IF (LPQ(N) == 6) THEN
+            IF (LCASE(N) == 2 .OR. LCASE(N) == 3) THEN
               LCASE(N) = 5
-            ELSE IF (LCASE(N) .EQ. 4) THEN
+            ELSE IF (LCASE(N) == 4) THEN
               LCASE(N) = 6
             END IF
           END IF
         END IF
       END IF
       N = 4
-      IF (LP(N) .GT. 0) THEN
+      IF (LP(N) > 0) THEN
         NSEGE = NSEGE + NSEG4
-        IF (LP(4) .EQ. LAY) THEN
+        IF (LP(4) == LAY) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(4))
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(4))
           DSUBIN(NSEGE) = 0.0D0
           SUBINS(NSEGE) = 0.0
-          IF ((LP(4)-1) .EQ. 3 .OR. (LP(4)-1) .EQ. 4) THEN
+          IF ((LP(4)-1) == 3 .OR. (LP(4)-1) == 4) THEN
             DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(4)-1)
             SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(4)-1)
           END IF
-        ELSE IF (LSEG(NSEGE) .EQ. 5) THEN
+        ELSE IF (LSEG(NSEGE) == 5) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(4)-1)
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(4)-1)
           DSUBIN(NSEGE) = SUBIN (LP(4))
           SUBINS(NSEGE) = SUBIN (LP(4))
         END IF
-        IF (LSEG(NSEGE) .GT. 3) THEN
-          IF (LSEG(NSEGE) .EQ. 4) LCASE(N) = 3
-          IF (LSEG(NSEGE) .EQ. 5) LCASE(N) = 4
-          IF (LSEG(NSEGE) .EQ. 6) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.0999) THEN
+        IF (LSEG(NSEGE) > 3) THEN
+          IF (LSEG(NSEGE) == 4) LCASE(N) = 3
+          IF (LSEG(NSEGE) == 5) LCASE(N) = 4
+          IF (LSEG(NSEGE) == 6) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.0999) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 3
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LSEG(NSEGE) .EQ. 7) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.099) THEN
+          IF (LSEG(NSEGE) == 7) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.099) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 4
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LPQ(N) .EQ. 6) THEN
-            IF (LCASE(N) .EQ. 2 .OR. LCASE(N) .EQ. 3) THEN
+          IF (LPQ(N) == 6) THEN
+            IF (LCASE(N) == 2 .OR. LCASE(N) == 3) THEN
               LCASE(N) = 5
-            ELSE IF (LCASE(N) .EQ. 4) THEN
+            ELSE IF (LCASE(N) == 4) THEN
               LCASE(N) = 6
             END IF
           END IF
         END IF
       END IF
       N = 5
-      IF (LP(N) .GT. 0) THEN
+      IF (LP(N) > 0) THEN
         NSEGE = NSEGE + NSEG5
-        IF (LP(5) .EQ. LAY) THEN
+        IF (LP(5) == LAY) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(5))
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(5))
           DSUBIN(NSEGE) = 0.0D0
           SUBINS(NSEGE) = 0.0
-          IF ((LP(5)-1) .EQ. 3 .OR. (LP(5)-1) .EQ. 4) THEN
+          IF ((LP(5)-1) == 3 .OR. (LP(5)-1) == 4) THEN
             DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(5)-1)
             SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(5)-1)
           END IF
-        ELSE IF (LSEG(NSEGE) .EQ. 5) THEN
+        ELSE IF (LSEG(NSEGE) == 5) THEN
           DSUBIN(NSEGE-1) = DSUBIN(NSEGE-1) + SUBIN (LP(5)-1)
           SUBINS(NSEGE-1) = SUBINS(NSEGE-1) + SUBIN (LP(5)-1)
           DSUBIN(NSEGE) = SUBIN (LP(5))
           SUBINS(NSEGE) = SUBIN (LP(5))
         END IF
-        IF (LSEG(NSEGE) .GT. 3) THEN
-          IF (LSEG(NSEGE) .EQ. 4) LCASE(N) = 3
-          IF (LSEG(NSEGE) .EQ. 5) LCASE(N) = 4
-          IF (LSEG(NSEGE) .EQ. 6) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.0999) THEN
+        IF (LSEG(NSEGE) > 3) THEN
+          IF (LSEG(NSEGE) == 4) LCASE(N) = 3
+          IF (LSEG(NSEGE) == 5) LCASE(N) = 4
+          IF (LSEG(NSEGE) == 6) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.0999) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 3
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LSEG(NSEGE) .EQ. 7) THEN
-            IF (RC(LAYSEG(NSEGE,1)) .GT. 0.099) THEN
+          IF (LSEG(NSEGE) == 7) THEN
+            IF (RC(LAYSEG(NSEGE,1)) > 0.099) THEN
               LCASE(N) = 1
-            ELSE IF (RC(LAYSEG(NSEGE,1)) .LE. 0.0000999) THEN
+            ELSE IF (RC(LAYSEG(NSEGE,1)) <= 0.0000999) THEN
               LCASE(N) = 4
             ELSE
               LCASE(N) = 2
             END IF
           END IF
-          IF (LPQ(N) .EQ. 6) THEN
-            IF (LCASE(N) .EQ. 2 .OR. LCASE(N) .EQ. 3) THEN
+          IF (LPQ(N) == 6) THEN
+            IF (LCASE(N) == 2 .OR. LCASE(N) == 3) THEN
               LCASE(N) = 5
-            ELSE IF (LCASE(N) .EQ. 4) THEN
+            ELSE IF (LCASE(N) == 4) THEN
               LCASE(N) = 6
             END IF
           END IF
@@ -2384,15 +2384,15 @@
       END IF
 !
       RCES = 0.0
-      DO 1301 J = 1, 7
+      DO J = 1, 7
         RCES = RCES + WF(J) * RCUL(J)
- 1301 CONTINUE
+      end do
       RCES = RCES / 34016.
       RCES = -1.0 * ALOG10 (RCES)
       SEDMX = 4.606745 * (1.595155**RCES)
-      IF (SEDMX .LT. 18.) SEDMX = 18.
-      IF (SEDMX .GT. 48.) SEDMX = 48.
-      IF (EDEPTH .GT. SEDMX) THEN
+      IF (SEDMX < 18.) SEDMX = 18.
+      IF (SEDMX > 48.) SEDMX = 48.
+      IF (EDEPTH > SEDMX) THEN
         SEDEP = SEDMX
       ELSE
         SEDEP = EDEPTH
@@ -2419,59 +2419,59 @@
   NSTEP(6), ND
 !
       NL = 0
-      DO 1000 I = 1, 5
+      DO I = 1, 5
         LP(I) = 0
         LPQ(I) = 0
         LD(I) = 0
- 1000 CONTINUE
+      end do
       LP(6) = 0
       DO 1010 I = 1, LAY
         LRIN (I) = 0
         LSIN (I) = 0
-        IF (LAYER (I) .EQ. 3 .or. LAYER (I) .EQ. 4) THEN
-          IF (LAYER (I-1) .NE. 3 .AND. LAYER (I-1) .NE. 4)& 
+        IF (LAYER (I) == 3 .or. LAYER (I) == 4) THEN
+          IF (LAYER (I-1) /= 3 .AND. LAYER (I-1) /= 4)&
        NL = NL + 1
-          IF (NL .GE. 1) THEN
+          IF (NL >= 1) THEN
             LP(NL) = I
-            IF (LAYER (I) .EQ. 4) THEN
-               IF (IPQ (I) .LT. 1 .OR. IPQ (I) .GT. 6) IPQ (I) = 4
+            IF (LAYER (I) == 4) THEN
+               IF (IPQ (I) < 1 .OR. IPQ (I) > 6) IPQ (I) = 4
                LPQ (NL) = IPQ (I)
             END IF
           END IF 
         END IF
  1010 CONTINUE
-      DO 1020 I = 1, 5
-      IF (LP(I) .GE. 2) THEN
-        IF (LAYER (LP(I) - 1) .EQ. 2) THEN
+      DO I = 1, 5
+      IF (LP(I) >= 2) THEN
+        IF (LAYER (LP(I) - 1) == 2) THEN
           LD(I) = LP(I) - 1
-        ELSE IF (LP(I) .GT. 2) THEN
-          IF (LAYER (LP(I) - 2) .EQ. 2) LD(I) = LP(I) - 2
+        ELSE IF (LP(I) > 2) THEN
+          IF (LAYER (LP(I) - 2) == 2) LD(I) = LP(I) - 2
         END IF
       END IF
- 1020 CONTINUE
-      IF (LAYER (LAY) .NE. 3 .AND. LAYER (LAY) .NE. 4) THEN
-        IF (NL .EQ. 0) LP(1) = LAY
-        IF (NL .EQ. 1 .and. LAY .GT. LP(1)) LP(2) = LAY
-        IF (NL .EQ. 2 .and. LAY .GT. LP(2)) LP(3) = LAY
-        IF (NL .EQ. 3 .and. LAY .GT. LP(3)) LP(4) = LAY
-        IF (NL .EQ. 4 .and. LAY .GT. LP(4)) LP(5) = LAY
-        IF (NL .EQ. 5 .and. LAY .GT. LP(5)) LP(6) = LAY
+      end do
+      IF (LAYER (LAY) /= 3 .AND. LAYER (LAY) /= 4) THEN
+        IF (NL == 0) LP(1) = LAY
+        IF (NL == 1 .and. LAY > LP(1)) LP(2) = LAY
+        IF (NL == 2 .and. LAY > LP(2)) LP(3) = LAY
+        IF (NL == 3 .and. LAY > LP(3)) LP(4) = LAY
+        IF (NL == 4 .and. LAY > LP(4)) LP(5) = LAY
+        IF (NL == 5 .and. LAY > LP(5)) LP(6) = LAY
       END IF
-      DO 1030 N = 1, 5
+      DO N = 1, 5
 !    COMPILER CORRECTIONS BELOW
-        IF (LD(N) .NE. 0 .and. layr(ld(n)) .ne. 0) THEN
-          IF (LAYER(LAYR(LD(N))) .GT. 2) THEN
+        IF (LD(N) /= 0 .and. layr(ld(n)) /= 0) THEN
+          IF (LAYER(LAYR(LD(N))) > 2) THEN
             LRIN(LAYR(LD(N))) = 0
             RECIR(LAYR(LD(N))) = 0.0
-          else IF (RECIR(LD(N)) .GT. 0.0) then
+          else IF (RECIR(LD(N)) > 0.0) then
             LRIN(LAYR(LD(N))) = 1
           END IF
         END IF
 !     COMPILER CORRECTIONS ABOVE
- 1030 CONTINUE
-      DO 1040 N = 1, LAY
-          IF (SUBIN(N) .GT. 0.0) LSIN(N) = 1
- 1040 CONTINUE
+      end do
+      DO N = 1, LAY
+          IF (SUBIN(N) > 0.0) LSIN(N) = 1
+      end do
       RETURN
       END
 !
@@ -2500,13 +2500,13 @@
       AVT = 0.
       TBB = 0.
       TS = 200.
-      DO 1000 I = 1, 12
-         IF (TM (I) .GT. TBB) TBB = TM (I)
-         IF (TM (I) .LT. TS) TS = TM (I)
+      DO I = 1, 12
+         IF (TM (I) > TBB) TBB = TM (I)
+         IF (TM (I) < TS) TS = TM (I)
          AVT = AVT + TM (I)
 !        WFT (I) = PWD (I)/(1. - PWW (I) + PWD (I))
          WFT (I) = 0.2 /(1. - 0.4 + 0.2)
- 1000 CONTINUE
+      end do
 !.....DEFINING AVT & AMP IN DEG. C.
       AVT = AVT/12. 
       AMP = (TBB - TS)/2.0
@@ -2514,14 +2514,14 @@
 !      TO COMPUTE PHU - POTENTIAL HEAT UNITS
       CALL DATFIT(12,TM,A1,A2,A3)
       PHUX = 0.
-      IF (IPL .GE. IHV) THEN
+      IF (IPL >= IHV) THEN
          PHU = AHU (IPL, 365, A1,A2,A3)
          PHUX = PHU
          PHU = PHU + AHU (1, IHV, A1,A2,A3)
       ELSE
          PHU = AHU (IPL, IHV, A1, A2, A3)
       END IF
-      IF (PHU .LT. 30.) PHU = 30.
+      IF (PHU < 30.) PHU = 30.
 !******INITIALIZING VARIABLES
       XLAI = (PHUX/PHU)*ULAI
       DLAI = XLAI
@@ -2531,15 +2531,15 @@
       DM = XLAI*100.
       ABD = 0.
       SWS = 0.
-      DO 1010 I = 1, 7
+      DO I = 1, 7
          Z (I) = 0.0
- 1010 CONTINUE
-      DO 1020 I = 1, 7     
+      end do
+      DO I = 1, 7
 !
 !    ACCUMULATING THICKNESSES OF EACH LAYER
 !      Z  = DEPTH FROM SURFACE TO BOTTOM OF SEGMENT I
 !
-         IF (I .EQ. 1) THEN
+         IF (I == 1) THEN
             ZSEG = 0.
          ELSE
             ZSEG = Z (I - 1)
@@ -2552,7 +2552,7 @@
          ST (I) = (SWUL (I) - WPUL (I))*25.4
          SWS = SWS + ST (I)
          ST(I) = ST (I)/25.4
- 1020 CONTINUE
+      end do
 !
 !  **** DETERMINING DD *****
 !
@@ -2576,10 +2576,10 @@
 !     THE POTENTIAL HEAT UNITS FOR EACH CROP BEFORE DAILY SIMULATION BE
 !
       AHU = 0.
-      DO 1000 L = M, K
+      DO L = M, K
          TA = COMPUT (A1, A2, A3, L, 366) - 5.
-         IF (TA .GT. 0.0) AHU = AHU + TA
- 1000 CONTINUE
+         IF (TA > 0.0) AHU = AHU + TA
+      end do
       RETURN
       END
 !
@@ -2592,21 +2592,21 @@
        PI       =3.14159
        SUMD     =0.0
        AM       =FLOAT(M)
-       DO 10 I=1,M
+       DO I=1,M
        SUMD     =SUMD+D(I)
- 10    CONTINUE
+      end do
        AC       =SUMD/AM
        AN       =1.0
        SUMA     =0.0
        SUMB     =0.0
-       DO 20 I=1,M
+       DO I=1,M
        TI       =FLOAT(I)-0.5
        TH       =2.0*PI*AN*TI
        FCOS     =COS(TH/AM)
        FSIN     =SIN(TH/AM)
        SUMA     =SUMA+D(I)*FCOS
        SUMB     =SUMB+D(I)*FSIN
- 20    CONTINUE
+      end do
        A        =2.0/AM*SUMA
        B        =2.0/AM*SUMB
        RETURN
@@ -8924,4 +8924,4 @@ X,F12.6,F16.5)
       RETURN
       END
 !
-
+

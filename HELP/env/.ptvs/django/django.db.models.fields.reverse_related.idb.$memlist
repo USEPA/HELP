@@ -1,0 +1,17 @@
+ManyToManyRel
+exceptions
+ManyToOneRel
+ForeignObjectRel
+cached_property
+__builtins__
+BLANK_CHOICE_DASH
+__cached__
+OneToOneRel
+RemovedInDjango20Warning
+unicode_literals
+warnings
+__name__
+force_text
+__file__
+__package__
+__spec__

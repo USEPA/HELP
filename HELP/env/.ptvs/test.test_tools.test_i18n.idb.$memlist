@@ -1,0 +1,16 @@
+sys
+dedent
+temp_dir
+os
+__builtins__
+toolsdir
+Test_pygettext
+__package__
+unittest
+__cached__
+assert_python_ok
+__name__
+__file__
+skip_if_missing
+temp_cwd
+__spec__

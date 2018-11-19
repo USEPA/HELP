@@ -1,0 +1,16 @@
+sys
+importlib
+enum
+os
+__builtins__
+main
+__file__
+__package__
+PyCompileError
+__all__
+traceback
+__name__
+compile
+PycInvalidationMode
+__cached__
+__spec__

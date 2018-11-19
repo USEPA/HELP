@@ -1,0 +1,14 @@
+check_default_cache_is_configured
+E001
+__cached__
+__spec__
+unicode_literals
+register
+settings
+__name__
+DEFAULT_CACHE_ALIAS
+Tags
+__builtins__
+__file__
+Error
+__package__

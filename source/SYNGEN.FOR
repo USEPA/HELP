@@ -81,7 +81,7 @@ C
       READ (11, 5000) IUNITS
       READ (11, 5010, END = 1200) (KNAME (L), L = 1, 10)
       READ (11, 5020) NYRS
-      IF (ITYPE .EQ. 1) THEN
+      IF (ITYPE == 1) THEN
       IF(IUNITS.EQ.1)READ (11, 5030, END = 1200) (RM (I), I = 1, 12)
       IF(IUNITS.EQ.2)READ (11, 5070, END = 1200) (RM (I), I = 1, 12)
       END IF
@@ -121,7 +121,7 @@ C
          WRITE (4, 5010) (KNAME (L), L = 1, 10)
          IF(IUNITS.EQ.1)WRITE (4, 5030) (RM (I), I = 1, 12)
          IF(IUNITS.EQ.2)WRITE (4, 5070) (RM (I), I = 1, 12)
-         DO 1150 IM = 1, 12
+         DO IM = 1, 12
             IF (IUNITS .EQ. 2) RM (IM) = RM (IM)/25.4
             PW (IM) = PWD (IM)/(1. - PWW (IM) + PWD (IM))
             NL = NI (IM)
@@ -135,7 +135,7 @@ C
 C*****CALCULATE MONTHLY RAINFALL CORRECTION FACTOR
             RG (IM) = ALPHA (IM)*BETA (IM)*ZN*PW (IM)
             RCF (IM) = RM (IM)/RG (IM)
- 1150    CONTINUE
+      end do
       END IF
 C
       IF(ITYPE.EQ.2)THEN
@@ -161,7 +161,7 @@ C
          IF (XCR2 .LT. 0.0) XCR2 = 0.06
          TNS (J) = TNM (J)*XCR2
       end do
-      DO 2160 IM = 1, 12
+      DO IM = 1, 12
          IF (IUNITS .EQ. 2) TM (IM) = (1.8 * TM (IM)) + 32.0
          TCFMAX (IM) = 0.0
          TCFMIN (IM) = 0.0
@@ -177,18 +177,18 @@ C
          NF = 1
  2180    CONTINUE
          ZN = NL - NF + 1
-         DO 2190 J = NF, NL
+         DO J = NF, NL
             S1 = S1 + TXM (J)/ZN
             S2 = S2 + TXM1 (J)/ZN
             S3 = S3 + TNM (J)/ZN
- 2190    CONTINUE
+      end do
 C*****CALCULATE MONTHLY TEMP CORRECTION FACTOR
          TMD = (S1 + S3)/2.
          TMW = (S2 + S3)/2.
          TG (IM) = TMW*PW (IM) + TMD*(1 - PW (IM))
          TCFMAX (IM) = TM (IM) - TG (IM)
          TCFMIN (IM) = TCFMAX (IM)
- 2160 CONTINUE
+      end do
       ENDIF
 C
       IF(ITYPE.EQ.3)THEN
@@ -206,7 +206,7 @@ C
       D2 = RMD - RMW
 C***** CALCULATE MAXIMUM SOLAR RADIATION FOR EACH DAY
       XLAT = ABS(ULAT)*6.2832/360.
-      DO 3130 I = 1, 366
+      DO I = 1, 366
          XI = I
          SD = 0.4102*SIN (0.0172*(XI - 80.25 + (IH * 183)))
          CH = - TAN (XLAT)*TAN (SD)
@@ -221,8 +221,8 @@ C***** CALCULATE MAXIMUM SOLAR RADIATION FOR EACH DAY
      1      (COS (XLAT)*COS (SD)*SIN (H)
      2      ))
          RC (I) = RC (I)*0.8
- 3130 CONTINUE
-      DO 3150 J = 1, 366
+      end do
+      DO J = 1, 366
          XJ = J
          DR = COS (.0172*(XJ - 172. + (IH * 183)))
          RM0 (J) = RMD + AR*DR
@@ -233,14 +233,14 @@ C***** CALCULATE MAXIMUM SOLAR RADIATION FOR EACH DAY
          XCR4 = CVRW + ACVRW*DR
          IF (XCR4 .LT. 0.0) XCR4 = 0.06
          RS1 (J) = RM1 (J)*XCR4
- 3150 CONTINUE
+      end do
       END IF
 c
 C*******BEGINNING OF DAILY CALCULATIONS LOOP
 c
       IDAYS = 365
       LEAP = 0
-      DO 1180 IYR = 1, NYRS
+      DO IYR = 1, NYRS
          NYR = IYR
          LEAP = LEAP + 1
          IF(LEAP.EQ.4)IDAYS=366
@@ -255,27 +255,27 @@ c
                READ(4,1181)DUMMY
  1181          FORMAT(A1)
             END IF
-            DO 1050 L = 1, 37
+            DO L = 1, 37
                LR1 = 10*L - 9
                LR2 = 10*L
                IF(L.EQ.1)READ(4,5500)NYR,(RAIN(L2),L2=LR1,LR2)
  5500          FORMAT(I10,10F5.0)
                IF(L.GT.1)READ(4,5510)(RAIN(L2),L2=LR1,LR2)
  5510          FORMAT(10X,10F5.0)
- 1050       CONTINUE
+      end do
             IDAYS=365
             IF(MOD(NYR,4).EQ.0)IDAYS=366
             CALL DAILY (RAIN, TMAX, TMIN, RAD, IDAYS, K)
          END IF
-         DO 1190 I1 = 1, 37
+         DO I1 = 1, 37
             IR1 = 10*I1 - 9
             IR2 = 10*I1
             ICOUNT = I1
             IF(ITYPE.EQ.1)THEN
                IF(IUNITS.EQ.2)THEN
-                  DO 1191 I2 = IR1, IR2
+                  DO I2 = IR1, IR2
                      RAIN (I2) = RAIN (I2) * 25.4
- 1191             CONTINUE
+      end do
                   WRITE(4,6200)NYR,(RAIN(I2),I2=IR1,IR2),ICOUNT
                else
                   WRITE(4,6201)NYR,(RAIN(I2),I2=IR1,IR2),ICOUNT
@@ -285,10 +285,10 @@ c
  6201       FORMAT(I10,10F5.2,I10)
             IF(ITYPE.EQ.2)THEN
                IF(IUNITS.EQ.2)THEN
-                  DO 1192 I2 = IR1, IR2
+                  DO I2 = IR1, IR2
                      TMAX (I2) = (TMAX (I2) - 32.0) / 1.8
                      TMIN (I2) = (TMIN (I2) - 32.0) / 1.8
- 1192             CONTINUE
+      end do
                END IF
                WRITE(7,6210) NYR,((TMAX (I) + TMIN (I))/2.,
      1         I = IR1, IR2), ICOUNT
@@ -296,16 +296,16 @@ c
  6210       FORMAT(I5,10F6.1,I5)
             IF(ITYPE.EQ.3)THEN
                IF(IUNITS.EQ.2)THEN
-                  DO 1193 I2 = IR1, IR2
+                  DO I2 = IR1, IR2
                      RAD (I2) = RAD (I2) * 0.04186
- 1193             CONTINUE
+      end do
                END IF
         IF(IUNITS.EQ.1)WRITE(13,6210) NYR,(RAD(I), I=IR1,IR2),ICOUNT
         IF(IUNITS.EQ.2)WRITE(13,6220) NYR,(RAD(I), I=IR1,IR2),ICOUNT
  6220       FORMAT(I5,10F6.2,I5)
             END IF
- 1190    CONTINUE
- 1180 CONTINUE
+      end do
+      end do
       CLOSE (4)
       IF(ITYPE.EQ.2)CLOSE (7)
       IF(ITYPE.EQ.3)CLOSE (13)
@@ -322,7 +322,7 @@ C*****ONE YEAR.
       SAVE IP
       DATA IP/0/
       IM = 1
-      DO 1000 IDAY = 1, IDAYS
+      DO IDAY = 1, IDAYS
          IF (IDAYS .EQ. 366) GO TO 1010
          IF (IDAY .GT. NI (IM)) IM = IM + 1
          GO TO 1020
@@ -371,6 +371,7 @@ C*****DETERMINE RAINFALL AMOUNT FOR WET DAYS USING GAMMA DISTRIBUTION
          CALL RANDN (RN3,K)
          RAIN (IDAY) = - Z*ALOG (RN3)*BETA (IM)*RCF (IM)
  1000 CONTINUE
+      end do
       END
 C***********************DAILY*************************
 C
@@ -393,7 +394,7 @@ C
       DATA XIM1/0., 0., 0./
       DATA IP/0/
       IM = 1
-      DO 1000 IDAY = 1, IDAYS
+      DO IDAY = 1, IDAYS
          IF (IDAYS .EQ. 366) GO TO 1010
          IF (IDAY .GT. NI (IM)) IM = IM + 1
          GO TO 1020
@@ -421,27 +422,28 @@ C*****GENERATE TMAX, TMIN, AND RAD FOR IDAY
          TXXM = TXM1 (IDAY)
          TXXS = TXS1 (IDAY)
  1080    CONTINUE
-         DO 1090 KK = 1, 3
+         DO KK = 1, 3
  1100       CONTINUE
             CALL RANDN (RN1,K)
             CALL RANDN (RN2,K)
             V = SQRT ( - 2.*ALOG (RN1))*COS (6.283185*RN2)
             IF (ABS (V) .GT. 2.5) GO TO 1100
             E (KK) = V
- 1090    CONTINUE
-         DO 1110 I = 1, 3
+      end do
+         DO I = 1, 3
             R (I) = 0.
             RR (I) = 0.
- 1110    CONTINUE
-         DO 1120 I = 1, 3
+      end do
+         DO I = 1, 3
             DO 1120 J = 1, 3
                R (I) = R (I) + B (I, J)*E (J)
                RR (I) = RR (I) + A (I, J)*XIM1 (J)
  1120    CONTINUE
-         DO 1130 KK = 1, 3
+      end do
+         DO KK = 1, 3
             X (KK) = R (KK) + RR (KK)
             XIM1 (KK) = X (KK)
- 1130    CONTINUE
+      end do
          TMAX (IDAY) = X (1)*TXXS + TXXM
          TMIN (IDAY) = X (2)*TNS (IDAY) + TNM (IDAY)
          IF (TMIN (IDAY) .GT. TMAX (IDAY)) GO TO 1140
@@ -460,7 +462,7 @@ C*****TMIN(IDAY) IS GENERATED TMIN FOR IDAY
 C*****RAD(IDAY) IS GENERATED RAD FOR IDAY
          IF (RAD (IDAY) .LT. RMIN) RAD (IDAY) = RMIN
          IF (RAD (IDAY) .GT. RC (IDAY)) RAD (IDAY) = RC (IDAY)
- 1000 CONTINUE
+      end do
       RETURN
       END
 C********************** RANDN ************************

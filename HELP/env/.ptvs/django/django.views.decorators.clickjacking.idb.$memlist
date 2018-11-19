@@ -1,0 +1,11 @@
+xframe_options_deny
+available_attrs
+xframe_options_exempt
+__cached__
+__spec__
+__file__
+__name__
+xframe_options_sameorigin
+__builtins__
+wraps
+__package__
