@@ -1,3 +1,9 @@
+# tests.py (app)
+# !/usr/bin/env python3
+# coding=utf-8
+# pylint: skip-file
+# We skip this file because it wasn't written by/for EPA.
+
 """
 This file demonstrates writing tests using the unittest module. These will pass
 when you run "manage.py test".
