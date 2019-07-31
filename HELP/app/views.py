@@ -1,11 +1,16 @@
+# views.py (app)
+# !/usr/bin/env python3
+# coding=utf-8
+# young.daniel@epa.gov
+
+
 """
 Definition of views.
 """
 
+from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from django.template import RequestContext
-from datetime import datetime
 
 def home(request):
     """Renders the home page."""
@@ -26,8 +31,8 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'Contact',
-            'message':'Your contact page.',
+            'title':'US Environmental Protection Agency',
+            'message':'Office of Research & Development.',
             'year':datetime.now().year,
         }
     )
@@ -39,8 +44,8 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'About',
-            'message':'Your application description page.',
+            'title':'HELP',
+            'message':'Hydrologic Evaluation of Landfill Performance (HELP) Model Software.',
             'year':datetime.now().year,
         }
     )
