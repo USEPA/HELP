@@ -57,6 +57,8 @@
     <Folder Include="HELP\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\dashboard.html" />
+    <Content Include="app\templates\app\support.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
