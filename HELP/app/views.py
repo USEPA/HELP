@@ -4,13 +4,12 @@
 # young.daniel@epa.gov
 
 
-"""
-Definition of views.
-"""
+"""Definition of views."""
 
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
+
 
 def home(request):
     """Renders the home page."""
@@ -19,10 +18,11 @@ def home(request):
         request,
         'app/index.html',
         {
-            'title':'Home Page',
-            'year':datetime.now().year,
+            'title': 'Home Page',
+            'year': datetime.now().year,
         }
     )
+
 
 def contact(request):
     """Renders the contact page."""
@@ -31,11 +31,12 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'US Environmental Protection Agency',
-            'message':'Office of Research & Development.',
-            'year':datetime.now().year,
+            'title': 'US Environmental Protection Agency',
+            'message': 'Office of Research & Development.',
+            'year': datetime.now().year,
         }
     )
+
 
 def about(request):
     """Renders the about page."""
@@ -44,8 +45,34 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'HELP',
-            'message':'Hydrologic Evaluation of Landfill Performance (HELP) Model Software.',
-            'year':datetime.now().year,
+            'title': 'HELP',
+            'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
+            'year': datetime.now().year,
+        }
+    )
+
+def dashboard(request):
+    """Renders the dashboard page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/dashboard.html',
+        {
+            'title': 'HELP',
+            'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
+            'year': datetime.now().year,
+        }
+    )
+
+def support(request):
+    """Renders the support page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/support.html',
+        {
+            'title': 'HELP',
+            'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
+            'year': datetime.now().year,
         }
     )

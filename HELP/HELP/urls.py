@@ -6,9 +6,7 @@
 # We disable the invalid name because urlpatterns is the Django default
 
 
-"""
-Definition of urls for HELP.
-"""
+"""Definition of urls for HELP."""
 
 from datetime import datetime
 from django.urls import path
@@ -21,6 +19,8 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('support/', views.support, name='support'),
     path('login/',
          LoginView.as_view
          (
@@ -29,7 +29,7 @@ urlpatterns = [
              extra_context=
              {
                  'title': 'Log in',
-                 'year' : datetime.now().year,
+                 'year': datetime.now().year,
              }
          ),
          name='login'),

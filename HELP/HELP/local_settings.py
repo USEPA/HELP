@@ -10,6 +10,7 @@ Available functions:
 NOTE: All development uses 'localhost' not private or EPA servers
 - Email settings
 - PostgreSQL database settings
+- Staging server @ https://help.engineering4sustainability.com/
 """
 
 SITE_NAME = 'localhost'
