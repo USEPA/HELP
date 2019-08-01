@@ -16,12 +16,12 @@ NOTE: All development uses 'localhost' not private or EPA servers
 SITE_NAME = 'localhost'
 
 # Settings when installing HELP on the EPA RedHat email Server.
-DEFAULT_FROM_EMAIL = 'dyoung11@engineering4sustainability.com'
+DEFAULT_FROM_EMAIL = 'young.daniel@fioptics.com'
 EMAIL_HOST = '127.0.0.1'
 EMAIL_HOST_USER = 'dyoung11'
 EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 25
-EMAIL_FILE_PATH = '/var/www/html/gemm/uploads'
+EMAIL_FILE_PATH = '/var/www/html/help/uploads'
 
 EMAIL_SUPPORT = 'young.daniel@epa.gov'
 
