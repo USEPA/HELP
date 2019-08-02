@@ -1,0 +1,25 @@
+# Check Python versions = "version Python 3.8 (64-bit)."
+# This requirements document was generated in the following way:
+# 1. Create a new python virtual environment.
+# 2. Install packages in this environment from the previous requirements file in Github
+# 3. Delete the existing requirements file.
+# 4. Generate this requirements file.
+# This method ensures that all installed packages are in the requirements file, which
+# includes packages that are sub-requirements of other packages.
+
+#---------------------------------------------------------------------------------------#
+# All of these packages appear to be necessary for both Windows and Linux environments. #
+#---------------------------------------------------------------------------------------#
+
+autopep8==1.4.4                   # Automatically formats Python code to conform to the PEP 8 style guide.
+Django==2.2.4                     # Python Modules.
+f2py-test-package==0.1            # A python package and command-line tools fortran extenions.
+F2python==1.5.0                   # The F2 DBMS written in Python. Needs ZODB and ZEO to run.
+mypy==0.720                       # Optional static typing for Python.
+numpy==1.17.0                     # 
+pip==19.2.1                       # The PyPA recommended tool for installing Python packages.
+psycopg2==2.8.3                   #
+pylint==2.3.1                     # python code static checker.
+pytz==2019.2                      # UTC is pytz.timezone('UTC') True.
+setuptools==41.0.1                # Fully-featured library designed to facilitate packaging Python projects.
+sqlparse==0.3.0                   # Non-validating SQL parser.

@@ -1,0 +1,121 @@
+﻿{% extends "main/base.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="jumbotron">
+    <h1>Running the software</h1>
+    <p class="lead"> Click link below to run HELP</p>
+    <p><a class="btn btn-primary btn-large" href="{% url 'FortranC' %}">Software &raquo;</a></p>
+</div>
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <title></title>
+    <meta name="author" content="Daniel Young" />
+    <meta name="created" content="2019-08-01T08:08:08.809000000" />
+    <meta name="changedby" content="Daniel Young" />
+    <meta name="changed" content="2019-08-01T08:16:15.320000000" />
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr">
+    <p style="margin-bottom: 0in; line-height: 100%">
+        <font face="Times New Roman, serif">
+            The original HELP program was
+            developed to provide landfill designers and regulators with a tool
+            for rapid, economical screening of alternative designs. The
+            functionality required of the updated HELP model must include the
+            ability to estimate the magnitudes of various components of the water
+            budget, including the volume of leachate produced and the thickness
+            of water-saturated soil (head) above liners. The results may be used
+            to compare the leachate production potential of alternative designs,
+            to select and size appropriate drainage and collection systems, and
+            to size leachate treatment facilities.
+        </font>
+    </p>
+    <br />
+    <p style="margin-bottom: 0in; line-height: 100%">
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">
+        <font face="Times New Roman, serif">
+            The
+            HELP model utilizes a static set of input data that is supplied with
+            the model.  The planned migration effort will use that same data set
+            and it will include the following:
+        </font>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">
+    </p>
+    <ol>
+        <li><p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif">Units</font></p>
+        <li><p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif">Location</font></p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Weather
+                    data file names
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Evapotranspiration
+                    information
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Precipitation
+                    data
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Temperature
+                    data
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Solar
+                    radiation data
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Soil
+                    and design data file name
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    General
+                    landfill and site information
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    Landfill
+                    profile and soil/waste/geomembrane data
+                </font>
+            </p>
+        <li>
+            <p style="margin-bottom: 0in; line-height: 100%">
+                <font face="Times New Roman, serif">
+                    SCS
+                    runoff curve number information
+                </font>
+            </p>
+    </ol>
+</body>
+</html>
+
+{% endblock %}
