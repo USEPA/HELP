@@ -77,12 +77,12 @@ def support(request):
         }
     )
 
-def f90_wrapper(request):
+def FortranC(request):
     """Renders the software page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'help/f90_wrapper.html',
+        'help/FortranC.html',
         {
             'title': 'HELP',
             'message': 'Software Launch.',
