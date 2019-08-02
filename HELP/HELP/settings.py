@@ -20,6 +20,16 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import posixpath
 
+
+DEFAULT_FROM_EMAIL = 'dyoung11@engineering4sustainability.com'
+EMAIL_HOST = '127.0.0.1'
+EMAIL_HOST_USER = 'dyoung11'
+EMAIL_HOST_PASSWORD = '***REMOVED***'
+EMAIL_PORT = 25
+EMAIL_FILE_PATH = '/var/www/html/help/uploads'
+
+EMAIL_SUPPORT = 'young.daniel@epa.gov'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -114,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+DOWNLOADS_DIR = os.path.join("..", "documents")
+MANUAL_NAME = 'user_manual.pdf'
 
 try:
     from .local_settings import *

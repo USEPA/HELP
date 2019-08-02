@@ -22,19 +22,8 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('support/', views.support, name='support'),
     path('FortranC/', views.FortranC, name='FortranC'),
-    #path('login/',
-    #     LoginView.as_view
-    #     (
-    #         template_name='accounts/login.html',
-    #         authentication_form=forms.BootstrapAuthenticationForm,
-    #         extra_context=
-    #         {
-    #             'title': 'Log in',
-    #             'year': datetime.now().year,
-    #         }
-    #     ),
-    #     name='login'),
-    #path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
+    path(r'suggestions/', views.ticket, name='ticket'),
+    path(r'usermanual/', views.usermanual, name='usermanual'),
 ]
