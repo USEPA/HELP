@@ -76,3 +76,16 @@ def support(request):
             'year': datetime.now().year,
         }
     )
+
+def f90_wrapper(request):
+    """Renders the software page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'help/f90_wrapper.html',
+        {
+            'title': 'HELP',
+            'message': 'Software Launch.',
+            'year': datetime.now().year,
+        }
+    )
