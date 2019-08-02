@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ac4cf3c1-c4e1-4975-bc05-e142ae7f774b}</ProjectGuid>
+    <ProjectGuid>{96488a72-bd41-4b61-b148-00775d402c0e}</ProjectGuid>
     <ProjectHome />
     <StartupFile>manage.py</StartupFile>
     <SearchPath />
@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Django launcher</LaunchProvider>
-    <InterpreterId>Global|VisualStudio|help</InterpreterId>
+    <InterpreterId>Global|VisualStudio|help37</InterpreterId>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <DjangoSettingsModule>HELP.settings</DjangoSettingsModule>
   </PropertyGroup>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="accounts\templates\main\profile.html" />
+    <Content Include="accounts\templates\registration\login.html" />
     <Content Include="accounts\templates\registration\logout.html" />
     <Content Include="accounts\templates\registration\password_reset.html" />
     <Content Include="accounts\templates\registration\password_reset_confirm.html" />
@@ -52,6 +53,119 @@
     <Content Include="accounts\templates\registration\username_reminder_done.html" />
     <Content Include="accounts\templates\registration\username_reminder_email.html" />
     <Content Include="accounts\templates\registration\username_reminder_subject.txt" />
+    <Content Include="HELP\static\admin\css\autocomplete.css" />
+    <Content Include="HELP\static\admin\css\base.css" />
+    <Content Include="HELP\static\admin\css\changelists.css" />
+    <Content Include="HELP\static\admin\css\dashboard.css" />
+    <Content Include="HELP\static\admin\css\fonts.css" />
+    <Content Include="HELP\static\admin\css\forms.css" />
+    <Content Include="HELP\static\admin\css\login.css" />
+    <Content Include="HELP\static\admin\css\responsive.css" />
+    <Content Include="HELP\static\admin\css\responsive_rtl.css" />
+    <Content Include="HELP\static\admin\css\rtl.css" />
+    <Content Include="HELP\static\admin\css\vendor\select2\select2.css" />
+    <Content Include="HELP\static\admin\css\vendor\select2\select2.min.css" />
+    <Content Include="HELP\static\admin\css\widgets.css" />
+    <Content Include="HELP\static\admin\fonts\LICENSE.txt" />
+    <Content Include="HELP\static\admin\fonts\README.txt" />
+    <Content Include="HELP\static\admin\img\calendar-icons.svg" />
+    <Content Include="HELP\static\admin\img\gis\move_vertex_off.svg" />
+    <Content Include="HELP\static\admin\img\gis\move_vertex_on.svg" />
+    <Content Include="HELP\static\admin\img\icon-addlink.svg" />
+    <Content Include="HELP\static\admin\img\icon-alert.svg" />
+    <Content Include="HELP\static\admin\img\icon-calendar.svg" />
+    <Content Include="HELP\static\admin\img\icon-changelink.svg" />
+    <Content Include="HELP\static\admin\img\icon-clock.svg" />
+    <Content Include="HELP\static\admin\img\icon-deletelink.svg" />
+    <Content Include="HELP\static\admin\img\icon-no.svg" />
+    <Content Include="HELP\static\admin\img\icon-unknown-alt.svg" />
+    <Content Include="HELP\static\admin\img\icon-unknown.svg" />
+    <Content Include="HELP\static\admin\img\icon-viewlink.svg" />
+    <Content Include="HELP\static\admin\img\icon-yes.svg" />
+    <Content Include="HELP\static\admin\img\inline-delete.svg" />
+    <Content Include="HELP\static\admin\img\README.txt" />
+    <Content Include="HELP\static\admin\img\search.svg" />
+    <Content Include="HELP\static\admin\img\selector-icons.svg" />
+    <Content Include="HELP\static\admin\img\sorting-icons.svg" />
+    <Content Include="HELP\static\admin\img\tooltag-add.svg" />
+    <Content Include="HELP\static\admin\img\tooltag-arrowright.svg" />
+    <Content Include="HELP\static\admin\js\actions.js" />
+    <Content Include="HELP\static\admin\js\actions.min.js" />
+    <Content Include="HELP\static\admin\js\admin\DateTimeShortcuts.js" />
+    <Content Include="HELP\static\admin\js\admin\RelatedObjectLookups.js" />
+    <Content Include="HELP\static\admin\js\autocomplete.js" />
+    <Content Include="HELP\static\admin\js\calendar.js" />
+    <Content Include="HELP\static\admin\js\cancel.js" />
+    <Content Include="HELP\static\admin\js\change_form.js" />
+    <Content Include="HELP\static\admin\js\collapse.js" />
+    <Content Include="HELP\static\admin\js\collapse.min.js" />
+    <Content Include="HELP\static\admin\js\core.js" />
+    <Content Include="HELP\static\admin\js\inlines.js" />
+    <Content Include="HELP\static\admin\js\inlines.min.js" />
+    <Content Include="HELP\static\admin\js\jquery.init.js" />
+    <Content Include="HELP\static\admin\js\popup_response.js" />
+    <Content Include="HELP\static\admin\js\prepopulate.js" />
+    <Content Include="HELP\static\admin\js\prepopulate.min.js" />
+    <Content Include="HELP\static\admin\js\prepopulate_init.js" />
+    <Content Include="HELP\static\admin\js\SelectBox.js" />
+    <Content Include="HELP\static\admin\js\SelectFilter2.js" />
+    <Content Include="HELP\static\admin\js\timeparse.js" />
+    <Content Include="HELP\static\admin\js\urlify.js" />
+    <Content Include="HELP\static\admin\js\vendor\jquery\jquery.js" />
+    <Content Include="HELP\static\admin\js\vendor\jquery\jquery.min.js" />
+    <Content Include="HELP\static\admin\js\vendor\jquery\LICENSE.txt" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ar.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\az.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\bg.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ca.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\cs.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\da.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\de.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\el.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\en.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\es.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\et.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\eu.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\fa.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\fi.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\fr.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\gl.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\he.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\hi.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\hr.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\hu.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\id.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\is.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\it.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ja.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\km.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ko.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\lt.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\lv.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\mk.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ms.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\nb.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\nl.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\pl.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\pt-BR.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\pt.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ro.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\ru.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\sk.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\sr-Cyrl.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\sr.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\sv.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\th.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\tr.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\uk.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\vi.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\zh-CN.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\i18n\zh-TW.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\select2.full.js" />
+    <Content Include="HELP\static\admin\js\vendor\select2\select2.full.min.js" />
+    <Content Include="HELP\static\admin\js\vendor\xregexp\LICENSE.txt" />
+    <Content Include="HELP\static\admin\js\vendor\xregexp\xregexp.js" />
+    <Content Include="HELP\static\admin\js\vendor\xregexp\xregexp.min.js" />
     <Content Include="HELP\static\content\bootstrap.css" />
     <Content Include="HELP\static\content\bootstrap.min.css" />
     <Content Include="HELP\static\content\site.css" />
@@ -75,9 +189,8 @@
     <Content Include="HELP\templates\dashboard.html" />
     <Content Include="HELP\templates\FortranC.html" />
     <Content Include="HELP\templates\index.html" />
-    <Content Include="HELP\templates\layout.html" />
-    <Content Include="accounts\templates\registration\login.html" />
-    <Content Include="HELP\templates\loginpartial.html" />
+    <Content Include="HELP\templates\main\base.html" />
+    <Content Include="HELP\templates\main\loginpartial.html" />
     <Content Include="HELP\templates\support.html" />
     <Content Include="readme.html" />
     <Content Include="requirements.txt" />
@@ -120,13 +233,28 @@
     <Folder Include="HELP" />
     <Folder Include="HELP\migrations" />
     <Folder Include="HELP\static\" />
+    <Folder Include="HELP\static\admin\" />
+    <Folder Include="HELP\static\admin\css" />
+    <Folder Include="HELP\static\admin\css\vendor\" />
+    <Folder Include="HELP\static\admin\css\vendor\select2" />
+    <Folder Include="HELP\static\admin\fonts" />
+    <Folder Include="HELP\static\admin\img" />
+    <Folder Include="HELP\static\admin\img\gis" />
+    <Folder Include="HELP\static\admin\js" />
+    <Folder Include="HELP\static\admin\js\admin" />
+    <Folder Include="HELP\static\admin\js\vendor\" />
+    <Folder Include="HELP\static\admin\js\vendor\jquery" />
+    <Folder Include="HELP\static\admin\js\vendor\select2" />
+    <Folder Include="HELP\static\admin\js\vendor\select2\i18n" />
+    <Folder Include="HELP\static\admin\js\vendor\xregexp" />
     <Folder Include="HELP\static\content" />
     <Folder Include="HELP\static\fonts" />
     <Folder Include="HELP\static\scripts" />
     <Folder Include="HELP\templates" />
+    <Folder Include="HELP\templates\main\" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|VisualStudio|help" />
+    <InterpreterReference Include="Global|VisualStudio|help37" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
