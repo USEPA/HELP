@@ -1,39 +1,79 @@
-# urls.py (HELP)
+# views.py (app)
 # !/usr/bin/env python3
 # coding=utf-8
 # young.daniel@epa.gov
-# pylint: disable=invalid-name
-# We disable the invalid name because urlpatterns is the Django default
 
 
-"""Definition of urls for HELP."""
+"""Definition of views."""
 
 from datetime import datetime
-from django.urls import path
-from django.contrib import admin
-from django.contrib.auth.views import LoginView, LogoutView
-from app import forms, views
+from django.shortcuts import render
+from django.http import HttpRequest
 
 
-urlpatterns = [
-    path('', views.home, name='home'),
-    path('contact/', views.contact, name='contact'),
-    path('about/', views.about, name='about'),
-    path('dashboard/', views.dashboard, name='dashboard'),
-    path('support/', views.support, name='support'),
-    path('FortranC/', views.FortranC, name='Software'),
-    path('login/',
-         LoginView.as_view
-         (
-             template_name='app/login.html',
-             authentication_form=forms.BootstrapAuthenticationForm,
-             extra_context=
-             {
-                 'title': 'Log in',
-                 'year': datetime.now().year,
-             }
-         ),
-         name='login'),
-    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
-    path('admin/', admin.site.urls),
-]
+def home(request):
+    """Renders the home page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/index.html',
+        {
+            'title': 'Home Page',
+            'year': datetime.now().year,
+        }
+    )
+
+
+def contact(request):
+    """Renders the contact page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/contact.html',
+        {
+            'title': 'US Environmental Protection Agency',
+            'message': 'Office of Research & Development.',
+            'year': datetime.now().year,
+        }
+    )
+
+
+def about(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/about.html',
+        {
+            'title': 'HELP',
+            'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
+            'year': datetime.now().year,
+        }
+    )
+
+def dashboard(request):
+    """Renders the dashboard page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/dashboard.html',
+        {
+            'title': 'HELP',
+            'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
+            'year': datetime.now().year,
+        }
+    )
+
+def support(request):
+    """Renders the support page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/support.html',
+        {
+            'title': 'HELP',
+            'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
+            'year': datetime.now().year,
+        }
+    )
+

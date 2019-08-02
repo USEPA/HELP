@@ -57,6 +57,6 @@ DATABASES = {
     }
 }
 
-# From GEMM local_settings, trying to get Admin to work properly.
+# From HELP local_settings, trying to get Admin to work properly.
 STATIC_ROOT = 'HELP/static/'
 STATIC_URL = '/static/'
