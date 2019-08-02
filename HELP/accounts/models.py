@@ -49,7 +49,8 @@ class Country(models.Model):
         """
         :return:
         """
-        return self.country
+        # DON'T CHANGE THE FOLLOWING LINE, PYLINT IS WRONG
+        return (self.country, )
 
     def __str__(self):
         """Request country."""
@@ -80,7 +81,8 @@ class Sector(models.Model):
         """
         :return:
         """
-        return self.sector
+        # DON'T CHANGE THE FOLLOWING LINE, PYLINT IS WRONG
+        return (self.sector, )
 
     def __str__(self):
         """Add docstring."""
@@ -96,7 +98,8 @@ class Role(models.Model):
         """
         :return:
         """
-        return self.role
+        # DON'T CHANGE THE FOLLOWING LINE, PYLINT IS WRONG
+        return (self.role, )
 
     def __str__(self):
         """Add docstring."""
