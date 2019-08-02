@@ -1,4 +1,4 @@
-# views.py (app)
+# views.py (HELP)
 # !/usr/bin/env python3
 # coding=utf-8
 # young.daniel@epa.gov
@@ -16,7 +16,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/index.html',
+        'HELP/index.html',
         {
             'title': 'Home Page',
             'year': datetime.now().year,
@@ -29,7 +29,7 @@ def contact(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/contact.html',
+        'HELP/contact.html',
         {
             'title': 'US Environmental Protection Agency',
             'message': 'Office of Research & Development.',
@@ -43,7 +43,7 @@ def about(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/about.html',
+        'HELP/about.html',
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
@@ -56,7 +56,7 @@ def dashboard(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/dashboard.html',
+        'HELP/dashboard.html',
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
@@ -69,7 +69,7 @@ def support(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/support.html',
+        'HELP/support.html',
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',

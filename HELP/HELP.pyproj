@@ -31,6 +31,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="accounts\admin.py" />
+    <Compile Include="accounts\apps.py" />
+    <Compile Include="accounts\forms.py" />
+    <Compile Include="accounts\migrations\0001_initial.py" />
+    <Compile Include="accounts\migrations\0002_auto_20180130_2054.py" />
+    <Compile Include="accounts\migrations\__init__.py" />
+    <Compile Include="accounts\models.py" />
+    <Compile Include="accounts\serializers.py" />
+    <Compile Include="accounts\session_middleware.py" />
+    <Compile Include="accounts\tests.py" />
+    <Compile Include="accounts\urls.py" />
+    <Compile Include="accounts\views.py" />
+    <Compile Include="accounts\__init__.py" />
     <Compile Include="HELP\admin.py" />
     <Compile Include="HELP\app.py" />
     <Compile Include="HELP\forms.py" />
@@ -51,17 +64,67 @@
     <Compile Include="HELP\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="accounts\" />
+    <Folder Include="accounts\fixtures\" />
+    <Folder Include="accounts\migrations\" />
+    <Folder Include="accounts\migrations\__pycache__\" />
+    <Folder Include="accounts\templates\" />
+    <Folder Include="accounts\templates\main\" />
+    <Folder Include="accounts\templates\registration\" />
+    <Folder Include="accounts\__pycache__\" />
     <Folder Include="HELP\migrations\" />
     <Folder Include="HELP\static\" />
-    <Folder Include="HELP\static\app\" />
-    <Folder Include="HELP\static\app\content\" />
-    <Folder Include="HELP\static\app\fonts\" />
-    <Folder Include="HELP\static\app\scripts\" />
+    <Folder Include="HELP\static\content\" />
+    <Folder Include="HELP\static\fonts\" />
+    <Folder Include="HELP\static\scripts\" />
     <Folder Include="HELP\" />
     <Folder Include="HELP\templates\" />
     <Folder Include="HELP\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accounts\fixtures\accounts_initial_data.json" />
+    <Content Include="accounts\migrations\__pycache__\0001_initial.cpython-37.pyc" />
+    <Content Include="accounts\migrations\__pycache__\0002_auto_20180130_2054.cpython-37.pyc" />
+    <Content Include="accounts\migrations\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="accounts\templates\main\profile.html" />
+    <Content Include="accounts\templates\registration\login.html" />
+    <Content Include="accounts\templates\registration\logout.html" />
+    <Content Include="accounts\templates\registration\password_reset.html" />
+    <Content Include="accounts\templates\registration\password_reset_confirm.html" />
+    <Content Include="accounts\templates\registration\password_reset_confirm_no_token.html" />
+    <Content Include="accounts\templates\registration\password_reset_done.html" />
+    <Content Include="accounts\templates\registration\password_reset_email.html" />
+    <Content Include="accounts\templates\registration\password_reset_email_sent.html" />
+    <Content Include="accounts\templates\registration\password_reset_subject.txt" />
+    <Content Include="accounts\templates\registration\register.html" />
+    <Content Include="accounts\templates\registration\register_activated.html" />
+    <Content Include="accounts\templates\registration\register_activate_email.html" />
+    <Content Include="accounts\templates\registration\register_activate_no_token.html" />
+    <Content Include="accounts\templates\registration\register_activate_subject.txt" />
+    <Content Include="accounts\templates\registration\register_approved.html" />
+    <Content Include="accounts\templates\registration\register_approved_email.html" />
+    <Content Include="accounts\templates\registration\register_approved_no_uid.html" />
+    <Content Include="accounts\templates\registration\register_approved_subject.txt" />
+    <Content Include="accounts\templates\registration\register_denied.html" />
+    <Content Include="accounts\templates\registration\register_denied_email.html" />
+    <Content Include="accounts\templates\registration\register_denied_no_uid.html" />
+    <Content Include="accounts\templates\registration\register_denied_subject.txt" />
+    <Content Include="accounts\templates\registration\register_inactive.html" />
+    <Content Include="accounts\templates\registration\register_request_admin_email.html" />
+    <Content Include="accounts\templates\registration\register_request_admin_subject.txt" />
+    <Content Include="accounts\templates\registration\register_request_user_email.html" />
+    <Content Include="accounts\templates\registration\register_request_user_subject.txt" />
+    <Content Include="accounts\templates\registration\username_reminder.html" />
+    <Content Include="accounts\templates\registration\username_reminder_done.html" />
+    <Content Include="accounts\templates\registration\username_reminder_email.html" />
+    <Content Include="accounts\templates\registration\username_reminder_subject.txt" />
+    <Content Include="accounts\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="accounts\__pycache__\forms.cpython-37.pyc" />
+    <Content Include="accounts\__pycache__\models.cpython-37.pyc" />
+    <Content Include="accounts\__pycache__\serializers.cpython-37.pyc" />
+    <Content Include="accounts\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="accounts\__pycache__\views.cpython-37.pyc" />
+    <Content Include="accounts\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="HELP\templates\dashboard.html" />
     <Content Include="HELP\templates\support.html" />
     <Content Include="HELP\templates\FortranC.html" />
@@ -70,28 +133,28 @@
     <Content Include="HELP\__pycache__\wsgi.cpython-38.pyc" />
     <Content Include="HELP\__pycache__\__init__.cpython-38.pyc" />
     <Content Include="requirements.txt" />
-    <Content Include="HELP\static\app\content\bootstrap.css" />
-    <Content Include="HELP\static\app\content\bootstrap.min.css" />
-    <Content Include="HELP\static\app\content\site.css" />
-    <Content Include="HELP\static\app\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="HELP\static\app\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="HELP\static\app\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="HELP\static\app\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="HELP\static\app\scripts\bootstrap.js" />
-    <Content Include="HELP\static\app\scripts\bootstrap.min.js" />
-    <Content Include="HELP\static\app\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="HELP\static\app\scripts\jquery-1.10.2.js" />
-    <Content Include="HELP\static\app\scripts\jquery-1.10.2.min.js" />
-    <Content Include="HELP\static\app\scripts\jquery-1.10.2.min.map" />
-    <Content Include="HELP\static\app\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="HELP\static\app\scripts\jquery.validate.js" />
-    <Content Include="HELP\static\app\scripts\jquery.validate.min.js" />
-    <Content Include="HELP\static\app\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="HELP\static\app\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="HELP\static\app\scripts\modernizr-2.6.2.js" />
-    <Content Include="HELP\static\app\scripts\respond.js" />
-    <Content Include="HELP\static\app\scripts\respond.min.js" />
-    <Content Include="HELP\static\app\scripts\_references.js" />
+    <Content Include="HELP\static\content\bootstrap.css" />
+    <Content Include="HELP\static\content\bootstrap.min.css" />
+    <Content Include="HELP\static\content\site.css" />
+    <Content Include="HELP\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="HELP\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HELP\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="HELP\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="HELP\static\scripts\bootstrap.js" />
+    <Content Include="HELP\static\scripts\bootstrap.min.js" />
+    <Content Include="HELP\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="HELP\static\scripts\jquery-1.10.2.js" />
+    <Content Include="HELP\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="HELP\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="HELP\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="HELP\static\scripts\jquery.validate.js" />
+    <Content Include="HELP\static\scripts\jquery.validate.min.js" />
+    <Content Include="HELP\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="HELP\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="HELP\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="HELP\static\scripts\respond.js" />
+    <Content Include="HELP\static\scripts\respond.min.js" />
+    <Content Include="HELP\static\scripts\_references.js" />
     <Content Include="HELP\templates\about.html" />
     <Content Include="HELP\templates\contact.html" />
     <Content Include="HELP\templates\index.html" />
@@ -107,8 +170,8 @@
   <ItemGroup>
     <Interpreter Include="..\..\..\..\..\Envs\help\">
       <Id>help</Id>
-      <Version>3.8</Version>
-      <Description>help (Python 3.8 (64-bit))</Description>
+      <Version>3.7</Version>
+      <Description>help (Python 3.7 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
