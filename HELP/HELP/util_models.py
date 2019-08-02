@@ -12,6 +12,7 @@ The models in this file do not belong in the database and are kept
 separate from the other Django Models.
 """
 
+
 class Ticket:
     """@class Ticket. Represents an issue ticket submitted by a user."""
 
