@@ -40,7 +40,7 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="HELP\admin.py" />
-    <Compile Include="HELP\f90_wrapper.py">
+    <Compile Include="HELP\FortranC.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="HELP\local_settings.py" />
@@ -67,7 +67,7 @@
   <ItemGroup>
     <Content Include="app\templates\app\dashboard.html" />
     <Content Include="app\templates\app\support.html" />
-    <Content Include="HELP\templates\f90_wrapper.html" />
+    <Content Include="HELP\templates\FortranC.html" />
     <Content Include="HELP\__pycache__\settings.cpython-38.pyc" />
     <Content Include="HELP\__pycache__\urls.cpython-38.pyc" />
     <Content Include="HELP\__pycache__\wsgi.cpython-38.pyc" />
