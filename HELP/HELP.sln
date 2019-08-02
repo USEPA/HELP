@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29123.88
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "HELP", "HELP.pyproj", "{51BE6DAA-7CA7-4CAF-AAF0-4F65B357BF80}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "HELP", "HELP.pyproj", "{AC4CF3C1-C4E1-4975-BC05-E142AE7F774B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51BE6DAA-7CA7-4CAF-AAF0-4F65B357BF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51BE6DAA-7CA7-4CAF-AAF0-4F65B357BF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51BE6DAA-7CA7-4CAF-AAF0-4F65B357BF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51BE6DAA-7CA7-4CAF-AAF0-4F65B357BF80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4CF3C1-C4E1-4975-BC05-E142AE7F774B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4CF3C1-C4E1-4975-BC05-E142AE7F774B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4CF3C1-C4E1-4975-BC05-E142AE7F774B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4CF3C1-C4E1-4975-BC05-E142AE7F774B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {419A8737-4046-4099-A11C-7D9C561D4ABA}
+		SolutionGuid = {2C98F63D-F3B3-412B-B727-2EA73BA8A0A3}
 	EndGlobalSection
 EndGlobal
