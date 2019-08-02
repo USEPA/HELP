@@ -1432,7 +1432,7 @@ class LiveServerThread(threading.Thread):
 class LiveServerTestCase(TransactionTestCase):
     """
     Do basically the same as TransactionTestCase.
-    
+
     Also launch a live HTTP server in a separate thread so that the tests may
     use another testing framework, such as Selenium for example, instead of the
     built-in dummy client. It inherits from TransactionTestCase instead of
