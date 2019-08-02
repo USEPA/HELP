@@ -10,13 +10,12 @@ Available functions:
 NOTE: All development uses 'localhost' not private or EPA servers
 - Email settings
 - PostgreSQL database settings
-- Staging server @ https://help.engineering4sustainability.com/
 """
 
 SITE_NAME = 'localhost'
 
 # Settings when installing HELP on the EPA RedHat email Server.
-DEFAULT_FROM_EMAIL = 'young.daniel@fioptics.com'
+DEFAULT_FROM_EMAIL = 'young.daniel@epa.gov'
 EMAIL_HOST = '127.0.0.1'
 EMAIL_HOST_USER = 'dyoung11'
 EMAIL_HOST_PASSWORD = 'password'
@@ -27,8 +26,6 @@ EMAIL_SUPPORT = 'young.daniel@epa.gov'
 
 USER_CONFIRMATION_EMAILS = [
     'young.daniel@epa.gov',
-    'jacob@gqc.com',
-    'raghuraman.venkatapathy@ptsied.com',
 ]
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -40,7 +37,7 @@ DEBUG = True
 if DEBUG is True:
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver']
 else:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.engineering4sustainability.com', 'testserver']
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver']
 
 # This sets URL to run as localhost for development on VS 2019
 BASE_URL = 'http://127.0.0.1'

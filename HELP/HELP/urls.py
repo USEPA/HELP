@@ -21,6 +21,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('support/', views.support, name='support'),
+    path('f90_wrapper/', views.f90_wrapper, name='Software'),
     path('login/',
          LoginView.as_view
          (
