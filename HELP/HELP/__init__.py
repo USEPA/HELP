@@ -1,3 +1,3 @@
 """
-Package for HELP.
+Package for the application.
 """
