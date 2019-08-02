@@ -410,7 +410,7 @@ class UserApprovalView(TemplateView):
     View for activating a user.
 
     This view can only be accessed by an administrator.  Typically accessed
-    from the registration request email sent to the gemm email address.
+    from the registration request email sent to the help email address.
     """
 
     template_name = "registration/register_approved.html"
@@ -552,7 +552,7 @@ def login(request, template_name='registration/login.html', redirect_field_name=
     """Displays the login form and handles the login action."""
     redirect_to = request.GET.get(redirect_field_name, )
 
-    layout_name = "GEMM Log-In and/or Register Screen"
+    layout_name = "HELP Log-In and/or Register Screen"
     error = None
 
     if request.method == "POST":
