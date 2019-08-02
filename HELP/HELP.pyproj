@@ -11,9 +11,10 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Django launcher</LaunchProvider>
-    <InterpreterId>Global|VisualStudio|help37</InterpreterId>
+    <InterpreterId>Global|VisualStudio|help</InterpreterId>
     <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <DjangoSettingsModule>HELP.settings</DjangoSettingsModule>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -184,7 +185,7 @@
     <Content Include="HELP\static\scripts\respond.js" />
     <Content Include="HELP\static\scripts\respond.min.js" />
     <Content Include="HELP\static\scripts\_references.js" />
-    <Content Include="HELP\templates\about.html" />
+    <Content Include="HELP\templates\main\about.html" />
     <Content Include="HELP\templates\contact.html" />
     <Content Include="HELP\templates\dashboard.html" />
     <Content Include="HELP\templates\FortranC.html" />
@@ -192,6 +193,9 @@
     <Content Include="HELP\templates\main\base.html" />
     <Content Include="HELP\templates\main\loginpartial.html" />
     <Content Include="HELP\templates\support.html" />
+    <Content Include="HELP\templates\support\ticket.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="readme.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -219,6 +223,9 @@
     <Compile Include="HELP\settings.py" />
     <Compile Include="HELP\tests.py" />
     <Compile Include="HELP\urls.py" />
+    <Compile Include="HELP\util_models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="HELP\views.py" />
     <Compile Include="HELP\wsgi.py" />
     <Compile Include="HELP\__init__.py" />
@@ -252,9 +259,10 @@
     <Folder Include="HELP\static\scripts" />
     <Folder Include="HELP\templates" />
     <Folder Include="HELP\templates\main\" />
+    <Folder Include="HELP\templates\support\" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="Global|VisualStudio|help37" />
+    <InterpreterReference Include="Global|VisualStudio|help" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
