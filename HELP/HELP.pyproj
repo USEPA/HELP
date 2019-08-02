@@ -61,12 +61,18 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="HELP\" />
+    <Folder Include="HELP\templates\" />
+    <Folder Include="HELP\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\templates\app\dashboard.html" />
     <Content Include="app\templates\app\support.html" />
+    <Content Include="HELP\templates\f90_wrapper.html" />
+    <Content Include="HELP\__pycache__\settings.cpython-38.pyc" />
+    <Content Include="HELP\__pycache__\urls.cpython-38.pyc" />
+    <Content Include="HELP\__pycache__\wsgi.cpython-38.pyc" />
+    <Content Include="HELP\__pycache__\__init__.cpython-38.pyc" />
     <Content Include="requirements.txt" />
-    <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
     <Content Include="app\static\app\content\site.css" />
