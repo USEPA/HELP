@@ -16,7 +16,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'HELP/index.html',
+        'index.html',
         {
             'title': 'Home Page',
             'year': datetime.now().year,
@@ -29,7 +29,7 @@ def contact(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'HELP/contact.html',
+        'contact.html',
         {
             'title': 'US Environmental Protection Agency',
             'message': 'Office of Research & Development.',
@@ -43,7 +43,7 @@ def about(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'HELP/about.html',
+        'about.html',
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
@@ -56,7 +56,7 @@ def dashboard(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'HELP/dashboard.html',
+        'dashboard.html',
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
@@ -69,7 +69,7 @@ def support(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'HELP/support.html',
+        'support.html',
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
@@ -82,7 +82,7 @@ def FortranC(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'help/FortranC.html',
+        'FortranC.html',
         {
             'title': 'HELP',
             'message': 'Software Launch.',
