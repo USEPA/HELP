@@ -12,4 +12,3 @@ Available functions:
 It is the recommended best practice to place your application configuration
 in the apps.py.
 """
-

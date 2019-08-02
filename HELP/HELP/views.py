@@ -56,6 +56,7 @@ def about(request):
         }
     )
 
+
 def dashboard(request):
     """Renders the dashboard page."""
     assert isinstance(request, HttpRequest)
@@ -69,6 +70,7 @@ def dashboard(request):
         }
     )
 
+
 def support(request):
     """Renders the support page."""
     assert isinstance(request, HttpRequest)
@@ -81,6 +83,7 @@ def support(request):
             'year': datetime.now().year,
         }
     )
+
 
 def FortranC(request):
     """Renders the software page."""
