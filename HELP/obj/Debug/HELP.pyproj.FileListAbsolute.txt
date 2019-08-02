@@ -1,3 +1,3 @@
-C:\Git\projects\epa\HELP\HELP\obj\Debug\HELP.pyproj.CoreCompileInputs.cache
-C:\Git\projects\epa\HELP\HELP\bin\Microsoft.PythonTools.WebRole.dll
-C:\Git\projects\epa\HELP\HELP\bin\wfastcgi.py
+C:\Users\young\source\repos\USEPA\HELP\HELP\obj\Debug\HELP.pyproj.CoreCompileInputs.cache
+C:\Users\young\source\repos\USEPA\HELP\HELP\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\young\source\repos\USEPA\HELP\HELP\bin\wfastcgi.py
