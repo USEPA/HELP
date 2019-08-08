@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Module 'HELP'" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b77c6fe9-81a8-4324-abd4-f38933532157" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HELP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HELP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP/.vs/HELP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/HELP/.vs/HELP/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP/HELP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HELP/HELP/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/HELP/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP/app/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/HELP/app/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/HELP/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP/.vs/HELP/v16/.suo" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
