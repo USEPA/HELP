@@ -21,7 +21,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('support/', views.support, name='support'),
-    path('FortranC/', views.FortranC, name='FortranC'),
+    path('help/', views.help, name='help'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path(r'suggestions/', views.ticket, name='ticket'),

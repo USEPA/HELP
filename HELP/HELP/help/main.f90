@@ -6,7 +6,7 @@
 
 !     
 ! File:   main.f90
-! Author: JacobS
+! Author: Daniel Young
 !
 ! Created on October 31, 2018, 1:14 PM
 !

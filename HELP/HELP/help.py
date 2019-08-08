@@ -18,5 +18,12 @@ https://www.youtube.com/watch?v=3G8R92Vx-dY
 https://bitbucket.org/chris_richardson/ctypes-demo/src/master/
 """
 
-from ctypes import CDLL, POINTER, c_double
+from ctypes import CDLL, POINTER, c_double, c_int, byref
 import numpy
+
+from cffi import FFI
+ffi = FFI()
+ffi.cdef("void add(double *in_data, double *out_data, int n);")
+mylib = ffi.dlopen("mylib.so")
+
+import numpy as np
