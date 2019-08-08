@@ -85,12 +85,12 @@ def support(request):
     )
 
 
-def FortranC(request):
+def help(request):
     """Renders the software page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'FortranC.html',
+        'help.html',
         {
             'title': 'HELP',
             'message': 'Software Launch.',

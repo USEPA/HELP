@@ -12,6 +12,7 @@
 #---------------------------------------------------------------------------------------#
 
 autopep8==1.4.4                   # Automatically formats Python code to conform to the PEP 8 style guide.
+cffi==1.12.3                      # Foreign Function Interface for Python calling C code (converted from f90)
 Django==2.2.4                     # Python Modules.
 f2py-test-package==0.1            # A python package and command-line tools fortran extenions.
 F2python==1.5.0                   # The F2 DBMS written in Python. Needs ZODB and ZEO to run.
