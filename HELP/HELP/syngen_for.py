@@ -4,13 +4,13 @@
 # young.daniel@epa.gov
 
 """
-ROUTINE PREPARES CLIMATOLOGICAL INPUT FILES FROM THE SYNTHETIC CLIMATOLOGICAL DATA TAPE.
+Routine prepares climatological input files from the synthetic climatological data tape.
 
-- TAPE1 CONTAINS THE SYNTHETIC RAIN PARAMETERS, ALPHA AND BETA.
-- DATA4 CONTAINS THE SELECTED DAILY PRECIPITATION VALUES.
-- DATA7 CONTAINS THE SELECTED AVERAGE DAILY TEMPERATURES.
-- DATA11 CONTAINS THE NAME OF THE SELECTED CITY, THE EVAPORATIVE ZONE DEPTH, THE
-  VEGETATION TYPE, MAX LAI, PLANTING AND HARVESTING DATES.
-- DATA13 CONTAINS THE SELECTED SOLAR RADIATION VALUES.
+Available functions:
+- TAPE1 contains the synthetic rain parameters, alpha and beta.
+- DATA4 contains the selected daily precipitation values.
+- DATA7 contains the selected average daily temperatures.
+- DATA11 contains the name of the selected city, the evaporative zone depth, the
+         vegetation type, maz lai, planting and harvesting dates.
+- DATA13 contains the selected solar radiation values.
 """
-
