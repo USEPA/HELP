@@ -15,17 +15,15 @@ COLOR 12, 0: KEY OFF: CLS : LOCATE 1, 1, O
 1062 PRINT "                Û       Û      Û             Û            Û   "
 1070 PRINT "               ÜÛÜ     ÜÛÜ    ÜÛÜÜÜÜÜÜÜÛ    ÜÛÜÜÜÜÜÜÛ    ÜÛÜ  "
 1080 PRINT : COLOR 6, 0
-1090 PRINT "                          Version 3.07   1 November 1997"
+1090 PRINT "                          Version .01   9 August 2019"
 1100 PRINT : COLOR 10, 0
 1110 PRINT "                 ษอออออออออออออออออออออออออออออออออออออออออออออป"
-1120 PRINT "                 บ"; : COLOR 11: PRINT "                Developed by                 "; : COLOR 10: PRINT "บ"
-1150 PRINT "                 บ"; : COLOR 11: PRINT "          Environmental Laboratory           "; : COLOR 10: PRINT "บ"
-1160 PRINT "                 บ"; : COLOR 11: PRINT "      USAE Waterways Experiment Station      "; : COLOR 10: PRINT "บ"
-1180 PRINT "                 บ"; : COLOR 11: PRINT "      Vicksburg, Mississippi 39180-6199      "; : COLOR 10: PRINT "บ"
-1121 PRINT "                 บ"; : COLOR 11: PRINT "                                             "; : COLOR 10: PRINT "บ"
-1151 PRINT "                 บ"; : COLOR 11: PRINT "                    for                      "; : COLOR 10: PRINT "บ"
-1161 PRINT "                 บ"; : COLOR 11: PRINT " USEPA Risk Reduction Engineering Laboratory "; : COLOR 10: PRINT "บ"
-1181 PRINT "                 บ"; : COLOR 11: PRINT "           Cincinnati, Ohio 45268            "; : COLOR 10: PRINT "บ"
+1120 PRINT "                 บ"; : COLOR 11: PRINT "                        Developed by                             "; : COLOR 10: PRINT "บ"
+1150 PRINT "                 บ"; : COLOR 11: PRINT "         U.S. E.P.A, Office of Research & Development            "; : COLOR 10: PRINT "บ"
+1160 PRINT "                 บ"; : COLOR 11: PRINT " Center for Environmental Solutions & Emergency Response (CESER) "; : COLOR 10: PRINT "บ"
+1180 PRINT "                 บ"; : COLOR 11: PRINT "        Land Remediation & Technology Division (LRTD)            "; : COLOR 10: PRINT "บ"
+1121 PRINT "                 บ"; : COLOR 11: PRINT "       Environmental Decision Analytics Branch (EDAB)            "; : COLOR 10: PRINT "บ"
+1181 PRINT "                 บ"; : COLOR 11: PRINT "           Cincinnati, Ohio 45246                                "; : COLOR 10: PRINT "บ"
 1190 PRINT "                 ศอออออออออออออออออออออออออออออออออออออออออออออผ"
 1200 PRINT : COLOR 15, 0
 1220 PRINT "                           Press any key to continue...";

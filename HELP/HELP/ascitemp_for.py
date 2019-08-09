@@ -4,10 +4,16 @@
 # young.daniel@epa.gov
 
 """
-ROUTINE CONVERTS AN ASCII FILE TO A FORMATTED FILE CONTAINING DAILY VALUES.
+Routine converts an ASCII file to a formatted file contianing daily values.
 
-EACH LINE OF OUTPUT CONSISTS OF THE YEAR, TEN DATA VALUES, AND THE LINE NUMBER.
-PROGRAM SCANT
-Temperature
+Each line of output consists of the year, ten data values, and line number.
+Available functions:
+- Program Scans
+- Temperature
+- Add data to existing file
+- Create new master file
+- Write first screen to input file name the user wishes to use as input
+- File is assumed to be ASCII file and will be output as formatted file called
+    "Data?.tmp". ? = (4=rain 7=temp 13=srad)
+- Enter year of the temperature data
 """
-

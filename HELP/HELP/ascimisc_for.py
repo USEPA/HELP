@@ -5,5 +5,8 @@
 
 
 """
-Used to print output to file in a grid format. References cells, rows, cols, etc.
+Used to print output to file in a grid format.
+
+Available functions:
+- References cells, rows, columns, etc.
 """
