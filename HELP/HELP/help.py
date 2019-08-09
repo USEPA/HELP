@@ -21,10 +21,10 @@ https://github.com/mgaitan/fortran_magic/issues/9
 
 from ctypes import CDLL, POINTER, c_double, c_int, byref
 import numpy
+import numpy as np
 
 from cffi import FFI
+
 ffi = FFI()
 ffi.cdef("void add(double *in_data, double *out_data, int n);")
 mylib = ffi.dlopen("mylib.so")
-
-import numpy as np
