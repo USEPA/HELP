@@ -1063,7 +1063,7 @@ class TransactionTestCase(SimpleTestCase):
                         # serialized data.
                         self.serialized_rollback and
                         hasattr(connections[db_name],
-                                    '_test_serialized_contents')
+                            '_test_serialized_contents')
                     )
             )
             call_command('flush', verbosity=0, interactive=False,
