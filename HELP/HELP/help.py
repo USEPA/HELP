@@ -16,6 +16,7 @@ https://www.fortran90.org/src/rosetta.html
 https://www.numfys.net/howto/F2PY/
 https://www.youtube.com/watch?v=3G8R92Vx-dY
 https://bitbucket.org/chris_richardson/ctypes-demo/src/master/
+https://github.com/mgaitan/fortran_magic/issues/9
 """
 
 from ctypes import CDLL, POINTER, c_double, c_int, byref
