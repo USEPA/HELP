@@ -1,4 +1,4 @@
-# ascitemp_for.py (help)
+# ascitemp_for.py (Temperature)
 # !/usr/bin/env python3
 # coding=utf-8
 # young.daniel@epa.gov
