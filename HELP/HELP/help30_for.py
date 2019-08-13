@@ -20,7 +20,8 @@ Common Abbreviations:
 - CLIM – Climate (pertaining to data file types)
 """
 
-# Note: "SOURCE" folder contains the source code for HELP3 written in Fortran 77.
+# Note: "SOURCE" folder contains the source code for HELP3 written in
+# Fortran 77.
 # Needs converted to Fortran 90 then to C.
 # .ASC files contain textual representations of binary information for the SW.
 # VB files .BAS contains application screenshots, etc.
