@@ -1,4 +1,4 @@
-# ascirad_for.py (help)
+# ascirad_for.py (SolarRadiation)
 # !/usr/bin/env python3
 # coding=utf-8
 # young.daniel@epa.gov
