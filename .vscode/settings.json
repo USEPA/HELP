@@ -4,12 +4,9 @@
     ],
     "python.linting.pep8Enabled": true,
     "python.linting.pydocstyleEnabled": false,
-    "python.linting.enabled": true
-
-    {
-        "fortran.includePaths": [
+    "python.linting.enabled": true,
+    "fortran.includePaths": [
             "/usr/local/include",
              "/usr/local"
         ]
     }
-}
