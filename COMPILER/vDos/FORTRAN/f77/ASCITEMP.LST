@@ -1,1 +1,209 @@
-Bad command or file name
+RM/FORTRAN Compiler (V2.42)                                         Page     1
+Source File: ASCITEMP.FOR          Options: /ile             08/14/;9 12:01:20 
+ 
+   2 !
+     ?
+1 ** ERROR 022: 
+   3 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    2
+   4 !********************************************************************
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    3
+   5 !    THIS ROUTINE CONVERTS AN ASCII FILE TO A FORMATTED FILE
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    4
+   6 !    CONTAINING DAILY VALUES.  EACH LINE OF OUTPUT CONSISTS OF
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    5
+   7 !    THE YEAR,  TEN DATA VALUES, AND THE LINE NUMBER.
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    6
+   8 !********************************************************************
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    7
+  18 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE    8
+  19 !  INITIALIZE VARIBLES
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   18
+  20 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   19
+  28 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   20
+  29 ! READ INPUT PARAMETERS - CITY, STATE, AND DATA UNITS.
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   28
+  30 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   29
+  67 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   30
+  68 !       SEE IF THEY WANT TO ADD DATA TO EXISTING FILE
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   67
+RM/FORTRAN Compiler (V2.42)                                         Page     2
+Source File: ASCITEMP.FOR          Options: /ile             08/14/;9 12:01:20 
+ 
+  69 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   68
+ 112 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE   69
+ 113 !  CREATE NEW MASTER FILE
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  112
+ 114 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  113
+ 125 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  114
+ 126 !       WRITE FIRST SCREEN TO INPUT FILE NAME THE USER WISHES TO USE AS
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  125
+ 127 !       INPUT - FILE IS ASSUMED TO BE ASCII FILE AND WILL BE OUTPUT AS
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  126
+ 128 !       FORMATTED FILE CALLED "DATA?.TMP". ? = (4=rain 7=temp 13=srad)
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  127
+ 129 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  128
+ 153 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  129
+ 154 !   CHECK FOR ESC TO EXIT
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  153
+ 155 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  154
+ 182 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  155
+ 183 !     Check for leap year.
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  182
+ 184 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  183
+RM/FORTRAN Compiler (V2.42)                                         Page     3
+Source File: ASCITEMP.FOR          Options: /ile             08/14/;9 12:01:20 
+ 
+ 192 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  184
+ 193 !     INITIALIZE ARRAY AND READ INPUT FILE
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  192
+ 194 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  193
+ 206 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  194
+ 207 !  TO MUCH DATA IN INPUT FILE
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  206
+ 208 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  207
+ 215 !
+     ?
+1 ** WARNING 116: 
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  208
+ 216 !  CHECK IF NOT ENOUGH DATA
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  215
+ 217 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  216
+ 225 !
+     ?
+1 ** WARNING 116: 
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  217
+ 226 !  NOT ENOUGH DATA IN INPUT FILE
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  225
+ 227 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  226
+ 239 !
+     ?
+1 ** WARNING 116: 
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  227
+ 240 !  CHECK IF DATA NEEDS UNITS CONVERTED
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  239
+RM/FORTRAN Compiler (V2.42)                                         Page     4
+Source File: ASCITEMP.FOR          Options: /ile             08/14/;9 12:01:20 
+ 
+ 241 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  240
+ 253 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  241
+ 254 !  WRITE DATA TO MASTER FILE FORMATTED
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  253
+ 255 !
+     ?
+1 ** ERROR 022: 
+    PREVIOUS ERROR WAS AT LINE  254
+
+
+LAST ERROR WAS AT LINE  255

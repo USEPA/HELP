@@ -1,0 +1,381 @@
+'
+' Installation Script file for the HELP Model Version 3.0
+'        There is a 400 line maximum for any one script file.  However,
+'        this limitation can be overcome by using the SCRIPT command.
+
+BACKGROUND ~0\install.bin ' display binary file as background (see READ.ME)
+LANGUAGE ENGLISH   'French, German and Spanish are also supported.
+
+BORDER 1            ' single line borders. 2 = double, 0 = no border
+PAUSE 300           ' 3 second delay
+TELESCOPE ON        ' turn on telescoping windows for the rest of the messages
+SHADOW OFF
+' display all messages from this point on without "shadowed" window
+' the default is "OFF".  This feature can be turned on and off as many
+' times as you want
+
+WINOPEN  0 0 31
+"                                                   "
+"           Hard Disk Storage Requirements          "
+"                                                   "
+"       Complete Installation           9.0 MB      "
+"                                                   "
+"       User Interface and Model        2.4 MB      "
+"       Default Precipitation           1.6 MB      "
+"       Example Data Files              1.4 MB      "
+"       Source Code                     1.5 MB      "
+"       User Guide and Documentation    2.1 MB      "
+"        (Adobe Acrobat PDF Files)                  "
+"                                                   "
+"        Do you want to continue installation?      "
+"                                                   "
+"             Enter Y for yes or N for no.          "
+"                                                   "
+
+ASK 58 19
+
+WINCLOSE
+
+JUMP.NO to_end2
+
+' Tell INSTALL the minimum amount of required disk space
+
+SPACE 2400                      ' 2400k   user files.
+
+'  Prompt for the drive to install to:
+
+DRIVE C 0 12 31 15 32 14 79
+
+'         C = drive C, the pre-stuffed drive letter
+'         0 = center window horizontally
+'        12 =              and  12  rows down
+'        31 = blue background and high intensity white foreground
+'        15 = input on a black background w/ high intensity white letters
+'        32 = error message located at 32 characters across
+'        14 =                      and 14 rows down
+'        79 = any error message will appear in a red window with
+'             high intensity white letters
+
+' After  the user selects a drive and presses [Enter], the first  thing
+' the  DRIVE command does is make sure the drive exists.  Next it  will
+' check  for the required disk space.  If the drive does not exist,  or
+' there is not enough space, an error message appears, and the user  is
+' required to pick a different drive, or quit.
+
+' Prompt with default path \HELP3
+'
+PATH \HELP3 0 12 31 15 32 14 79
+
+' the numbers above represent window locations and colors.  See the
+' documentation for more details
+
+COPY ~0\PKUNZIP.EXE ~1~2 0 0 31
+COPY ~0\README.* ~1~2 0 0 31
+
+WINOPEN  0 0 31
+"                                             "
+"  Do you want to install the user interface  "
+"      and executable simulation model?       "
+"           (needed to run program)           "
+"                                             "
+"         Enter Y for yes or N for no.        "
+"                                             "
+
+ASK 58 14
+
+WINCLOSE
+
+JUMP.NO to_tape3
+
+' the numbers above represent window locations and colors.  See the
+' documentation for more details
+
+WINOPEN  0 0 31
+"                                                 "
+"     Do you want to install the version that     "
+"           requires a math coprocessor?          "
+"                                                 "
+"   (The version requiring a math coprocessor     "
+"    runs more than 10 times faster and uses      "
+"    more precision in its computations than the  "
+"    version not requiring a math coprocessor.)   "
+"                                                 "
+"          Enter Y for yes or N for no.           "
+"                                                 "
+
+ASK 58 16
+
+WINCLOSE
+
+JUMP.NO to_no87
+
+WINOPEN  0 0 31
+"                                                          "
+"     The installation routine will now perform a test     "
+"          to determine whether the program will           "
+"             recognize your math coprocessor.             "
+"                                                          "
+"             Strike any key to start the test.            "
+"                                                          "
+
+WINCLOSE
+
+SHELL
+
+"~0\testmath"
+"pause"
+
+WINOPEN  0 0 31
+"                                                      "
+"       Was the test successful?  If so, enter Y.      "
+"                                                      "
+"     If a 4001 error was produced, enter N and the    "
+"     no math coprocessor version will be installed.   "
+"                                                      "
+
+ASK 63 11
+
+WINCLOSE
+
+JUMP.NO to_no87
+
+SHELL
+
+"~1~2\pkunzip -o ~0\USER.ZIP ~1~2"
+"~1~2\pkunzip -o ~0\USER87.ZIP ~1~2"
+
+JUMP to_tape3
+
+:to_no87
+
+SHELL
+
+"~1~2\pkunzip -o ~0\USER.ZIP ~1~2"
+"~1~2\pkunzip -o ~0\USERNO.ZIP ~1~2"
+
+
+:to_tape3
+
+'*************************** TAPE3 **********************************
+
+WINOPEN  0 0 31
+"                                           "
+"      Do you want to install default       "
+"      historical precipitation data?       "
+"                (optional)                 "
+"                                           "
+"       Enter Y for yes or N for no.        "
+"                                           "
+
+ASK 58 14
+
+JUMP.NO to_examples
+
+WINOPEN  13 13 31
+
+"                                                   "
+"    Do you want to install it on the hard disk?    "
+"                                                   "
+"         Enter Y for yes or N for no.              "
+"                                                   "
+
+ASK 55 17
+
+WINCLOSE
+
+WINCLOSE
+
+COPY ~0\TAPE3A.ZIP ~1~2 0 0 31
+
+DISK 2 TAPE3N.ZIP 0 0 31
+
+COPY ~0\TAPE3N.ZIP ~1~2 0 0 31
+
+JUMP.NO to_floppy
+
+SPACE 1400                      ' 1440k   user files.
+
+SHELL
+"~1"
+"cd ~2"
+"~1~2\pkunzip -o TAPE3A.ZIP"
+"~1~2\pkunzip -o TAPE3N.ZIP"
+"ERASE tape3A.zip"
+"ERASE tape3N.zip"
+
+JUMP over_floppy
+
+:to_floppy
+
+'-----------------------STORE TO FLOPPIES GOES HERE-------------
+
+WINOPEN  0 0 78
+"                                                  "
+"    Replace installation diskette with a blank    "
+"     formatted 3 and 1/2-inch DS/HD diskette.     "
+"                                                  "
+"        Enter Y after replacing diskette.         "
+"                                                  "
+
+ASK 58 14
+
+WINCLOSE
+
+SHELL
+
+"~1~2\pkunzip -o ~1~2\TAPE3A.ZIP ~0"
+"~1~2\pkunzip -o ~1~2\TAPE3N.ZIP ~0"
+"~1"
+"CD ~2"
+"ERASE TAPE3A.ZIP"
+"ERASE TAPE3N.ZIP"
+
+JUMP over_floppy
+
+:to_examples
+
+WINCLOSE
+
+:over_floppy
+
+'************************ EXAMPLES **********************************
+
+WINOPEN  0 0 31
+"                                                                 "
+"    Do you want to install example data files used by the HELP   "
+"        simulation program and weather data import options?      "
+"                             (optional)                          "
+"                                                                 "
+"                    Enter Y for yes or N for no.                 "
+"                                                                 "
+"      If yes, the files will be installed on your hard disk      "
+"         in a subdirectory called ~1~2\EXAMPLES."
+"                                                                 "
+
+ASK 58 13
+
+WINCLOSE
+
+JUMP.NO to_source
+
+SPACE 1020                      ' 1020k   user files.
+
+EXIST ~1~2\EXAMPLES
+
+JUMP.YES skip_md
+
+MD ~1~2\EXAMPLES
+
+:skip_md
+
+DISK 2 EXAMPLES.ZIP 0 0 31
+
+SHELL
+
+"~1~2\pkunzip -o ~0\EXAMPLES.ZIP ~1~2\EXAMPLES"
+
+:to_source
+
+'***********************  SOURCE   **********************************
+
+WINOPEN  0 0 31
+"                                                             "
+"     Do you want to install the HELP Model source code?      "
+"                           (optional)                        "
+"                                                             "
+"                  Enter Y for yes or N for no.               "
+"                                                             "
+"    If yes, the files will be installed on your hard disk    "
+"       in a subdirectory called ~1~2\SOURCE. "
+"                                                             "
+
+ASK 58 12
+
+WINCLOSE
+
+JUMP.NO to_doc
+
+DISK 2 SOURCE.ZIP 0 0 31
+
+SPACE 1440                      ' 1020k   user files.
+
+EXIST ~1~2\SOURCE
+
+JUMP.YES skip_md2
+
+MD ~1~2\SOURCE
+
+:skip_md2
+
+SHELL
+
+"~1~2\pkunzip -o ~0\SOURCE.ZIP ~1~2\SOURCE"
+
+:to_doc
+
+'***********************  DOCUMENTS   *******************************
+WINOPEN  0 0 31
+"                                                  "
+"     Do you want to install the user guide and    "
+"       engineering documentation?  (optional)     "
+"                                                  "
+"            Enter Y for yes or N for no.          "
+"                                                  "
+"     If yes, the reports will be installed as     "
+"       PDF files in subdirectory ~1~2\DOC.        "
+"           Use Adobe Acrobat 3.0 Reader           "
+"           to view and print the files.           "
+"                                                  "
+"    The user guide is called HELP3USE.PDF.        "
+"    The documentation is called HELP3DOC.PDF.     "
+"                                                  "
+ASK 63 10
+
+WINCLOSE
+
+JUMP.NO to_end
+
+DISK 2 H3USEPDF.ZIP 0 0 31
+
+SPACE 2750                      ' 1020k   user files.
+
+EXIST ~1~2\DOC
+
+JUMP.YES skip_md3
+
+MD ~1~2\DOC
+
+:skip_md3
+
+SHELL
+
+"~1~2\pkunzip -o ~0\H3USEPDF.ZIP ~1~2\DOC"
+
+DISK 3 H3DOCPDF.ZIP 0 0 31
+
+SHELL
+
+"~1~2\PKUNZIP -o ~0\H3DOCPDF.ZIP ~1~2\DOC"
+
+:to_end
+
+WINOPEN  0 0 31
+"                                          "
+"          Installation completed.         "
+"                                          "
+"       Type HELP3 at the DOS prompt       "
+"          in ~1~2 subdirectory            "
+"           to start the program.          "
+"                                          "
+"           Press [Enter] to end.          "
+"                                          "
+
+wait   53 15
+DELETE ~1~2\PKUNZIP.EXE 0 0 31
+
+:to_end2
+SHELL
+"~1"
+"CD\"
+"CD ~2"
+END
