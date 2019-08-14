@@ -1,0 +1,64 @@
+rem vDos has a few configuration options, you eventually set them in this file.
+rem Don't try to include DOS config.sys or Windows config.nt settings like FILES= or KEYB=, that won't work!
+
+rem <value>: A numeric value or string.
+rem [value]: Parameter is optional.
+
+
+REM Keyboard and mouse
+REM ==================
+rem Ctrl+V pastes text from the Windows Clipboard. If your program however needs Ctrl+V itself:
+rem CTRL+V = OFF
+    
+rem In text mode the mouse is disabled.
+rem Some programs just handle the mouse badly (being able to leave the window), to turn it on:
+rem MOUSE = ON
+
+
+REM Font
+REM ====
+rem Text is displayed by a built-in scalable TTF font, optimized for DOS programs.
+rem To use another (monospaced) font, copy the font file (consola.ttf...) to the vDos folder, then:
+rem FONT = CONSOLA
+rem Or more directly, for Windows installed fonts:
+rem FONT = C:\WINDOWS\FONTS\CONSOLA
+rem If no file extension is supplied, .TTF is assumed.
+
+rem ASCII codes 176-223 mostly display a mix of lines/boxes and extended characters.
+rem If characters are displayed while you expect lines/boxes, enforce these by the optional minus sign:
+rem FONT = -[fontname]
+
+
+REM Window
+REM ======
+rem The default vDos window is centered and will cover about (max) 75% of the screen.
+rem This can be changed by WINDOW = [-][max percentage][,left-x-pos:top-y-pos]
+rem In text mode, the window has some extra blank space to the left and right, the minus sign will disable this.
+rem This would give you a full screen view. Mind, it's still a window (in disguise), so it won't obscure any Windows messages:
+rem WINDOW = 100
+rem Alternatively, you can use Alt+Enter to switch to and back from full screen while the program is running.
+
+rem The number of lines and columns in text mode are the standard DOS 25x80.
+rem See for yourself if changing this (minimal 24x80) is useful and supported by your program.
+rem TEXT = 30x100
+
+rem To use a different color scheme in text mode, supply all 16 color values in RGB: (r,g,b), or hexadecimal as in HTML: #RRGGBB.
+rem The original DOS colors (first line is docu):
+rem				0 - Black	1 - Blue	2 - Green 	3 - Aqua 	4 - Red 	5 - Purple	6 - Yellow 	7 - White 	8 - Gray	9 - Lt Blue		10 - Lt Green	11 - Lt Aqua	12 - Lt Red		13- Lt Purple	14 - Lt Yellow	15 - Bright White
+rem COLORS =	(0,0,0)		#0000aa		#00aa00		#00aaaa		(170,0,0)	#aa00aa		#aa5500		#aaaaaa		#555555		#(85,85,255)	#55ff55			#55ffff			#ff5555			#ff55ff			#ffff55			#ffffff
+
+rem Scale the window when in graphics mode: SCALE = <1-9> (that’s 100-900%).
+rem It won't be that nice, A single point is simply enlarged to 2x2 points:
+rem SCALE = 2
+
+
+REM WordPerfect/WordStar
+REM ====================
+rem The WP= directive is specific for use of WordPerfect or Wordstar.
+rem Documentation can be found at: http://www.columbia.edu/~em36/wpdos/vdoswp.html or http://sfwriter.com/ws-vdos.htm.
+
+
+REM Printing
+REM ========
+rem Without explicit settings, printing should mostly work just fine.
+rem If it doesn't, or you want more control over the printer's output: See the Printing.pdf document.

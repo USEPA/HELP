@@ -1,0 +1,76 @@
+             Copyright WordPerfect Corporation 1993
+                       All Rights Reserved
+
+README.CHK                                                 5/14/93
+
+This README file is in DOS text format and is 2 pages long.
+
+Checkbook Management System (CHECKBOOK) helps you manage your
+checkbook and credit cards.  It can track multiple accounts,
+monitor how much you are spending for charitable causes, show you
+your current account balance, and more.  The database is designed
+for use with DataPerfect 2.3.
+
+For information on deleting the sample data in CHECKBOOK, see the
+file titled README.APP.
+
+You may copy and modify this database for your own or your
+company's use.  You may not copy the database and resell it. 
+Please be aware that while WordPerfect Corporation is happy to
+provide support on DataPerfect questions, only limited support is
+available for these predefined databases.  No support is
+available for the databases if they have been modified.
+
+PANELS
+Checkbook was created with a built-in menu to make navigating
+easier.  It contains six panels and eight menu options.  Most of
+your work can be done by accessing one of the menu options. 
+However, if you need to work directly with the panel list, you
+can enter 99 to bypass the menu.
+
+As you tab through each field in a panel, a help message at the
+top of the screen explains what to do while in that field.  Press
+Help (F3) twice for further information about the field.
+
+REPORTS
+Checkbook provides 4 custom reports in addition to Built-In Short
+Reports.  Each report is available from the menu (options 4-5 and
+11-12).  Using DPPrint when running reports is recommended.  For
+more information about DPPrint, see Appendix L: Utilities--
+DPPrint in DataPerfect Reference.
+
+USING THE DATABASE
+Selecting a menu option will access a database panel or will
+begin a report.  The menu options for adding, editing, or looking
+up are described below.
+
+     Menu option 1 allows you to view or edit information about
+     your accounts (e.g., the number, name(s) and address, phone
+     number, and current balance).
+
+     Menu option 2 allows you to view or edit information about
+     deposits (e.g., the deposit slip number, deposit date,
+     currency & coin, method(s) of depositing, deposit amounts
+     and totals, cash received, net deposit, depositor, account,
+     and whether the deposit has appeared on a bank statement).
+
+     Menu option 3 allows you to edit or view the check register,
+     listing the payee, amount, date, purpose, signature line,
+     account, and other information.
+
+     Menu option 4 allows you mark deposits as being cleared or
+     outstanding.
+
+     Menu option 5 allows you to mark checks as being cleared or
+     outstanding.
+
+     Menu option 6 allows you to read notes from the database
+     designer.
+
+The menu options for reports are described below.
+
+     Menu option 11 allows you to select a list of checks and
+     deposits by account number.
+
+     Menu option 12 allows you to select a list of tax-deductible
+     expenses by account number.

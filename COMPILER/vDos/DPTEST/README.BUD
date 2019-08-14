@@ -1,0 +1,108 @@
+             Copyright WordPerfect Corporation 1993
+                       All Rights Reserved
+
+README.CON                                                 5/14/93
+
+This README file is in DOS text format and is 2 pages long.
+
+Checkbook and Budget Management System helps you manage your
+funds by tracking income and expenditures and allowing you to 
+compare your money usage to your budget.  This database is 
+designed for use with DataPerfect 2.3 and DataPerfect TestDrive.
+
+To delete the sample data in BUDGET, see menu entry 17 in the
+database.  For additional information, see also README.APP.
+
+You may copy and modify this database for your own or your
+company's use.  You may not copy the database and resell it. 
+Please be aware that while WordPerfect Corporation is happy to
+provide support on DataPerfect questions, only limited support is
+available for these predefined databases.  No support is
+available for the databases if they have been modified.
+
+PANELS
+Budget was created with a built-in menu to make navigating
+easier.  It contains nine panels and 15 menu options.  Most of
+your work can be done by accessing one of the menu options. 
+However, if you need to work directly with the panel list, you
+can enter 99 to bypass the menu.
+
+As you tab through each field in a panel, a help message at the
+top of the screen explains what to do while in that field.  Press
+Help (F3) twice for further information about the field.
+
+REPORTS
+Checkbook provides 4 custom reports in addition to Built-In Short
+Reports.  Each report is available from the menu (options 11-14.  
+Using DPPrint when running reports is recommended.  For more 
+information about DPPrint, see Appendix L: Utilities--DPPrint in 
+DataPerfect Reference.
+
+USING THE DATABASE
+Selecting a menu option will access a database panel or will
+begin a report.  The menu options for adding, editing, or looking
+up are described below.
+
+     Menu option 1 allows you to view or edit information about
+     your accounts (e.g., the number, name(s) and address, phone
+     number, and current balance).
+
+     Menu option 2 allows you to print a listing of budget
+     categories that you entered through menu item 3.  If you
+     have cleared sample data from the database and have not
+     yet entered your own budget categories, nothing will print.
+
+     Menu option 3 allows you to edit or view budget categories.
+     The Budgets Information panel displays information about 
+     both income and expense budgets.  Specific entries can be
+     accessed through panel links from this panel.
+
+     Menu option 4 allows you to view or edit information about
+     your creditors.  Creditor information includes Account
+     Number, Name, Mailing Address, and Category.  You can assign
+     each creditor to a category through a data link.  Possible 
+     categories might be Credit Card, Auto Loan, Public Utility, 
+     Mortgage Company, etc.
+
+     Menu option 5 allows you to establish defaults for each 
+     account.  Options include Starting Check Number and toggles
+     (Y/N) for Print Check Numbers on Checks, Print Payee Addresses
+     on Checks, and Print Current Date on Checks.
+
+     Menu option 6 allows you to enter check information, including
+     Pay to the Order of, Amount, Budget Category, Account Number,
+     Signed by, and toggles (Y/N) for Tax Deductible, Cleared the 
+     Bank, and Bank Card.
+
+     Menu option 7 allows you to enter deposit information.  It is
+     in the form of a deposit slip, so you can track currency, coin,
+     checks, cash received, net deposit, and category, account,
+     signed by, taxable, and cleared.
+
+     Menu option 8 runs a report that will reconcile your account 
+     based upon your entries.  If you have made no entried into 
+     the database, this report will find nothing to print.
+
+The special menu options for reports are described below.
+
+     Menu option 11 prints a listing of you account statuses.
+
+     Menu option 12 prints a listing of tax-deductible expenses 
+     and taxable income, by account number.
+
+     Menu option 13 prints an accounting of you budget cagetories
+     and how they relate to your income and expenses.  You can select
+     current year (default) or another year.
+
+     Menu option 14 allows you to print checks in one of four
+     formats (8.5" x 11", 3 per page; 8.5" x 7", 1 per page; 9.5" x
+     3.5", tractor feed; and 6" x 2-5/6" tractor feed).
+
+     Menu option 16 is a Definer's Notice, which contains 
+     information from the database designer.
+
+     Menu option 17 explains how to create a new account.  It 
+     also contains information about how to clear the sample data
+     from the database.
+
+     Menu option 18 allows you to remove one account at a time.

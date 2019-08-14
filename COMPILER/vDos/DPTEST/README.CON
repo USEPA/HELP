@@ -1,0 +1,115 @@
+             Copyright WordPerfect Corporation 1993
+                       All Rights Reserved
+
+README.CON                                                 5/14/93
+
+This README file is in DOS text format and is 2 pages long.
+
+Contact Manager helps you manage your business through maintaining
+contact information, to-do items, phone call logs, meeting schedules,
+and notes.  The database is designed for use with DataPerfect 2.3.
+
+For information on deleting the sample data in Contact Manager, see 
+the file titled README.APP.
+
+You may copy and modify this database for your own or your
+company's use.  You may not copy the database and resell it. 
+Please be aware that while WordPerfect Corporation is happy to
+provide support on DataPerfect questions, only limited support is
+available for these predefined databases.  No support is
+available for the databases if they have been modified.
+
+PANELS
+Contact Manager was created with a built-in menu to make navigating
+easier.  It contains seven panels and 16 menu options.  Most of
+your work can be done by accessing one of the menu options. 
+However, if you need to work directly with the panel list, you
+can enter 99 to bypass the menu.
+
+As you tab through each field in a panel, a help message at the
+top of the screen explains what to do while in that field.  Press
+Help (F3) twice for further information about the field.
+
+REPORTS
+Contact Manager provides 10 custom reports in addition to Built-In 
+Short Reports.  Each report is available from the menu (options 10- 
+15 and 20-23).  Using DPPrint when running reports is recommended.  
+For more information about DPPrint, see Appendix L: Utilities--
+DPPrint in DataPerfect Reference.
+
+USING THE DATABASE
+Selecting a menu option will access a database panel or will
+begin a report.  The menu options for adding, editing, or looking
+up are described below.
+
+     Menu option 1 allows you to view or edit information about
+     your contacts (e.g., name(s) and address, phone and fax
+     numbers, etc.).  You can also schedule meetings, to-do items,
+     phone calls, and notes from this entry.
+
+     Menu option 2 allows you to view or edit information about
+     your contacts' location, specifically their postal code, city,
+     state or province, and country.  This information is useful
+     when adding a new contact, as you can perform a lookup on 
+     previously entered data.
+
+     Menu option 3 allows you to edit or view To-Do items for each
+     contact.  You can log to-do notes, priority, and completion 
+     date.  Later, you can archive to-do items that are completed.
+
+     Menu option 4 allows you to edit or view phone calls for each
+     contact.  You can log phone call notes, priority, and 
+     completion date.  Later, you can archive phone call items 
+     that are completed.
+
+     Menu option 5 allows you to edit or view meetings for each
+     contact.  You can log meeting notes, priority, and completion 
+     date.  Later, you can archive meetings that are completed.
+
+     Menu option 6 allows you to enter notes about your contact.
+     You can also schedule meetings, phone calls, and to-do items
+     from this entry.
+
+The menu options for reports are described below.
+
+     Menu option 10 allows you to print a list of To-Do items.
+     You can print items for a range of dates (e.g., a day, week,
+     month, etc.).
+
+     Menu option 11 allows you to print a list of Meetings.  You 
+     can print items for a range of dates (e.g., a day, week, 
+     month, etc.).
+
+     Menu option 12 allows you to print a list of Phone Calls.
+     You can print items for a range of dates (e.g., a day, week,
+     month, etc.).
+
+     Menu option 13 allows you to print a list of all scheduled items.
+     You can print items for a range of dates (e.g., a day, week,
+     month, etc.).
+
+     Menu option 14 allows you to print information about any one or
+     several contacts, including address, phone, and birthdate.
+
+     Menu option 15 creates a WordPerfect secondary merge file (using
+     named fields) of the address information about each contact (first 
+     name, middle name, last name, company, address1, address2, city, 
+     state, zip code, and country).  You can merge the information from
+     this report into a WordPerfect document.  The filename is MERGE.SEC.
+
+Maintenance Reports
+
+     Menu option 20 allows you to select individual contacts and mark
+     them as inactive.  Inactive contacts remain in the database, but
+     are not visible to you.
+
+     Menu option 21 allows you to select individuals who were marked
+     inactive, and restore them to view (return them to activity).
+
+     Menu option 22 allows you to select individual tasks and mark
+     them as completed.  This report places today's date in each of 
+     the Completed date fields for all meetings, to-do items, and
+     phone calls for the selected item.
+
+     Menu option 23 allows you to select individual tasks and delete
+     the associated meetings, to-do items, and phone calls.

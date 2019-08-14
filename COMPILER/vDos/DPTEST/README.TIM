@@ -1,0 +1,193 @@
+                Copyright WordPerfect Corporation 1993
+                          All Rights Reserved
+
+README.TIM                                                     5/14/93
+
+This README file is in DOS text format and is 4 pages long.
+
+Time and Billing lets you track client and billing information
+for an accountant, attorney, engineer, or other professional, or
+for an entire firm.  The database adds the cost of total services
+for each client and lets you print invoices.
+
+For information on deleting the sample data in TIMEBILL, see the
+file titled README.APP.
+
+You may copy and modify this database for your own or your
+company's use.  You may not copy the database and resell it. 
+Please be aware that while WordPerfect Corporation provides
+support on DataPerfect questions, only limited support is
+available for these predefined databases.  No support is
+available for the databases if they have been modified.
+
+PANELS
+Time and Billing contains seven panels.  The main panel, Client
+Information, gives you direct or indirect access to the six
+subpanels.
+
+As you tab through each field in a panel, a help message at the
+top of the screen explains what to do while in that field.  Press
+Help (F3) twice for further information about the field.
+
+CLIENT INFORMATION
+     Type the client name and address.  The Client Number field
+     is self-numbering so each record will be unique.  You can
+     view billing information for the client in this panel. 
+     Panel links let you access the Matter Information and
+     Comments panels.
+
+MATTER INFORMATION
+     If you are going to type information into this panel, you
+     should access it through the Client Information panel link
+     so that all records in this panel will have the
+     corresponding client's name and number.  Type the matter
+     number and description (parking ticket, will, blueprint, and
+     so on) in the Description field.  This panel also displays
+     the balance due for this matter.  Panel links let you access
+     the Time, Expenses, and Payments panels.
+
+COMMENTS
+     If you are going to type information into this panel, you
+     should access it through the Client Information panel link
+     so that all records in this panel will have the
+     corresponding client's name and number.  Each Comments
+     record is self-numbering. Enter any comments on the client
+     or matter in the Comments text field. 
+
+ TIME
+     If you are going to type information into this panel, you
+     should access it through the Matter Information panel link
+     so that all corresponding records in this panel will have
+     the correct client and matter number.  Use military time
+     (24-hour clock) to record information in the Beginning Time
+     and Ending time fields.  Enter the billing rate in the
+     Billing Rate field and add a short description of the job in
+     the Description field.
+
+EXPENSES
+     For each expense charged to the client, create a separate
+     record in Expenses.  Access Expenses through the Matter
+     Information panel so the records will all have the correct
+     client name and number.  Type the amount of the expense in
+     the Amount field.  Type the date in the Date field if it
+     should be anything other than today's date.
+
+     Select the type of expense from the lookup list in the Type
+     field.  Type any explanatory information in the Description
+     text field. 
+
+EXPENSE TYPES
+     Type the kind of expense (phone call, rental car, and so
+     on).
+
+PAYMENTS
+     For each payment received from the client, create a separate
+     record in Payments.  Access Payments through the Matter
+     Information panel link so the records will all have the
+     correct client name and number and the correct matter
+     number.  Type the amount of the payment in the Amount field
+     and the date payment was received if it is other than
+     today's date.
+
+REPORTS
+Time and Billing provides an invoice report in addition to Built-
+In Short Reports.  Using DPPrint when running reports is
+recommended.  For more information about DPPrint, see Appendix L:
+Utilities--DPPrint in DataPerfect Reference.
+
+When you run the report, it prompts for the invoice date and
+prints invoices for all clients that owe money, showing charges
+for services and expenses, payments received, and balance due.
+
+If you want to print out a single invoice or a select group of
+invoices, you can specify search conditions.  To find out more
+about specifying search conditions, see Report, Built-In Short
+(Menu Options) in DataPerfect Reference.
+
+USING THE DATABASE
+When the individual or firm accepts a new client, create a new
+record containing all necessary information in the Client
+Information panel.  Access the Matter Information panel through
+the panel link and create a new record and description for each
+matter.  
+
+From the Matter Information panel, access and complete records in
+the Time, Expenses, and Payments panels.
+
+You can enter all the usual expense types for your firm in the
+Expense Types panel all at once by accessing Expense Types
+directly and creating a new record for each type or you can enter
+types as you enter information about clients in the Expenses
+panel.  If you enter an unlisted expense type in the Type field
+of the Expenses panel, the data link will recognize an unfamiliar
+type and DataPerfect will prompt you to create a record for the
+new type.
+
+As payments arrive from clients, access the appropriate Payments
+record for the client through the Matter Information panel and
+enter the amount of the payment there in the Payments panel. 
+
+At the end of a billing period, run the Invoices report to get
+billing statements for that period.
+
+FORMULAS AND KEEP-A-TOTALS
+This database contains several formulas and keep-a-totals.
+
+     CLIENT INFORMATION
+     If there is a balance due and the last payment date was over
+     thirty days ago, the formula in the Delinquent field
+     displays a Y and the # Days field displays a number
+     representing the number of days payment is overdue.
+
+     COMMENTS
+     The Name field formula displays the client name entered in
+     the Client Information panel.
+
+     MATTER INFORMATION
+     The Name field formula displays the client name entered in
+     the Client Information panel.
+
+     The formula on the Total Charges field adds total time and
+     total expenses to determine to the total charges.
+
+     The formula on the Balance Due field subtracts payments from
+     total charges to determine the balance due.
+
+     The Balance Due field keeps a total to the Balance Due field
+     in the Client Information panel.
+
+     TIME
+     The Elapsed Time field formula subtracts Ending Time from
+     Beginning time to determine elapsed time.
+
+     The Amount Due formula multiplies the value in Elapsed Time
+     by the value in Billing Rate to determine the amount of
+     money due.
+
+     The Date field formula displays the current date.  You can
+     change the date displayed by typing in a new date.
+
+     The Amount Due field keeps a total to the Total Time field
+     in the Matter Information panel.
+
+     EXPENSES
+     The Name field formula displays the client name in the
+     Matter Information panel.
+
+     The Date field formula displays the current date, which can
+     be changed.
+
+     The Amount field keep-a-total calculates and displays total
+     expenses for this matter in the Balance Due Field in the
+     Matter Information panel.
+
+     PAYMENTS
+     The Name field formula displays the client name in the
+     Matter Information panel.
+
+     The Date field formula displays the current date, which can
+     be changed.
+
+     The Amount field keep-a-total calculates and displays total
+     payments for this client in the Total Payments field in the
+     Matter Information panel.
