@@ -18,9 +18,9 @@ f2py-test-package==0.1            # A python package and command-line tools fort
 F2python==1.5.0                   # The F2 DBMS written in Python. Needs ZODB and ZEO to run.
 mypy==0.720                       # Optional static typing for Python.
 numpy==1.17.0                     # 
-pip==19.2.1                       # The PyPA recommended tool for installing Python packages.
+pip==19.2.2                       # The PyPA recommended tool for installing Python packages.
 psycopg2==2.8.3                   #
 pylint==2.3.1                     # python code static checker.
 pytz==2019.2                      # UTC is pytz.timezone('UTC') True.
-setuptools==41.0.1                # Fully-featured library designed to facilitate packaging Python projects.
+setuptools==41.1.0                # Fully-featured library designed to facilitate packaging Python projects.
 sqlparse==0.3.0                   # Non-validating SQL parser.
