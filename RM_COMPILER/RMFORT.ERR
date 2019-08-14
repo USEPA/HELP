@@ -1,0 +1,252 @@
+2                                                                            X
+-1 End of file read                                                          X
+1000 Incorrect ACOS argument                                                 X
+1001 Incorrect DACOS argument                                                X
+1002 Incorrect ASIN argument                                                 X
+1003 Incorrect DASIN argument                                                X
+1004 Incorrect ATAN2 argument                                                X
+1005 Incorrect DATAN2 argument                                               X
+1006 Incorrect COSH argument                                                 X
+1007 Incorrect DCOSH argument                                                X
+1008 Incorrect EXP argument                                                  X
+1009 Incorrect DEXP argument                                                 X
+1010 Incorrect ALOG10 argument                                               X
+1011 Incorrect DLOG10 argument                                               X
+1012 Incorrect ALOG argument                                                 X
+1013 Incorrect DLOG argument                                                 X
+1014 Incorrect CLOG argument                                                 X
+1015 Incorrect MOD argument                                                  X
+1016 Incorrect AMOD argument                                                 X
+1017 Incorrect DMOD argument                                                 X
+1018 Incorrect CDLOG argument                                                X
+1022 Incorrect SINH argument                                                 X
+1023 Incorrect DSINH argument                                                X
+1024 Incorrect SQRT argument                                                 X
+1025 Incorrect DSQRT argument                                                X
+1026 Incorrect TAN argument                                                  X
+1027 Incorrect DTAN argument                                                 X
+1102 Incorrect AINT argument                                                 X
+1104 Incorrect DINT argument                                                 X
+1106 Incorrect ANINT argument                                                X
+1108 Incorrect DNINT argument                                                X
+1110 Incorrect NINT argument                                                 X
+1112 Incorrect NINT argument                                                 X
+1114 Incorrect IDNINT argument                                               X
+1116 Incorrect IDNINT argument                                               X
+1121 Incorrect ABS argument                                                  X
+1122 Incorrect DABS argument                                                 X
+1124 Incorrect CABS argument                                                 X
+1125 Incorrect CDABS argument                                                X
+1126 Incorrect ISIGN argument                                                X
+1128 Incorrect ISIGN argument                                                X
+1130 Incorrect SIGN argument                                                 X
+1132 Incorrect DSIGN argument                                                X
+1134 Incorrect IDIM argument                                                 X
+1136 Incorrect IDIM argument                                                 X
+1138 Incorrect DIM argument                                                  X
+1140 Incorrect DDIM argument                                                 X
+1142 Incorrect MAX0 argument                                                 X
+1144 Incorrect MAX0 argument                                                 X
+1146 Incorrect AMAX1 argument                                                X
+1148 Incorrect DMAX1 argument                                                X
+1150 Incorrect AMAX0 argument                                                X
+1152 Incorrect AMAX0 argument                                                X
+1154 Incorrect MAX1 argument                                                 X
+1156 Incorrect MAX1 argument                                                 X
+1158 Incorrect MIN0 argument                                                 X
+1160 Incorrect MIN0 argument                                                 X
+1162 Incorrect AMIN1 argument                                                X
+1164 Incorrect DMIN1 argument                                                X
+1166 Incorrect AMIN0 argument                                                X
+1168 Incorrect AMIN0 argument                                                X
+1170 Incorrect MIN1 argument                                                 X
+1172 Incorrect MIN1 argument                                                 X
+1174 Incorrect LEN argument                                                  X
+1176 Incorrect LEN argument                                                  X
+1178 Incorrect INDEX argument                                                X
+1180 Incorrect INDEX argument                                                X
+1182 Incorrect AIMAG argument                                                X
+1184 Incorrect CONJG argument                                                X
+1186 Incorrect CSQRT argument                                                X
+1187 Incorrect CDSQRT argument                                               X
+1188 Incorrect CEXP argument                                                 X
+1189 Incorrect CDEXP argument                                                X
+1190 Incorrect SIN argument                                                  X
+1192 Incorrect DSIN argument                                                 X
+1194 Incorrect CSIN argument                                                 X
+1195 Incorrect CDSIN argument                                                X
+1196 Incorrect COS argument                                                  X
+1198 Incorrect DCOS argument                                                 X
+1200 Incorrect CCOS argument                                                 X
+1201 Incorrect CDCOS argument                                                X
+1202 Incorrect ATAN argument                                                 X
+1204 Incorrect DATAN argument                                                X
+1206 Incorrect TANH argument                                                 X
+1208 Incorrect DTANH argument                                                X
+1210 Incorrect ISHL argument                                                 X
+1212 Incorrect ISHA argument                                                 X
+1214 Incorrect ISHC argument                                                 X
+1216 Incorrect IBCLR argument                                                X
+1218 Incorrect IBSET argument                                                X
+1220 Incorrect IBCHNG argument                                               X
+1222 Incorrect BTEST argument                                                X
+1224 Incorrect INTEGER*2 ** INTEGER*2 argument                               X
+1226 Incorrect INTEGER*4 ** INTEGER*4 argument                               X
+1228 Incorrect FLOATING POINT ** INTEGER argument                            X
+1230 Incorrect FLOATING POINT ** FLOATING POINT argument                     X
+1232 Incorrect COMPLEX ** (INTEGER OR FLOATING POINT) argument               X
+1234 Incorrect COMPLEX ** COMPLEX argument                                   X
+1236 Array size too large                                                    X
+2000 BACKSPACE on direct access                                              X
+2001 BACKSPACE on non-existent file                                          X
+2002 BACKSPACE on unconnected file                                           X
+2003 CLOSE of scratch file with KEEP status                                  X
+2004 ENDFILE on unconnected unit                                             X
+2005 ENDFILE on direct access                                                X
+2006 Formatted I/O not allowed                                               X
+2007 Incorrect BLANK argument                                                X
+2008 Incorrect FORM argument                                                 X
+2009 Incorrect STATUS argument                                               X
+2010 OPEN specifies BLANK with unformatted I/O                               X
+2011 OPEN RECL too large                                                     X
+2012 OPEN specifies RECL with sequential access                              X
+2013 OPEN STATUS is NEW but file exists                                      X
+2014 OPEN STATUS is NEW but FILE not specified                               X
+2015 OPEN STATUS is OLD but file does not exist                              X
+2016 OPEN STATUS is OLD but FILE not specified                               X
+2017 OPEN STATUS is SCRATCH but file is named                                X
+2018 REC argument missing                                                    X
+2019 REC argument not allowed                                                X
+2020 REWIND on unconnected unit                                              X
+2021 REWIND on direct access                                                 X
+2022 Unformatted I/O not allowed                                             X
+2023 Unit not connected                                                      X
+2024 OPEN ACCESS is DIRECT but no RECL specified                             X
+2025 Incorrect REC argument                                                  X
+2026 OPEN RECL is negative or zero                                           X
+2500 Apostrophe edit descriptor in input                                     X
+2501 Apostrophe field overflow                                               X
+2502 D or E exponent magnitude too large                                     X
+2503 Format specifier exponent width too large                               X
+2504 Format specifier field exceeds record                                   X
+2505 Format specifier fraction width too large                               X
+2506 Format specifier integer negative                                       X
+2507 Format specifier integer too large                                      X
+2508 Format specifier integer zero                                           X
+2509 Format specifier minimum field width too large                          X
+2510 H edit descriptor not allowed on input                                  X
+2511 Incorrect blanks edit descriptor                                        X
+2512 Incorrect character after format specifier field width                  X
+2514 Incorrect integer in input                                              X
+2515 Incorrect format specifier item start                                   X
+2516 Incorrect format specifier start                                        X
+2517 Incorrect integer character                                             X
+2518 Incorrect logical iolist item                                           X
+2519 Incorrect exponent in input                                             X
+2520 Incorrect repeated edit descriptor                                      X
+2521 Incorrect scale factor                                                  X
+2523 Internal file overflow                                                  X
+2525 Iolist item not integer                                                 X
+2526 Iolist item not logical                                                 X
+2527 Iolist item neither real nor double                                     X
+2528 P missing in format specifier                                           X
+2529 Premature end of format specifier                                       X
+2530 Read after end of field                                                 X
+2531 Record integer too large                                                X
+2532 Record position too high                                                X
+2533 Repeat count zero                                                       X
+2534 Scale factor too large                                                  X
+2535 Scale factor too small                                                  X
+2536 Separator missing in format specifier                                   X
+2537 Too many parentheses in format specifier                                X
+2539 Write after ENDFILE                                                     X
+2540 Incorrect hexadecimal in input                                          X
+2541 Incorrect character constant in list directed input                     X
+2542 Incorrect complex constant in list directed input                       X
+2543 List directed output field too large                                    X
+2544 Separator missing in list directed input                                X
+2545 Premature end of list directed input record                             X
+2548 No repeatable edit descriptor in format specifier                       X
+2549 Read after endfile reported                                             X
+3000 Memory allocation failure                                               X
+3001 Backspace on wrongly positioned formatted file                          X
+3002 Backspace unable to find preceding formatted record                     X
+3003 Backspace unable to read preceding formatted record                     X
+3004 Formatted backspace unable to complete                                  X
+3005 Backspace on wrongly positioned unformatted file                        X
+3006 Backspace unable to find preceding unformatted record                   X
+3007 Backspace unable to read unformatted record's trailer                   X
+3008 Unformatted backspace unable to complete                                X
+3009 Invalid file handle for CLOSE                                           X
+3010 Invalid file handle for DELETE                                          X
+3011 File deletion failure                                                   X
+3012 File opening failure                                                    X
+3013 Formatted direct record length 1 not found                              X
+3014 Read error on formatted direct record length 1                          X
+3015 Formatted direct record not found                                       X
+3016 Read error on formatted direct record                                   X
+3017 Unformatted direct record not found                                     X
+3019 Read error on unformatted sequential record's header                    X
+3020 Read error on unformatted sequential record                             X
+3023 End of file before newline on reading formatted sequential record       X
+3024 Formatted sequential input record too long                              X
+3025 Rewind failure                                                          X
+3026 Unable to position to write formatted direct record length 1            X
+3027 Write error on formatted direct record length 1                         X
+3028 Unable to position to write formatted direct record                     X
+3029 Write error on formatted direct record                                  X
+3030 Unable to position to write unformatted direct record                   X
+3032 Write error on printer control characters                               X
+3033 Write error on formatted sequential record                              X
+3035 No workspace for filename                                               X
+3036 Error in releasing default filename's storage space to operating system X
+3037 Undefined unit for Operating System Interface                           X
+3038 Too many units for Operating System Interface                           X
+3039 Undefined unit for Operating System Interface                           X
+3040 Read error in PAUSE processing                                          X
+3041 Unable to position after reading unformatted direct record              X
+3042 Unable to position to read unformatted sequential record's trailer      X
+3043 Read error on unformatted sequential record's trailer                   X
+3044 Unformatted sequential record length error                              X
+3045 Unable to position to write unformatted direct record                   X
+3046 Attempt to read beyond the end of an unformatted record                 X
+3047 Read error on unformatted record                                        X
+3048 Unable to position to write an unformatted sequential record            X
+3049 Write error on unformatted sequential record's header                   X
+3050 Attempt to write beyond the end of an unformatted record - see /r optionX
+3051 Write error on unformatted record                                       X
+3052 Write error on unformatted sequential record's trailer                  X
+3053 Unable to position to write unformatted sequential record's header      X
+3054 Write error on unformatted sequential record's header                   X
+3055 Unable to position after writing unformatted sequential record          X
+3070 Error in reading PSP's parameter area                                   X
+3071 No workspace for I/O record buffer                                      X
+3072 Unable to release unused memory to operating system                     X
+3073 Error in invoking a user command in PAUSE processing                    X
+3074 Error in releasing previously allocated memory to operating system      X
+3075 Undefined unit for opening a file                                       X
+3076 Write error on final use of standard output                             X
+3077 Error in releasing a filename's storage space to operating system       X
+3078 Cannot find Command Processor name in PAUSE processing                  X
+3079 Error in getting operating system version                               X
+3080 Endfile write error                                                     X
+3081 Read error on unformatted direct record                                 X
+3082 Read error on unformatted sequential record                             X
+3083 Unformatted sequential record length error                              X
+3084 Write error on unformatted direct record                                X
+3085 Write error on unformatted sequential record                            X
+3086 Unformatted record too long                                             X
+3087 Read error on formatted sequential record                               X
+3088 Incorrect maximum record length option                                  X
+3089 File positioning failure for appending                                  X
+3110 Error in getting file information                                       X
+4000 Runtime Error                                                           X
+4001 RMFORT requires math coprocessor                                        X
+4002 Incorrect DOS Version                                                   X
+5001 I/O error closing Debug file                                            X
+5002 I/O error reading Debug file                                            X
+5003 Unexpected EOF on Debug command file                                    X
+5004 I/O error writing Debug file                                            X
+5005 Must have a /t compiled main program for Debug                          X
+5006 Internal error in Debug                                                 X
+
