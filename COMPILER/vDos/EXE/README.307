@@ -1,0 +1,296 @@
+   
+
+                  HELP Version 3.07 Revision (11/1/97)
+   
+   A number of revisions of HELP Version 3.06 has been made to create
+   HELP Version 3.07.  Some of the revisions involve cleaning of the
+   HELP3O source code and clearing the compilation of warnings that may
+   not be handled by other compilers.  Others are corrections of the 
+   HELP3O.EXE simulation code.
+   
+    1.  Initialization of variables for other compilers.
+
+    2.  Prevention of division by zero error due to zero drainage slope 
+          or drainage length.
+
+    3.  Corrected computation of daily location in the growing season.
+
+    4.  Corrected computation of snowmelt factor for latitudes between
+          50 and 60 degrees.
+
+    5.  Corrected printing of initial soil water from Version 3.06.
+  
+
+
+                  HELP Version 3.06 Revision (8/17/96)
+   
+   HELP Version 3.05a was released without updating the source code,
+   the example problem, main menu and logo screens.  Version 3.06  
+   provides the final updates started in Version 3.05a.  In addition,
+   the following improvements were made:                
+   
+    1.  Modification of the Canadian weather data import utilities to 
+        better accomodate missing data and incomplete data files. 
+
+   
+
+                  HELP Version 3.05a Revision (6/5/96)
+   
+   A number of revisions of HELP Version 3.05 has been made to create
+   HELP Version 3.05a.  All of the revisions involve cleaning of the
+   HELP3O source code and clearing the compilation of warnings that may
+   not be handled by other compilers.  Examples include:
+   
+    1.  Elimination of unused variables.
+   
+    2.  Initialization of variables.
+
+    3.  Matching variable descriptions and lengths in all subroutines.
+
+    4.  Matching common block size in all subroutines.
+
+    5.  Eliminating unused labels.
+
+
+
+                  HELP Version 3.05 Revision (3/30/96)
+   
+   A number of revisions of HELP Version 3.04a has been made to create
+   HELP Version 3.05.  The revisions include:
+   
+    1.  Corrected the snowmelt factors in the simulation program HELP3O,
+        reducing the daily snowmelt by about a factor of 5.
+   
+    2.  Modified the default path for viewing and printing output in
+        the H3MENU program.
+   
+    3.  Corrected the H3MENU program to close guidance file before
+        executing another menu option.
+
+    4.  Corrected soil and design data error checking in the DESIGN program.
+
+    5.  Corrected the printing of peak leachate recirculation results in
+        the simulation program HELP3O.
+
+    6.  Updated version number, example and source codes.
+
+                                                                               
+   
+                  HELP Version 3.04a Revision (8/05/95)
+   
+    1.  The MOUND equation was replaced with McEnroe's equations for
+        all cases except for near-zero slope conditions (<0.3%).
+   
+   
+
+                  HELP Version 3.04 Revisions (4/10/95)
+   
+   A number of revisions to HELP Version 3.03 have been made to create
+   HELP Version 3.04.  The revisions include:
+   
+    1.  Corrected the directory and path routines in the WEATHER, DESIGN
+        OUTPUT programs to handle the root directory and not put or
+        allow multiple \'s at the end of the path.
+
+    2.  Changed the path routines in the WEATHER and DESIGN programs to
+        retain the paths used in the edit screen and use it as the 
+        default in the save routine.  Similarly, the OUTPUT program was
+        changed to retain the paths used in the previous execution of
+        the simulation routine.
+
+    3.  Changed the labels for heads values in the output from the HELP3O
+        program to consistently state "AVERAGE HEAD ON TOP OF LAYER" for 
+        all levels of output.  Also, the layer number was corrected for
+        composite liners to report the layer number of the uppermost liner
+        of the composite system when reporting the head values.
+
+    4.  Added a check in the WEATHER program to verify that the specified
+        evaporative zone depth is greater than zero. 
+        
+    5.  Corrected default normal mean monthly rainfall for Knoxville, TN
+        and default growing season for Topeka, KS in TAPE2.NEW.  
+        
+    6.  Added printing of the latitude used to generate synthetic solar 
+        radiation to the output from simulation program (HELP3O).
+        
+    7.  Added printing of the evaporative zone depth under the heading of
+        evapotranspiration data in the simulation program (HELP3O).
+        
+    8.  Corrected the synthetic weather generator (program SYNGEN) to adjust 
+        for latitude and to work for locations in the southern hemisphere.
+        
+    9.  Added instructions in the WEATHER program and help messages to inform
+        users to use negative values for latitudes in the southern hemisphere.
+        
+   10.  Corrected import of HELP Version 2 temperature and solar radiation   
+        data in the WEATHER program to include the years of the data, which is
+        needed for execution of the simulation.
+        
+   11.  Corrected reading of evapotranspiration data file in HELP3O simulation
+        program for data that was built by converting from conventional to 
+        metric units.
+        
+   12.  Corrected lateral drainage solution for larger heads and condition for 
+        use of nonlinear approximation of lateral drainage solution in the 
+        simulation program HELP3O.  Previous error leads to a somewhat high
+        estimate (perhaps 50% too large) of the peak head when greater than
+        about six inches.
+        
+   13.  Added computation of the maximum head for the peak average heads using
+        the MOUND equation by Moore (1983) for steady-state drainage and 
+        listed the results in peak output section of the simulation results 
+        from the program HELP3O.
+   
+   14.  Modified daily evaporative zone moisture content output to be the end
+        of day value instead of value at midpoint of last timestep in the 
+        daily output from the simulation program HELP3O.  
+   
+   15.  Changed timestep calculation to account properly for units.  The 
+        timestep may increase in some cases and speed up the simulation in
+        program HELP3O. 
+   
+   16.  Corrected evapotranspiration from frozen soil, preventing evaporation 
+        from the soil whenever it is frozen or the mean temperature is less 
+        than -5 degrees Celsius in simulation program HELP3O.  Similarly, 
+        drainage is restricted from the evaporative zone when the soil is 
+        frozen.
+   
+   17.  Modified drainage routines to reduce total daily evapotranspiration
+        if previous unsaturated drainage during the day lowered the soil to 
+        the point where applying the remainder of the daily evapotranspiration
+        would lower the soil moisture below the wilting point.  This prevents
+        the soil moisture from falling below the wilting point under any 
+        circumstance during the simulation with program HELP3O.
+   
+   18.  Modified drainage routines in program HELP3O to permit drainage from
+        the evaporative zone only when the moisture content of the segment is
+        above field capacity, there is drainage into the segment or the
+        segment directly below has greater soil suction.  The same rules are
+        applied to vertical percolation layers placed below the lowest liner.
+
+   19.  Fixed the printing of the number of years for synthetic weather 
+        generation in program WEATHER.
+
+   20.  Corrected yearly initialization of ponded water in the simulation 
+        program HELP3O.
+   
+   21.  Corrected computation of layer soil moisture at end of the simulation
+        or the initialization when no liners are used in program HELP3O.
+   
+   22.  Updated version number, example and source codes.
+   
+
+ 
+
+
+                  HELP Version 3.03 Revisions (12/31/94)
+   
+   A number of revisions to HELP Version 3.02 have been made to create
+   HELP Version 3.03.  The revisions include:
+   
+    1.  Corrected the printing of area and label for recirculation into
+        a layer when metric units are used.
+
+    2.  Corrected the calculation of volumetric totals for water budget
+        components in cubic metres due to error in units conversion for
+        area in HELP3O program.
+
+    3.  Corrected initialization of subsurface inflow and annual 
+        initialization of recirculation variables, snow metric totals
+        and soil water metric totals in HELP3O program.
+   
+    4.  Corrected distribution of subsurface inflow in HELP3O program.
+   
+    5.  Corrected HELP3.BAT file to prevent changing of screen colors.
+   
+    6.  Prevented copying of empty year of weather data in create/edit
+        option in WEATHER.EXE file, eliminating potential for locking up
+        the keyboard and loss of data.
+   
+    7.  Updated version number and source codes.
+
+                                                                              
+   
+                                                                             
+                  HELP Version 3.02 Revisions (11/21/94)
+   
+   A number of revisions to HELP Version 3.01 have been made to create
+   HELP Version 3.02.  The revisions include:
+   
+    1.  Corrected reading of default evapotranspiration data for the
+        states of IOWA, OHIO and UTAH in WEATHER.EXE file.
+   
+    2.  Corrected access to synthetic weather generator for a number of
+        cities having a name starting with a four letter word such as
+        Fort Smith or Reno and similarly insured access to all default
+        weather data, revising WEATHER.EXE and TAPE2.NEW files.
+   
+    3.  Modified WEATHER, DESIGN and OUTPUT programs to clear screen upon
+        exiting the programs.
+   
+    4.  Corrected a label of the percolation/leakage output in HELP3O
+        program.
+   
+    5.  Updated version number and source codes.
+
+
+   
+                  HELP Version 3.01 Revisions (10/14/94)
+   
+   A number of revisions to HELP Version 3.00 have been made to create
+   HELP Version 3.01.  The revisions include:
+   
+    1.  Corrected head computation in subroutine HEAD of HELP3O simulation
+        code caused by incorrect passing of variables and decreasing
+        round off tolerance.
+   
+    2.  Change the order for computing head in subroutine DRAIN of HELP3O
+        simulation code to eliminate need for separate subroutine to
+        calculate initial head and to simplify routine.
+   
+    3.  Improved printing of daily output in subroutine OUTDAY of HELP3O
+        simulation code.
+   
+    4.  Corrected printing of daily output in subroutine OUTDAY of HELP3O
+        simulation code for designs employing more than
+        three subprofiles.
+   
+    5.  Correct HELP3O main program to permit simulation of designs having
+        more than three subprofiles.
+   
+    6.  Added a sort routine to alphabetize the listing of files when
+        performing a directory at any point in the user interface.
+   
+    7.  Added a feature to retain and list the name of the output file for
+        viewing or printing after executing a simulation during the session.
+   
+    8.  Modified the HELP Version 2 precipitation data import routine to
+        allow it to also import CREAMS or GLEAMS precipitation data files
+        or CLIGEN generated CREAMS or GLEAMS precipitation data files.
+
+    9.  Corrected list of states having default precipitation data, adding
+        HAWAII and PUERTO RICO.
+   
+   10.  Cleared stacks before exiting back to the H3MENU shell from
+        programs WEATHER, DESIGN and OUTPUT.
+   
+   11.  Corrected memory problem and eliminated need to exit H3MENU shell
+        to execute HELP3O simulation code.  As such, deleted H3.BAT,
+        H3M.BAT and HELP3O.BAT files.
+   
+   12.  Corrected location for printing number of years of precipitation
+        data to be synthetically generated in subroutine SYNPREC of 
+        WEATHER user interface.
+   
+   13.  Created executable codes that do not require a math coprocessor
+        and modified installation routine to test for math coprocessor
+        install whichever version that is appropriate.
+   
+   14.  Generated new example RCRA output file.
+   
+   15.  Updated Version number and source codes.
+   
+   16.  Added option to download user guide and engineering documentation
+        report as WORD PERFECT 5.1 document files.                        
+
+
