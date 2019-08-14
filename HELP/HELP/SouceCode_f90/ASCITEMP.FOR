@@ -1,4 +1,4 @@
-      PROGRAM SCANT
+!***********************      PROGRAM SCANT   ************************
 !
 !
 !********************************************************************
@@ -36,21 +36,21 @@
          CALL UTLTY (8, 6, 1, NL, NH, 1, ' ')
          WRITE (6, 41)
 41       FORMAT(
-     *15x,'ษออออออออออออออออออออออออออออออออออออออออออออออป',/,
-     *15x,'บ                                              บ',/,
-     *15x,'บ         Enter the following information:     บ',/,
-     *15x,'บ                                              บ',/,
-     *15x,'บ        CITY  :                               บ',/,
-     *15x,'บ        STATE :                               บ',/,
-     *15x,'บ        UNITS (1=U.S.  2=METRIC) :            บ',/,
-     *15x,'บ                                              บ',/,
-     *15x,'ศออออออออออออออออออออออออออออออออออออออออออออออผ')
+     *15x,'๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอป',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ         Enter the following information:     ๏ฟฝ',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ        CITY  :                               ๏ฟฝ',/,
+     *15x,'๏ฟฝ        STATE :                               ๏ฟฝ',/,
+     *15x,'๏ฟฝ        UNITS (1=U.S.  2=METRIC) :            ๏ฟฝ',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอผ')
          CALL ACELL (11, 33, 20, CITY, NL, NH, 1)
          CALL ACELL (12, 33, 20, STATE, NL, NH, 1)
 50       CALL CELL (13,52,4, NL, NH, RVALUE, IFLAG, TXT)
          IF (RVALUE .NE. 1.0 .AND. RVALUE .NE. 2.0) GOTO 50
          IUNIT = RVALUE
-      ELSE    
+      ELSE
          OPEN (20, FILE = 'SCAN.TMP', STATUS = 'OLD')
          READ (20,100, END = 120) CITY
          READ (20,100, END = 120) STATE
@@ -92,13 +92,13 @@
             IF (IUNIT .NE. IUNIT2) THEN
                ICONVERT = IUNIT2
                CALL UTLTY (256,1,1,NL,NH,1,' ')
-               CALL UTLTY (8+16,10,12,NL,NH,56,' DATA WILL BE CONVERTED 
+               CALL UTLTY (8+16,10,12,NL,NH,56,' DATA WILL BE CONVERTED
      *TO UNITS PRESENT IN MASTER FILE.')
                IF(ICONVERT .EQ. 1) THEN
-                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM METRIC TO U.S. 
+                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM METRIC TO U.S.
      *UNITS)')
                ELSE
-                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM U.S. TO METRIC 
+                  CALL UTLTY (8+16,11,27,NL,NH,27,'(FROM U.S. TO METRIC
      *UNITS)')
                ENDIF
                CALL UTLTY (8+16+128,14,27,NL,NH,26,'PRESS ANY KEY TO CON
@@ -131,22 +131,22 @@
 200   CALL UTLTY (8+256, 6, 1, NL, NH, 1, ' ')
       WRITE (6, 241) CHAR(39)
 241   FORMAT(
-     *15x,'ษออออออออออออออออออออออออออออออออออออออออออออออป',/,
-     *15x,'บ                                              บ',/,
-     *15x,'บ    Enter the name of the data set for the    บ',/,
-     *15x,'บ             current year',A1,'s data.             บ',/,
-     *15x,'บ                                              บ',/,
-     *15x,'บ      Temperature input values should         บ')
+     *15x,'๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอป',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ    Enter the name of the data set for the    ๏ฟฝ',/,
+     *15x,'๏ฟฝ             current year',A1,'s data.             ๏ฟฝ',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ      Temperature input values should         ๏ฟฝ')
       IF (IUNIT .EQ. 1) WRITE (6, 261)
 261      FORMAT(
-     *15x,'บ             be in fahrenheit.                บ')
+     *15x,'๏ฟฝ             be in fahrenheit.                ๏ฟฝ')
       IF (IUNIT .EQ. 2) WRITE (6, 271)
 271      FORMAT(
-     *15x,'บ              be in celsius.                  บ')
+     *15x,'๏ฟฝ              be in celsius.                  ๏ฟฝ')
       WRITE (*, 281)
 281   FORMAT(
-     *15x,'บ                                              บ',/,
-     *15x,'ศออออออออออออออออออออออออออออออออออออออออออออออผ',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอผ',/,
      *15x,'          Enter ESC to exit this session. ')
 
       CALL ACELL (14, 18, 40, INFILE, NL, NH, 1)
@@ -162,18 +162,18 @@
          CALL UTLTY (8+16+128,15,27,NL,NH,26,'PRESS ANY KEY TO CONTINUE!
      *')
          GO TO 200
-      ENDIF         
+      ENDIF
 
 300   CALL UTLTY (8+256, 7, 1, NL, NH, 1, ' ')
       WRITE (6, 341)
 341   FORMAT(
-     *15x,'ษออออออออออออออออออออออออออออออออออออออออออออออป',/,
-     *15x,'บ                                              บ',/,
-     *15x,'บ    Enter the year of the temperature data    บ',/,
-     *15x,'บ     contained in this file being added.      บ',/,
-     *15x,'บ                                              บ',/,
-     *15x,'บ                                              บ',/,
-     *15x,'ศออออออออออออออออออออออออออออออออออออออออออออออผ')
+     *15x,'๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอป',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ    Enter the year of the temperature data    ๏ฟฝ',/,
+     *15x,'๏ฟฝ     contained in this file being added.      ๏ฟฝ',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ                                              ๏ฟฝ',/,
+     *15x,'๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอผ')
 
       CALL CELL (13,18,4, NL, NH, RVALUE, IFLAG, TXT)
       IF(RVALUE .EQ. 0) GOTO 300
@@ -253,7 +253,7 @@
 !
 !  WRITE DATA TO MASTER FILE FORMATTED
 !
-                 
+
       IF (IUNIT2 .EQ. 1) THEN
          DO 551 I=1, INUMDAYS, 10
             WRITE(10,546) IYEAR,(INDATA(J),J=I,I+9),(J/10)
