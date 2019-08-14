@@ -1,0 +1,319 @@
+MEMBERS.TXT                 11/27/91
+
+The Members database keeps track of membership for organizations. 
+It records general member information, meetings attended,
+contributions, and family relationships.  The database is
+designed for use with DataPerfect 2.2.
+
+The Members database is useful for churches, community groups,
+volunteer associations, and other organizations that need to
+organize and list information about people.
+
+You may copy and modify the databases for your own or your
+company's use.  You may not copy or modify the databases and
+resell them.  Please be aware that while WordPerfect Corporation
+provides support on DataPerfect questions, only limited support
+is available for these predefined databases.  No support is
+available for the databases if they have been modified.
+
+PANELS
+You will enter information in all panels except the Contribution
+Summary panel, which displays contribution totals for each
+member.  
+
+As you tab through each field, a help message at the top of the
+screen explains what to do while in that field.  Press Help (F3)
+twice for further information about the field.
+
+      MEMBERSHIP
+      The Membership panel is the main panel.  This is where you
+      enter general information about each member, such as name,
+      address, phone number, birth date, comments, and spouse's
+      name.  This panel has links to the Contributions and
+      Contribution Summary panels.
+
+      ATTENDANCE RECORD 
+      The Attendance Record panel records events attended by each
+      member.  The panel has fields for date, event, and name.
+
+      FAMILY GROUPS 
+      The Family Groups panel allows you to establish family
+      relationships between members.  You enter the father's and
+      mother's names in the appropriate fields to establish the
+      parental relationship.  From this panel, you also access the
+      Children panel, where you create a record for each child. 
+      When there are children's records in the Children panel,
+      those names are displayed in the Family Groups panel.
+
+      CHILDREN 
+      The Children panel relates children to a parent or parents. 
+      When you need to enter information in this panel, you should
+      access it from the Family Groups panel.
+
+      CONTRIBUTIONS 
+      The Contributions panel records contributions for each
+      member.  For every contribution, the date, amount, and
+      category are recorded. 
+
+      CONTRIBUTION SUMMARY 
+      The Contribution Summary panel displays the total
+      contribution for each member.  The individual contributions
+      for each member are also listed.  This is the only panel
+      where you are not required to enter any information; the
+      totals are created for you through links.
+
+      EVENT NAMES
+      The Event Names panel records all possible event names to be
+      used in the Attendance Record panel.  When entering records
+      in that panel, you may look up all events in the Event Names
+      panel and select the desired event.
+
+      CONTRIBUTION CATEGORY NAMES 
+      The Contribution Category Names panel records all possible
+      contribution categories to be used in the Contributions
+      panel.  When entering records in that panel, you may list
+      all categories in the Contribution Category name panel and
+      select the desired category.
+
+REPORTS
+Members provides four custom reports in addition to Built-In
+Short Reports.  These custom reports print information about
+members, attendance, and families.  Using DPPrint when running
+reports is recommended.  For more information about DPPrint, see
+Appendix M: Utilities--DPPrint in DataPerfect Reference.
+
+      ATTENDANCE REPORT 
+      This report prints the names of members who attended a
+      certain event.  As the report begins, you are prompted to
+      enter the event, starting date, and ending date to search
+      for.  You are also asked to enter the number of event
+      periods.  This is the number of times that particular event
+      was held, and is used to calculate the attendance percentage
+      for each member.
+
+      LIST OF MEMBERS 
+      This report will print a list of all people entered in the
+      database, or a list of members only, depending on what
+      information you enter in answer to the prompt given as the
+      report begins.
+
+      BIRTHDAY LIST 
+      This report prompts you for the month to search.  It then
+      lists the name and birth date for each member who has a
+      birthday in that month.
+
+      FAMILY GROUPS REPORT 
+      This report lists the father, mother, and children for each
+      family in the database.
+
+USING THE DATABASE
+To use the database, the first thing to do is set up the events
+and contribution categories you will need.
+
+In the Event Names panel, press Create (F9) to create a new
+record and enter the event name (for example, Sunday School). 
+Continue creating records until you've established the events
+you'll need.  If you need to add another event later, you may do
+so by following the same process.  When finished, press Exit (F7)
+to leave the Event Names panel and return to the panel list.
+
+In the Contribution Category Name panel, press Create (F9) to
+create a record.  Enter the contribution category (for example,
+Dues).  Continue creating records until you've established the
+contribution categories you'll need.  If you need to add other
+categories later, you may so by following the same process. 
+Press Exit (F7) to leave the Contribution Category Names panel
+and return to the panel list.
+
+Now that you have your events and contribution categories set up,
+you are ready to enter information in the database, beginning
+with the Membership panel.  In the Membership panel, press Create
+(F9) to create a record.  Enter the general information about the
+member, pressing Tab to move from field to field.  After you have
+entered information in all of the fields, you should be on the
+Contributions panel link.  
+
+Press Down Panel (F5) to go through the link into the
+Contributions panel.  The name and date will be filled in for
+you; however, you can replace the date if you wish.  Enter the
+amount of the contribution as well as the contribution category. 
+If you don't remember which contribution category to use, press
+Lookup (F8) or Up Arrow to see the list of categories.  Highlight
+the desired category and press Enter, and the category will be
+inserted in the field.  If you have more contributions for this
+member, continue creating records until you've entered them all. 
+If you need to add other contributions later, you may do so by
+following the same process.  When finished, press Exit (F7) to
+return to the Membership panel.
+
+With your cursor on the Summary link, press Down Arrow to move to
+the Contribution Summary panel.  That particular member's summary
+will be shown, displaying the total contribution as well as
+listing each individual contribution.  When finished, press Exit
+(F7) twice to return to the panel list. 
+
+The next panel to enter information in is the Attendance Record
+panel.  In that panel, press Create (F9) to create a record. 
+Enter the date of the event, then enter the event name.  If you
+don't know which event to enter, press Lookup (F8) or Up Arrow to
+see a list of events.  Highlight the desired event and press
+Enter, and the event name will be inserted for you.  Enter the
+member's name in the same way you entered the event name.  If you
+have more attendance records for this member, continue creating
+records until they've all been entered.  If you need to add other
+records later, you may do so by following the same process. 
+Press Exit (F7) to return to the panel list.
+
+The next panel to enter information in is the Family Groups
+panel.  While in that panel, press Create (F9) to create a record
+and enter the father's name.  If you don't remember the father's
+name, press Lookup (F8) or Up Arrow while you are on the first
+name field to see a list of members.  Highlight the correct name
+and press Enter, and the name will be inserted in the field.  If
+you do not have the father's name, leave the field empty.  Enter
+the information in the mother's name field in the same way.  
+
+Move to the Children panel link, and press Down Panel (F5) to
+move to the Children panel.  Enter the name of the first child
+for this family in the same way you entered the names for father
+and mother.  If you have more children for this family, continue
+creating records until they've all been entered.  If necessary,
+additional names may be added at another time.  Once you have
+entered all of the children for this family, press Exit (F7)
+twice to return to the panel list.
+
+FIELDS
+The following tables outline the type and format of the displayed
+fields in each panel.  Hidden fields are not listed.  For more
+information, see Field Format in DataPerfect Reference.
+
+      MEMBERSHIP
+
+      FIELD                TYPE            FORMAT
+      First Name           Alphanumeric    A15
+      Middle Name          Alphanumeric    A15
+      Last Name            Alphanumeric    A20
+      Address              Text            A32A2
+      City                 Alphanumeric    A15
+      State                Alphanumeric    U2
+      Zip                  Numeric         N99999-9999;;B
+      Comments             Text            A22A3
+      Birthday             Date            D99/99/9999
+      Home Area Code       Numeric         N(999)
+      Home Telephone       Numeric         N999-9999
+      Work Area Code       Numeric         N(999)
+      Work Telephone       Numeric         N999-9999
+      Member               Alphanumeric    U1
+      Spouse First Name    Alphanumeric    A15
+      Spouse Middle Name   Alphanumeric    A15
+      Spouse Last Name     Alphanumeric    A20
+
+      ATTENDANCE RECORD
+
+      FIELD                TYPE            FORMAT
+      Date                 Date            D99/99/9999
+      Event                Alphanumeric    A20
+      First Name           Alphanumeric    A15
+      Middle Name          Alphanumeric    A15
+      Last Name            Alphanumeric    A20
+
+      FAMILY GROUPS
+
+      FIELD                TYPE            FORMAT
+      Father First Name    Alphanumeric    A15
+      Father Middle Name   Alphanumeric    A15
+      Father Last Name     Alphanumeric    A20
+      Mother First Name    Alphanumeric    A15
+      Mother Middle Name   Alphanumeric    A15
+      Mother Last Name     Alphanumeric    A20
+
+      CONTRIBUTIONS
+
+      FIELD                TYPE            FORMAT
+      Name                 Alphanumeric    A35::N
+      Date                 Date            D99/99/9999
+      Amount               Numeric         G-$ZZZ,ZZ9.99
+      Category             Alphanumeric    A20
+
+      CHILDREN
+
+      FIELD                TYPE            FORMAT
+      First Name           Alphanumeric    A15
+      Middle Name          Alphanumeric    A15::N
+      Last Name            Alphanumeric    A20::N
+
+      CONTRIBUTION SUMMARY
+
+      FIELD                TYPE            FORMAT
+      Name                 Alphanumeric    A35::N
+      Total Contributions 
+      to Date              Numeric         G-$ZZZ,ZZZ.Z9
+
+      EVENT NAMES
+
+      FIELD                TYPE            FORMAT
+      Event                Alphanumeric    A20
+
+      CONTRIBUTION CATEGORY NAMES
+
+      FIELD                TYPE            FORMAT
+      Contribution 
+      Category             Alphanumeric    A20
+
+LINKS
+The main links in this database are panel links which take you
+from the Membership panel to the Contributions and Contribution
+Summary panels, along with a panel link from the Family Groups to
+the Children panel.  The data links are used to view and retrieve
+information from other panels.
+
+      *    Panel link from Membership to Contributions.
+      *    Panel link from Membership to Contribution Summary.
+      *    Data link from Event field of Attendance Record to
+           Event Names panel.
+      *    Data link from First Name field of Attendance Record to
+           Membership panel.
+      *    Data link from Father First Name field of Family Groups
+           to Membership panel.
+      *    Data link from Mother First Name field of Family Groups
+           to Membership panel.
+      *    Panel link from Family Groups to Children.
+      *    Data link from Category field of Contributions to
+           Contribution Category Names panel.
+      *    Data link from First Name field of Children to
+           Membership panel.
+
+FORMULAS AND KEEP-A-TOTALS
+The Members database contains many formulas, as well as one keep-
+a-total.
+
+      MEMBERSHIP
+      The Spouse Last Name field formula places the last name of
+      the member if anything is entered in the Spouse First Name
+      field.  Otherwise, it leaves whatever last name was entered
+      in the Spouse Last Name field.
+
+      ATTENDANCE RECORD 
+      The Date field formula places the current date in the field
+      when a record is created.  The date can be overwritten.
+
+      The Name field formula concatenates the first, middle, and
+      last names of that member from the Membership panel.
+
+      FAMILY GROUPS
+      The Mother and Father Middle Name field formulas pull the
+      middle name from the Membership panel.
+
+      The Mother and Father Last Name field formulas pull the last
+      name from the Membership panel.
+
+      CONTRIBUTIONS
+      The Date field formula places the current date in the field
+      when a record is created.  The date can be overwritten.
+
+      The Amount field has a Keep-A-Total which totals the amount
+      entered to the Total Contributions to Date in the
+      Contribution Summary panel.
+
+      The Name field formula concatenates the first, middle, and
+      last names of that member from the Membership panel.

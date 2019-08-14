@@ -1,0 +1,107 @@
+             Copyright WordPerfect Corporation 1993
+                       All Rights Reserved
+
+README.STA                                                 5/14/93
+
+This README file is in DOS text format and is 2 pages long.
+
+Student Tracking and Reporting lets you register students for a
+specific course and shows current class availability.  You can
+also record student assignment and test scores and keep track of
+semester and cumulative grade point averages.  The reports let
+you print out a class schedule sorted by department, a roll for
+each class, a schedule of classes for each student, and a grade
+report for each student.  The database is designed for use with
+DataPerfect 2.3.
+
+You may copy and modify this database for your own or your
+company's use.  You may not copy the database and resell it. 
+Please be aware that while WordPerfect Corporation is happy to
+provide support on DataPerfect questions, only limited support is
+available for these predefined databases.  No support is
+available for the databases if they have been modified.
+
+PANELS
+Student Tracking and Reporting (STAR) was created with a built-in
+menu to make navigating it easier.  STAR contains 11 panels and
+16 menu options.  Most of your work can be done by accessing one
+of the menu options.  However, if you need to work directly with
+the panel list, you can enter 99 to bypass the menu.
+
+As you tab through each field in a panel, a help message at the
+top of the screen explains what to do while in that field.  Press
+Help (F3) twice for further information about the field.
+
+REPORTS
+Student Tracking and Reporting provides 7 custom reports in
+addition to Built-In Short Reports.  Each report is available
+from the menu (options 11-15 and 21-22).  Using DPPrint when
+running reports is recommended.  For more information about
+DPPrint, see Appendix L: Utilities--DPPrint in DataPerfect
+Reference.
+
+USING THE DATABASE
+Selecting a menu option will access a database panel or will
+begin a report.  The menu options for adding, editing, or looking
+up are described below.
+
+     Menu option 1 allows you to view or edit information about
+     teachers (e.g., their name, address, phone number and
+     extension, Social Security Number, and hire date), and gives
+     access to their teaching history.
+
+     Menu option 2 allows you to view or edit information about
+     students (e.g., their name, address, phone number and
+     extension, Social Security Number, and application date),
+     and gives access to their transcripts and major.
+
+     Menu option 3 allows you to edit or view class information,
+     including department name, class title, teacher, notes about
+     the class (requirements, prerequisites, etc.), and the class
+     schedule(s), locations, credits, and ID.  The Department,
+     Class Title, and Teacher fields allow you to select from a
+     lookup list while creating a new record.
+
+     Menu option 4 allows you to enter information about your
+     school.  The information you enter here is used in various
+     reports.
+
+     Menu option 5 allows you to read notes about the database
+     and its intended purpose.
+
+     Menu option 6 allows you to look up or add class names to a
+     panel (for inclusion in the class information, available
+     from menu option 3).
+
+     Menu option 7 allows you to look up or add department names
+     to a panel (for inclusion in the class information,
+     available from menu option 3).
+
+     Menu option 8 allows you to add or look up or add majors to
+     a panel (for inclusion in the Student Information (Major)
+     panel available from the Majors link from option 3).
+
+     Menu option 9 allows you to add or look up class
+     assignments.
+
+The menu options for reports are described below.
+
+     Menu option 11 prints a list of teachers by department.
+
+     Menu option 12 prints all report cards by semester.
+
+     Menu option 13 prints a list of classes by department.
+
+     Menu option 14 prints a single student's transcript.  You
+     can enter the student's social security number or select the
+     student from a lookup.
+
+     Menu option 15 exports a single student's information in
+     WordPerfect named merge field format.  You can select the
+     student from a lookup.
+
+     Menu options 21 will mark an individual record so you will
+     not see it in your normal work.
+
+     Menu option 22 will unmark an individual archived record so
+     you can continue to work with it.

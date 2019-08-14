@@ -1,0 +1,116 @@
+             Copyright WordPerfect Corporation 1993
+                       All Rights Reserved
+
+README.MAI                                                 5/14/93
+
+This README file is in DOS text format and is 3 pages long.
+
+This is a simple mailing database with an archiving panel.  You
+can use the database to record client addresses, to print mailing
+lists or labels, to merge addresses into a form letter in
+WordPerfect, and to record the date of a mailing.  The database
+is designed for use with DataPerfect 2.3.
+
+For information on deleting the sample data in MAILING, see the
+file titled README.APP.
+
+You may copy and modify this database for your own or your
+company's use.  You may not copy the database and resell it. 
+Please be aware that while WordPerfect Corporation provides
+support on DataPerfect questions, only limited support is
+available for the predefined databases.  No support is available
+for the databases if they have been modified.
+
+PANELS
+Mailing was created with a built-in menu to make navigating
+easier.  Mailing has seven panels, however, you can do most or
+your work using the menu.
+
+As you tab through each field in a panel, a help message at the
+top of the screen explains what to do while in that field.  Press
+Help (F3) twice for further information about the field.
+
+CUSTOMER INFORMATION
+This panel stores the customer's mailing address.  This panel
+gives you access to Mailing List Types and Mailing History.  You 
+An arrow () next to a link indicates that this customer has
+records to view.
+
+MAILING HISTORY
+Data in the Mailing History panel is created when you run a
+mailing label report.  You can create records manually by
+accessing the View Mailing History link in the Customer
+Information panel.
+
+MAILING RESPONSES
+Customer responses to mailings are tracked in the Mailing
+Responses panel.  If you enter this panel from the menu (menu
+option 2), you will need to select the mailing history
+information manually by highlighting the customer name field,
+pressing F6, then the Up Arrow.  If you enter the Mailing
+Response panel from the Mailing History panel, the mailing
+history information will automatically be entered for you.  You
+will need to enter information for Requested Items either way.
+
+CUSTOMER MAILING LIST TYPES
+You can enter the Customer Mailing List Types panel from the
+Customer Information panel.  You should enter a new record for
+each mailing list a customer is on.  You can select a mailing
+list type from a lookup list.
+
+MAILING LIST TYPES
+The Mailing List Types panel lists the possible mailing lists
+your customers may be on.  This panel is used to select the
+customer mailing list type.  You can enter this panel from the
+menu (option 7).  You should leave the records marked "*All*" and
+"*Done*" if you want the mailing label reports to work correctly.
+
+MAILING REQUEST ITEMS
+The Mailing Request Items panel lists the items a customer has
+requested in response to a mailing.
+
+
+REPORTS
+Mailing has six custom reports in addition to Built-In Short
+Reports.  Using DPPrint when running reports is recommended.  For
+more information about DPPrint, see Appendix M: Utilities--
+DPPrint in DataPerfect Reference.
+
+LABELS
+     Two reports allow you to print labels.  You can easily
+     modify or copy these reports to meet your personal
+     requirements.  The label reports are set up to print to HP
+     Laser 3-across (Avery 5160 - menu option 11) or Continuous
+     feed 1.5" x 4" (menu option 12).   Each of these reports
+     will print labels and create mailing history records in the
+     Mailing History panel.  You can specify which mailing list
+     type to print as you run the report.
+
+CUSTOMER MAILING LIST
+     Menu option 14 prints an alphabetic list of customers
+     (sorted by last name).
+
+WPMERGE FILE EXPORT
+     Menu option 16 creates a WordPerfect export file containing
+     data from the Customer Information panel.
+
+ARCHIVE/RESTORE RECORDS
+     The Archive Records report (menu option 17) and Restore to
+     Active List (menu option 18) help you maintain your
+     database.  When a customer becomes inactive (you decide
+     when), you can select the Archive Records report.  You are
+     prompted to select the customer to be archived.  If the
+     customer later needs to be restored to view, you can select
+     the Restore to Active List report (the records are not
+     deleted, but have been hidden from view).
+
+
+USING THE DATABASE
+You can use the database to record client addresses, to print
+mailing lists or labels, to merge addresses into a form letter in
+WordPerfect, and to record the date of a mailing.
+
+When you print labels or merge addresses to WordPerfect for a
+mass mailing, you might consider sorting the addresses by state
+or ZIP Code first so you can take advantage of bulk mailing
+discounts for pre-sorted mail.
