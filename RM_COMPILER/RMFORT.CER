@@ -1,0 +1,124 @@
+ARRAY SIZE ERROR%                                                              X
+BLOCK DATA VIOLATION%                                                          X
+CHARACTER TYPE REQUIRED%                                                       X
+COMPLEX TYPE NOT ALLOWED IN THIS CONTEXT%                                      X
+CONSTANT EXPRESSION REQUIRED%                                                  X
+CONSTANT MUST BE GREATER THAN ZERO%                                            X
+CONSTANT MUST BE POSITIVE%                                                     X
+CONFLICTS WITH PREVIOUS DECLARATION OF THIS IDENTIFIER%                        X
+DEFAULT INTEGER TYPE REQUIRED%                                                 X
+DUPLICATE COMMON DECLARATION%                                                  X
+DUPLICATE DUMMY ARGUMENT%                                                      X
+DUPLICATE I/O STATEMENT SPECIFIER%                                             X
+EQUIVALENCE COMMON TO COMMON%                                                  X
+ATTEMPT TO INITIALIZE NON-COMMON VARIABLE%                                     X
+ATTEMPT TO INITIALIZE COMMON VARIABLE%                                         X
+SAVE VARIABLE EQUIVALENCED TO COMMON%                                          X
+INCORRECT DEFINITION OF, OR REFERENCE TO, A FORMAT LABEL%                      X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+HOLLERITH TYPE NOT ALLOWED IN THIS CONTEXT%                                    X
+INCORRECT NESTING OF DO-LOOP AND IF-BLOCK%                                     X
+ATTEMPT TO CHANGE VALUE OF DO CONTROL VARIABLE%                                X
+INVALID LABEL OR INCORRECT REFERENCE TO PREVIOUSLY DEFINED LABEL%              X
+INCORRECTLY REFERENCED LABEL%                                                  X
+CONTRADICTS PREVIOUS IMPLICIT SPECIFICATIONS%                                  X
+INCLUDE UNSUCCESSFUL%                                                          X
+I/O STATEMENT SPECIFIER INCOMPATIBLE WITH OTHER SPECIFIERS%                    X
+INCORRECT DIMENSION RANGE%                                                     X
+INCORRECT LENGTH SPECIFICATION OR REPEAT COUNT%                                X
+INCORRECT INITIALIZATION EXPRESSION%                                           X
+INCORRECT NUMBER OF ARGUMENTS%                                                 X
+INCORRECT NUMBER OF DATA VALUES%                                               X
+INCORRECT NUMBER OF SUBSCRIPTS%                                                X
+INTEGER TYPE REQUIRED%                                                         X
+INVALID I/O UNIT%                                                              X
+INCORRECT DEFINITION OF, OR REFERENCE TO, A JUMPED-TO LABEL%                   X
+CHARACTER FUNCTION AND ENTRY LENGTHS UNEQUAL%                                  X
+LENGTH VIOLATION%                                                              X
+LOGICAL TYPE REQUIRED%                                                         X
+MISSING END STATEMENT%                                                         X
+MISSING FMT SPECIFIER%                                                         X
+MISSING UNIT SPECIFIER%                                                        X
+INCORRECT USAGE OF THIS IDENTIFIER%                                            X
+MULTIPLY DEFINED STATEMENT LABEL%                                              X
+NESTED INCLUDE NOT ALLOWED%                                                    X
+NO MATCHING IF STATEMENT FOR THIS STATEMENT%                                   X
+CONSTANT OUT OF RANGE%                                                         X
+NUMERIC TYPE REQUIRED%                                                         X
+OPEN DO LOOP%                                                                  X
+EQUIVALENCE ATTEMPTS TO PRE-EXTEND COMMON%                                     X
+RANGE VIOLATION%                                                               X
+REAL OR INTEGER TYPE REQUIRED%                                                 X
+SECOND ARGUMENT OF MOD IS ZERO%                                                X
+THIS STATEMENT NOT ALLOWED IN THIS CONTEXT%                                    X
+STORAGE OVERFLOW%                                                              X
+SUBSCRIPT VALUE OUT OF RANGE%                                                  X
+SUBSCRIPT USED WITH UNDIMENSIONED VARIABLE%                                    X
+UNRECOGNIZABLE SYNTAX AT THIS POINT%                                           X
+TOO MANY NESTED DO LOOPS%                                                      X
+INCORRECT OPERAND TYPE%                                                        X
+TYPE CONFLICT - CHARACTER VERSUS NUMERIC%                                      X
+TYPE CONFLICT BETWEEN CONSTANT AND VARIABLE TO BE INITIALIZED%                 X
+THIS TYPE OF CONSTANT CANNOT BE SIGNED%                                        X
+UNDEFINED LABEL%                                                               X
+UNRECOGNIZABLE STATEMENT%                                                      X
+INCORRECT TYPE FOR COMPLEX PART%                                               X
+TOO MANY COMMON AREAS%                                                         X
+CONSTANT SUBSCRIPT OUT OF RANGE%                                               X
+INCORRECT CHARACTER CONSTANT%                                                  X
+DO INCREMENT IS ZERO%                                                          X
+SPECIFICATION NOT ALLOWED FOR THIS IDENTIFIER%                                 X
+DIVIDE BY ZERO%                                                                X
+EXPONENTIATE ZERO TO ZERO OR NEGATIVE POWER%                                   X
+FUNCTION OR ENTRY NAME HAS NOT BEEN EXPLICITLY TYPED%                          X
+IDENTIFIER HAS NOT BEEN EXPLICITLY TYPED%                                      X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+THIS ERROR MESSAGE NUMBER IS SPARE%                                            X
+ARGUMENT COUNT CONTRADICTS PREVIOUS SUBPROGRAM REFERENCE%                      X
+ARGUMENT TYPE CONTRADICTS PREVIOUS SUBPROGRAM REFERENCE%                       X
+CONSTANT TOO LARGE%                                                            X
+INCORRECT ARGUMENT TYPE - HAS BEEN CONVERTED%                                  X
+EXTRA COMMA%                                                                   X
+HEXADECIMAL CONSTANT HAS ODD NUMBER OF CHARACTERS%                             X
+INCORRECT CLOSURE OF DO LOOP%                                                  X
+LABEL MISSING - THIS STATEMENT CANNOT BE REACHED%                              X
+MISSING COMMA%                                                                 X
+MISSING END IF STATEMENT%                                                      X
+NAME TOO LONG - TRUNCATED TO 31 CHARACTERS%                                    X
+GLOBAL NAME MORE THAN 8 CHARACTERS - TRUNCATED%                                X
+POSSIBLE ASSUMED-SIZE ERROR%                                                   X
+FUNCTION NAME AND ENTRY NAMES NOT ASSIGNED A VALUE%                            X
+SHORT INTEGER USED IN ASSIGN STATEMENT%                                        X
+
