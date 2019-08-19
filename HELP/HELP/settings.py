@@ -54,7 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'accounts',
+    'support',
     'HELP',
 ]
 
@@ -127,6 +129,39 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 DOWNLOADS_DIR = os.path.join("..", "documents")
 MANUAL_NAME = 'user_manual.pdf'
+
+
+
+
+APP_NAME = 'HELP'
+APP_NAME_SHORT = 'Hydrologic Evaluation of Landfill Performance'
+
+APP_NAME_LONG = 'Hydrologic Evaluation of Landfill Performance (HELP)'
+
+APP_DESCRIPTION = 'HELP is developed and maintained by National Risk Management Research Laboratory Office \
+                   of Research and Development U.S. Environmental Protection Agency, Cincinnati, OH 45268.'
+
+APP_VERSION = '0.0.01'
+
+APP_DISCLAIMER = 'Copyright (c) 2019. Hydrologic Evaluation of Landfill Performance (HELP) is developed \
+                  and maintained by National Risk Management Research Laboratory Office of Research and Development U.S. Environmental Protection \
+                  Agency, Cincinnati, OH 45268.The United States Environmental Protection Agency (EPA) GitHub project code is provided on an "as is" \
+                  basis and the user assumes responsibility for its use. EPA has relinquished control of the information and no longer has the responsibility \
+                  to protect the integrity, confidentiality, or availability of the information. Any reference to specific commercial products, processes, \
+                  or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or \
+                  favoring by EPA. The EPA seal and logo shall not be used in any manner to imply endorsement of any commercial product or activity by \
+                  EPA or the United States Government. https://www.epa.gov/webguide/github-guidance#open.'
+
+APP_ENDORSEMENT = 'Disclaimer of Endorsement. Reference on this website to any specific commercial products, process, or service by trade name, trademark, \
+                   manufacturer, or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States \
+                   Government. The presence of external hyperlinks does not constitute endorsement by the EPA, its employees, or contractors, of such external \
+                   websites or the information contained therein. Furthermore, the views and opinions of authors expressed herein do not necessarily state \
+                   or reflect those of the United States Government, and shall not be used for advertising or product endorsement purposes.'
+
+
+
+
+
 
 try:
     from .local_settings import *

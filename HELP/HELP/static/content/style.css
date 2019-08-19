@@ -1,0 +1,508 @@
+.bold-red {
+    color: red;
+    font-weight: 700;
+}
+
+.pad-left {
+    padding-left: 4px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.column-4 {
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+
+.margin-around {
+    width: 99%;
+    margin: 1em, 1em, 1em, 1em;
+}
+
+.inline-error {
+    background-color: #e74c3c;
+    color: #FFF;
+    width: 1em;
+    height: 1.5em;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.water-div {
+    position: relative;
+    float: left;
+    background-color: #9bc2e6;
+    width: 100%;
+    height: 15em
+}
+
+.water-div-tall {
+    position: relative;
+    float: left;
+    background-color: #9bc2e6;
+    width: 100%;
+    height: 25em
+}
+
+.sediment-div {
+    position: relative;
+    float: left;
+    background-color: #bf8f00;
+    width: 100%;
+    height: 20em;
+    clear: both
+}
+
+.water-sed-div {
+    float: left;
+    width: 100%;
+    opacity: .999999
+}
+
+.input-el {
+    float:left;
+    padding-top: 1em;
+    padding-left: 2em;
+    clear:both;
+}
+
+.input-el-label {
+    display: inline-block;
+}
+
+.input-el-label input {
+    width: 6em;
+    height: 2em;
+    /*margin-left: 1em;*/
+}
+
+.input-el textarea{
+    width: 100%;
+    height: 12em;
+}
+
+.input-el-top-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.input-el-right {
+    float: right;
+    padding-top: 1em;
+    padding-right: 2em;
+    clear: both;
+}
+
+.input-el-bot-right {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.input-el-top-mid-left {
+    position: absolute;
+    left: 25%;
+}
+
+.input-el-mid-left {
+    position: absolute;
+    left: 25%;
+    margin-top: 3em;
+}
+
+.input-el-mid-right {
+    position: absolute;
+    right: 25%;
+    margin-top: 3em;
+}
+
+.input-el-bot {
+    position: absolute;
+    bottom: 0px;
+}
+
+.input-el-shift-down {
+    margin-top: 10em;
+}
+
+.shift-down {
+    margin-top: 5em;
+}
+
+/*********************************************/
+/* Everything below this point is from GEMM: */
+/*********************************************/
+.smallerfont {
+    font-size: 11pt !important;
+}
+
+.biggerfont {
+    font-size: 13pt !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-justified {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.middle {
+    float: none;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.indent {
+    margin-left: 50px !important;
+}
+
+.click {
+    cursor: pointer;
+}
+
+.toggleCollapse {
+    overflow: hidden;
+}
+
+.centered {
+    width: 100%;
+    margin: auto auto;
+}
+
+/*.login {
+    width: 60%;
+    transform: translateY(100px);
+    margin: auto auto;
+}*/
+
+.vmargin10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.padding20 {
+    padding: 20px;
+}
+
+.vpadding20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.vpadding10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.white-box {
+    background: white;
+    padding: 20px;
+}
+
+.bordered {
+    border: 1px solid #ccc;
+}
+
+.nomargin {
+    margin: 0px 0px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+/*.welcome {
+    background: white;
+    padding: 10px;
+    width: 90%;
+    transform: translateY(30px);
+    margin: auto;
+    font-size: 75%;
+}
+.welcome h1 {
+    font-size: 5em;
+    color: #48AC45;
+}
+.welcome p {
+    font-size: 1.5em;
+}*/
+
+.red {
+    color: #9A0000;
+}
+
+/** override griddle **/
+.griddle .griddle-filter {
+    margin-bottom: 5px;
+}
+
+.griddle .griddle-filter input {
+    width: 50%;
+}
+
+.griddle th {
+    font-size: 15px;
+}
+
+.connection-wrap {
+    display: none
+}
+
+.marker-arrowhead {
+    display: none
+}
+
+.link-tools {
+    display: none
+}
+
+.marker-vertices {
+    display: none
+}
+
+.btn-clean {
+    background: white;
+    border: 1px solid #cccccc;
+}
+
+    .btn-clean:hover, .btn-clean:active, .btn-clean:focus {
+        color: black;
+        background: #dddddd;
+    }
+
+/* Style overrides for fixed data table */
+.public_fixedDataTable_header,
+.public_fixedDataTable_header .public_fixedDataTableCell_main {
+    background: #d9dbdb;
+    color: black;
+    text-align: left;
+    vertical-align: text-top;
+}
+
+.public_fixedDataTableCell_wrap3 {
+    vertical-align: text-top;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+}
+
+.inner {
+    width: 85%;
+    margin: 5px;
+    border: none;
+    padding: 5px;
+    display: inline-block;
+    text-align: left;
+}
+
+.innerborder {
+    width: 85%;
+    margin: 50px 5px 5px 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    text-align: left;
+}
+
+.innerborder_full {
+    width: 98%;
+    margin: 50px 5px 25px 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    text-align: left;
+}
+
+.inner_smaller {
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+
+.inner_smallest {
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 125px;
+}
+
+.inner_bigger {
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 275px;
+}
+
+.inner_biggest {
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 375px;
+}
+
+.inner_full {
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 98%;
+    position: relative;
+}
+
+.outer {
+    text-align: center;
+    width: 100%;
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    /* Safari and Chrome */
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+
+.percent-control {
+    width: 50px;
+    height: 25px;
+}
+
+.leftlabel {
+    text-align: left;
+    margin-top: -27px;
+    font-weight: 600;
+}
+
+/*.submitbutton {
+    display: inline-block;
+}*/
+
+label {
+    font-weight: 400;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+#breadcrumbdiv {
+    text-align: center;
+    margin: 20px 10px 0px 10px;
+    color: gray;
+    font-weight: 400;
+}
+
+.breadcrumb {
+    /* Had to be added, as the default had a negative left margin for some reason */
+    margin-left: 0px;
+    font-size: 14px;
+}
+
+.breadcrumb ul,
+.breadcrumb li,
+.breadcrumb a {
+    font-size: 16px;
+}
+
+#nextpagediv {
+    margin: 0px 10px 0px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#transportdiv {
+    display: none;
+}
+
+#loadfactor {
+    display: none;
+}
+
+#efficiencyrating {
+    display: none;
+}
+
+#additionalreusediv {
+    display: none;
+    margin-top: -15px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#forcefullwidth {
+    height: 5px;
+    visibility: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* http://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box */
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it is hidden */
+}
+
+.left-col {
+    border-left: 2px solid !important;
+}
+
+.top-col {
+    border-top: 2px solid !important;
+}
+
+.right-col {
+    border-right: 2px solid !important;
+}
+
+.bottom-col {
+    border-bottom: 2px solid !important;
+}
+
+.no-border {
+    border: none;
+}
+
+.label-column {
+    text-align: right;
+    width: 225px;
+}
+/* Hide bullet points */
+.no-bullets {
+    list-style-type: none;
+}

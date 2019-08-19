@@ -1,48 +1,218 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="HandheldFriendly" content="true">
+        
         <title>{{ title }} - Hydrologic Evaluation of Landfill Performance</title>
         {% load staticfiles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'content/bootstrap.min.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'content/site.css' %}" />
+
+        <link rel="shortcut icon" href="https://www.epa.gov/sites/all/themes/epa/favicon.ico" type="image/vnd.microsoft.icon">
+        <meta name="MobileOptimized" content="width">
+        <meta http-equiv="cleartype" content="on">
+        <meta http-equiv="ImageToolbar" content="false">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="version" content="20161218">
+    <!--googleon: all-->
+        <meta name="DC.description" content="">
+        <meta name="DC.title" content="">
+    <!--googleoff: snippet-->
+        <meta name="keywords" content="">
+        <link rel="shortlink" href="https://www.epa.gov/sites/all/libraries/template2/standalone.html">
+        <link rel="canonical" href="https://www.epa.gov/sites/all/libraries/template2/standalone.html">
+        <meta name="DC.creator" content="">
+        <meta name="DC.language" content="en">
+        <meta name="DC.Subject.epachannel" content="">
+        <meta name="DC.type" content="">
+        <meta name="DC.date.created" content="">
+        <meta name="DC.date.modified" content="">
+    <!--googleoff: all-->
+
+        <!-- JS Section -->
+        <script src="{% static "jquery-3.3.1.js" %}"></script>
+        <script src="{{PROJECT_ROOT}}/static/scripts/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <script src="{{PROJECT_ROOT}}/static/bootstrap-4.1.3-dist/js/bootstrap.bundle.js"></script>
+  
+        <!-- CSS Section -->
+        <link href="{{PROJECT_ROOT}}/static/bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{PROJECT_ROOT}}/static/content/bootstrap-flatly.min.css" rel="stylesheet">
+        <link href="{{PROJECT_ROOT}}/static/content/epa-core.css" rel="stylesheet">
+        <link href="{{PROJECT_ROOT}}/static/EPA_files/s.css" rel="stylesheet">
+        <!-- All custom CSS defined AFTER to make sure it overwrites when necessary -->
+        <link href="{{PROJECT_ROOT}}/static/content/style.css" rel="stylesheet">
+
+        <!--[if lt IE 9]><link type="text/css" rel="stylesheet" href="https://www.epa.gov/sites/all/themes/epa/css/ie.css" media="all" /><![endif]-->
+        <link rel="alternate" type="application/atom+xml" title="EPA.gov All Press Releases" href="https://www.epa.gov/newsreleases/search/rss">
+        <link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases" href="https://www.epa.gov/newsreleases/search/rss/field_press_office/headquarters">
+        <link rel="alternate" type="application/atom+xml" title="Greenversations, EPA&#39;s Blog" href="https://blog.epa.gov/blog/feed/">
+        <!--[if lt IE 9]><script src="https://www.epa.gov/sites/all/themes/epa/js/html5.js"></script><![endif]-->
+
+
         <script src="{% static 'scripts/modernizr-2.6.2.js' %}"></script>
     </head>
 
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="/" class="navbar-brand">HELP</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'contact' %}">Contact</a></li>
-                        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                        <li><a href="{% url 'ticket' %}">Support</a></li>
-                    </ul>
-                    {% include 'main/loginpartial.html' %}
-                </div>
+    <body class="node-type-(web-area|page|document|webform) (microsite|resource-directory) hasGoogleVoiceExt">
+        <!-- Google Tag Manager -->
+        <!--<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-L8ZB" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-L8ZB');</script>-->
+        <!-- End Google Tag Manager -->
+        <div class="skip-links"><a href="https://www.epa.gov/sites/all/libraries/template2/standalone.html#main-content" class="skip-link element-invisible element-focusable">Jump to main content</a></div>
+                <header class="masthead clearfix" role="banner">
+            <img class="site-logo" src="{{PROJECT_ROOT}}/static/EPA_files/logo.png" alt="">
+            <hgroup class="site-name-and-slogan">
+                <h1 class="site-name"><a href="https://www.epa.gov/" title="Go to the home page" rel="home"><span>US EPA</span></a></h1>
+                <div class="site-slogan">United States Environmental Protection Agency</div>
+            </hgroup>
+        </header>
+        <!-- Nav bar from EPA Template -->
+        <nav class="nav main-nav clearfix" role="navigation">
+            <div class="nav__inner">
+                <h2 class="element-invisible">Main menu</h2>
+                <ul class="menu" role="menu"  id="navbar">
+                    <!-- navbar when user is logged in -->
+                    {% if user.is_authenticated %}
+                    <li class="menu-item" role="presentation">
+                        <a href={% url 'dashboard' %} class="menu-link" role="menuitem">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    {% endif %}
+
+                    <!-- Right-floating user dropdown options (view account, logout) -->
+                    <li class="dropdown menu-item navbar-right" role="presentation">
+                        <a data-toggle="dropdown" href="javascript:void(0)" class="menu-link dropdown-toggle" role="menuitem">
+                            Welcome
+                            {% if request.user.first_name %}
+                            {{request.user.first_name}}
+                            {% elif request.user.username %}
+                            {{request.user.username}}
+                            {% else %}
+                            User
+                            {% endif %}
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% if not user.is_authenticated %}
+                            <li class="menu-item">
+                                <a class="menu-link" href={% url 'accounts:login' %}>Login</a>
+                            </li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <li class="menu-item">
+                                <a class="menu-link" href={% url 'accounts:logout' %}>Logout</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="menu-item">
+                                <a class="menu-link" href={% url 'accounts:profile' %}>My Account</a>
+                            </li>
+                            {% endif %}
+                            {% if not user.is_authenticated %}
+                            <li class="menu-item">
+                                <a class="menu-link" href={% url 'accounts:register' %}>Register</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li class="menu-item" role="presentation">
+                        <a class="menu-link" role="menuitem" href="{% url 'support:go_to_support' %}">Help/Suggestions</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="dropdown menu-item" role="presentation">
+                        <a class="menu-link" data-toggle="dropdown" href="javascript:void(0)" role="menuitem">
+                            User Documentation <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item" role="presentation">
+                                <a class="menu-link" role="menuitem" href="{% url 'usermanual' %}">User Manual</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <div id="mobile-nav" class="mobile-nav">
+            <div class="mobile-bar clearfix">
+                <a class="menu-button" href="#" onclick="toggleMenu()">Menu</a>
+            </div>
+            <div id="mobile-links" class="mobile-links element-hidden" style="height: 400px; margin-top: 0px;">
             </div>
         </div>
 
-        <div class="container body-content">
-            {% block content %}{% endblock %}
-            <hr/>
-            <footer>
-                <p>&copy; {{ year }} - Hydrologic Evaluation of Landfill Performance</p>
-            </footer>
-        </div>
+        <section id="main-content" class="main-content clearfix" role="main" tabindex="-1">
+            <div class="main-column clearfix">
+                <!-- main content block - override in partials/sub-templates -->
+                <div>
+                    {% block content %}
+                    <!-- If the user is logged in, we should redirect to the about page as the 'landing page' -->
+                    <div class="splash">
+                        <div class="welcome">
+                            <div class="row">
+                                <div>
+                                    <div class="column">
+                                        <h1 class="home-header">{{APP_NAME_SHORT}}</h1>
+                                        {% if not user.is_authenticated %}
+                                        <a href={% url 'accounts:login' %}>
+                                            <input id="login" name="login" type="submit" value="Log-in" style="width: 10em" />
+                                        </a>
+                                        <br />
+                                        <a href={% url 'accounts:register' %}>
+                                            <input id="register" name="register" type="submit" value="Register" style="width: 10em" />
+                                        </a>
+                                        {% else %}
+                                        <a href={% url 'accounts:logout' %}>
+                                            <input id="logout" name="logout" type="submit" value="Logout" style="width: 10em" />
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                    <div class="column">
+                                        <img src="{{PROJECT_ROOT}}/static/images/GWSC_Logo.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock %}
+                </div>
 
-        <script src="{% static 'scripts/jquery-1.10.2.js' %}"></script>
+                <!--googleon: all-->
+                {#<h1 class="page-title">{PAGE TITLE}</h1>#}
+                <div class="panel-pane pane-node-content">
+                    <div class="pane-content">
+                        <div class="node node-page clearfix view-mode-full">
+                            {#{PAGE CONTENT}#}
+                        </div>
+                    </div>
+                </div>
+                <div id="block-epa-og-footer" class="block block-epa-og">
+                    {#<p>{FOOTER CONTENT}</p>#}
+                </div>
+                <!--googleoff: all-->
+            </div>
+        </section>
+    
+        <footer class="main-footer clearfix" role="contentinfo">
+            <div class="main-footer__inner">
+                <div class="region-footer">
+                    <div class="block block-pane block-pane-epa-global-footer">
+                        <h4>Software Disclaimer</h4>
+                        <div>
+                            <p class="smallerfont">{{APP_DISCLAIMER}}</p>
+                            <p class="smallerfont">{{APP_ENDORSEMENT}}</p>
+                        </div>
+                        <div>
+                            <p class="smallerfont">Version {{APP_VERSION}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {#<script src="{% static 'scripts/jquery-1.10.2.js' %}"></script>#}
+        <script src="{% static 'EPA_files/jquery.js.download' %}"></script>
+        <script src="{% static 'EPA_files/js.js.download' %}"></script>
         <script src="{% static 'scripts/bootstrap.js' %}"></script>
         <script src="{% static 'scripts/respond.js' %}"></script>
         {% block scripts %}{% endblock %}
