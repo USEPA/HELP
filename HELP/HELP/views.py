@@ -12,8 +12,33 @@ from django.core.mail import EmailMessage
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from os.path import join
-from HELP.forms import TicketForm, Ticket
+from HELP.forms import TicketForm, Ticket, SimulationForm
 from HELP import settings
+from pyhelp.managers import HelpManager
+
+
+def help(request):
+    """Renders the software page."""
+    if not request.user.is_authenticated:
+        return render(request, 'main/base.html', {})
+
+    assert isinstance(request, HttpRequest)
+
+    ctx = {'title': 'HELP',
+           'message': 'Run a Simulation',
+           'year': datetime.now().year,}
+
+    if request.method != 'POST':
+        ctx['form'] = SimulationForm()
+        return render(request, 'help.html', ctx)
+
+    form = SimulationForm(request.POST)
+    if(form.is_valid()):
+        # Call pyhelp with these files
+        tempdir = ""
+        helpm = HelpManager(workdir, year_range=(2000, 2010))
+
+    return render(request, 'help.html', ctx)
 
 
 def home(request):
@@ -80,20 +105,6 @@ def support(request):
         {
             'title': 'HELP',
             'message': 'Hydrologic Evaluation of Landfill Performance (HELP).',
-            'year': datetime.now().year,
-        }
-    )
-
-
-def help(request):
-    """Renders the software page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'help.html',
-        {
-            'title': 'HELP',
-            'message': 'Software Launch.',
             'year': datetime.now().year,
         }
     )

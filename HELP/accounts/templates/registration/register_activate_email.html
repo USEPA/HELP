@@ -5,7 +5,7 @@ Please see below the user's information:
 {{ email }}
 
 Please click the link below to activate the account:
-{{protocol}}://{{ domain }}{% url 'register_activate' uidb64=uid token=token %}
+{{protocol}}://{{ domain }}{% url 'accounts:register_activate' uidb64=uid token=token %}
 
 If you received this email in error, please disregard.
 

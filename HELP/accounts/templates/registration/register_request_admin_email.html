@@ -19,11 +19,11 @@ Country: {{country}}
 
 
 To approve this user, click the link below:
-{{protocol}}://{{ domain }}{% url 'register_approve' uidb64=uid %}
+{{protocol}}://{{ domain }}{% url 'accounts:register_approve' uidb64=uid %}
 
 
 To deny this user, click the link below:
-{{protocol}}://{{ domain }}{% url 'register_deny' uidb64=uid %}
+{{protocol}}://{{ domain }}{% url 'accounts:register_deny' uidb64=uid %}
 
 
 

@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="white-box">
-    <form class="form-horizontal" method="post" action="{% url 'profile' %}">
+    <form class="form-horizontal" method="post" action="{% url 'accounts:profile' %}">
         {% if form.errors %}
         <div class="alert alert-danger">
             <h5>Please correct the following errors</h5>
@@ -158,7 +158,7 @@
             <div class="col-sm-9"> </div>
             <div class="col-sm-3">
                 <input class="btn btn-primary" type="submit" value="Save" />
-                <a class="btn btn-warning" href="{% url 'profile' %}">Undo changes</a>
+                <a class="btn btn-warning" href="{% url 'accounts:profile' %}">Undo changes</a>
             </div>
         </div>
 
