@@ -9,7 +9,7 @@
             are required.
         </div>
         <div class="vpadding20">
-            <form enctype="multipart/form-data" method="post" action="{% url 'register' %}">
+            <form enctype="multipart/form-data" method="post" action="{% url 'accounts:register' %}">
 
                 {% csrf_token %}
 

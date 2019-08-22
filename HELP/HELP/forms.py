@@ -11,6 +11,34 @@ from django.utils.translation import ugettext_lazy as _
 from HELP.util_models import Ticket
 
 
+class SimulationForm(forms.Form):
+    """@class SimulationForm. Form for submitting inputs and running simulations."""
+
+    air_temperature_csv = forms.FileField(label=_("Upload Air Temperature CSV:"),
+                                          required=True,
+                                          widget=forms.ClearableFileInput(
+                                              attrs={'multiple': False,
+                                                     'class': 'custom-file-input'}));
+
+    precip_csv = forms.FileField(label=_("Upload Precipitation CSV:"),
+                                 required=True,
+                                 widget=forms.ClearableFileInput(
+                                     attrs={'multiple': False,
+                                            'class': 'custom-file-input'}));
+
+    solar_rad_csv = forms.FileField(label=_("Upload Solar Radiation CSV:"),
+                                    required=True,
+                                    widget=forms.ClearableFileInput(
+                                        attrs={'multiple': False,
+                                               'class': 'custom-file-input'}));
+
+    input_grid = forms.FileField(label=_("Upload Input Grid:"),
+                                 required=True,
+                                 widget=forms.ClearableFileInput(
+                                     attrs={'multiple': False,
+                                            'class': 'custom-file-input'}));
+
+
 class TicketForm(forms.Form):
     """@class TicketForm. Form for submitting ticket issues."""
 

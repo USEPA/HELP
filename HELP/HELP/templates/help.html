@@ -2,9 +2,79 @@
 {% load staticfiles %}
 {% block content %}
 
-<h2>{{ title }}.</h2>
+<h2>{{ title }}</h2>
 <h3>{{ message }}</h3>
 
-<p>Running the HELP software.</p>
+{% if form.errors %}
+    <div class="alert alert-danger">
+        <!--{#<h4>Please fix the following errors:</h4>#}-->
+        {% for field in form %}
+            {% for error in field.errors %}
+                <h4>{{ error|escape }}</h4>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <h4>{{ error|escape }}</h4>
+        {% endfor %}
+    </div>
+{% endif %}
+<form class="form-horizontal" role="form" method="POST" id="form">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="id_air_temperature_csv">{{form.air_temperature_csv.label}}</label>
+            <div class="custom-file">
+                {{form.air_temperature_csv}}
+                <label class="custom-file-label" for="id_air_temperature_csv">Select a file...</label>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="id_precip_csv">{{form.precip_csv.label}}</label>
+            <div class="custom-file">
+                {{form.precip_csv}}
+                <label class="custom-file-label" for="id_precip_csv">Select a file...</label>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="id_solar_rad_csv">{{form.solar_rad_csv.label}}</label>
+            <div class="custom-file">
+                {{form.solar_rad_csv}}
+                <label class="custom-file-label" for="id_solar_rad_csv">Select a file...</label>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="id_input_grid">{{form.input_grid.label}}</label>
+            <div class="custom-file">
+                {{form.input_grid}}
+                <label class="custom-file-label" for="id_input_grid">Select a file...</label>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <div class="text-center">
+                <button type="submit" class="save btn btn-success">Run Simulation</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="text-center">
+                <button type="reset" class="save btn btn-warning" id="clear-input">Clear Input</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    $('.custom-file-input').on('change', function() { 
+        let fileName = $(this).val().split('\\').pop();
+        if(fileName)
+            $(this).next('.custom-file-label').addClass("selected").html(fileName);
+        else
+            $(this).next('.custom-file-label').addClass("selected").html("Select a file...");
+    });
+    $('#clear-input').on('click', function () {
+        $('.custom-file-label').html("Select a file...");
+    });
+</script>
 
 {% endblock %}
