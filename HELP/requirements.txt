@@ -10,6 +10,9 @@
 #---------------------------------------------------------------------------------------#
 # All of these packages appear to be necessary for both Windows and Linux environments. #
 #---------------------------------------------------------------------------------------#
+# Make note of the requirements_MANUAL.txt file before adding dependencies here.        #
+# Any dependencies of the MANUAL requirements should NOT be added here.                 #
+#---------------------------------------------------------------------------------------#
 
 autopep8==1.4.4                   # Automatically formats Python code to conform to the PEP 8 style guide.
 cffi==1.12.3                      # Foreign Function Interface for Python calling C code (converted from f90)
@@ -17,10 +20,6 @@ Django==2.2.4                     # Python Modules.
 f2py-test-package==0.1            # A python package and command-line tools fortran extenions.
 F2python==1.5.0                   # The F2 DBMS written in Python. Needs ZODB and ZEO to run.
 mypy==0.720                       # Optional static typing for Python.
-numpy==1.17.0                     # 
-pip==19.2.2                       # The PyPA recommended tool for installing Python packages.
 psycopg2==2.8.3                   #
 pylint==2.3.1                     # python code static checker.
-pytz==2019.2                      # UTC is pytz.timezone('UTC') True.
-setuptools==41.1.0                # Fully-featured library designed to facilitate packaging Python projects.
 sqlparse==0.3.0                   # Non-validating SQL parser.
