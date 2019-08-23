@@ -11,10 +11,12 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from os.path import join
+from os import path
+import tempfile
 from HELP.forms import TicketForm, Ticket, SimulationForm
 from HELP import settings
-from pyhelp.managers import HelpManager
+from HELP.pyhelp_interface import run_help
+from pyhelpinterface.managers import HelpManager
 
 
 def help(request):
@@ -32,11 +34,44 @@ def help(request):
         ctx['form'] = SimulationForm()
         return render(request, 'help.html', ctx)
 
-    form = SimulationForm(request.POST)
+    form = SimulationForm(request.POST, request.FILES)
     if(form.is_valid()):
-        # Call pyhelp with these files
-        tempdir = ""
-        helpm = HelpManager(workdir, year_range=(2000, 2010))
+        # Set up a temporary directory:
+        with tempfile.TemporaryDirectory() as workdir:
+            # Save all the input files as tempfiles into the tempdir.
+            # This is the quickest way to get started with PyHELP, but a more complete and
+            # more efficient solution would be to modify the PyHELP functions to accept the files
+            # themselves, instead of accepting a directory.
+            with open(join(workdir, 'airtemp_input_data.csv')) as dest:
+                for chunk in request.FILES['airtemp_input_data']:
+                    dest.write(chunk)
+            with open(join(workdir, 'precip_input_data.csv')) as dest:
+                for chunk in request.FILES['precip_input_data']:
+                    dest.write(chunk)
+            with open(join(workdir, 'solrad_input_data.csv')) as dest:
+                for chunk in request.FILES['solrad_input_data']:
+                    dest.write(chunk)
+            with open(join(workdir, 'input_grid.csv')) as dest:
+                for chunk in request.FILES['input_grid']:
+                    dest.write(chunk)
+
+            # Instantiate HelpManager and calculate  monthly water budget for 2000-2010 period.
+            helpm = HelpManager(tempdir, year_range=(2000, 2010))
+            output = run_help(helpm)
+
+            # Export and save the data to an ESRI shapefile.
+            help_output_shp = join(workdir, 'help_example.shp')
+            output.save_to_shp(help_output_shp)
+
+            # Plot some results.
+            output.plot_area_monthly_avg()
+            output.plot_area_yearly_avg()
+            output.plot_area_yearly_series()
+
+            # Calculate the yearly water budget for surface water cells.
+            evp_surf = 650
+            surf_output_hdf5 = join(workdir, 'surf_example.out')
+            output_surf = helpm.calc_surf_water_cells(evp_surf, surf_output_hdf5)
 
     return render(request, 'help.html', ctx)
 

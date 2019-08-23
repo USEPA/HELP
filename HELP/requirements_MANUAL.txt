@@ -1,0 +1,54 @@
+pip install --no-cache-dir matplotlib-3.1.1-cp37-cp37m-win_amd64.whl
+pip install --no-cache-dir numpy-1.17.0+mkl-cp37-cp37m-win_amd64.whl
+pip install --no-cache-dir pandas-0.25.0-cp37-cp37m-win_amd64.whl
+pip install --no-cache-dir scipy-1.3.1-cp37-cp37m-win_amd64.whl
+pip install --no-cache-dir xlrd-1.2.0-py2.py3-none-any.whl
+pip install --no-cache-dir netCDF4-1.5.1.2-cp37-cp37m-win_amd64.whl
+pip install --no-cache-dir h5py-2.9.0-cp37-cp37m-win_amd64.whl
+
+# https://github.com/geopandas/geopandas/issues/793
+pip install --no-cache-dir pyproj-2.2.2-cp37-cp37m-win_amd64.whl
+# Set PROJ_DIR variable:
+
+pip install --no-cache-dir GDAL-3.0.1-cp37-cp37m-win_amd64.whl
+# Set GDAL_VERSION environment variable:
+# key: GDAL_VERSION
+# val: 3.0.1
+
+# Install fiona as well:
+pip install --no-cache-dir Fiona-1.8.6-cp37-cp37m-win_amd64.whl
+
+pip install --no-cache-dir geopandas-0.5.1-py2.py3-none-any.whl
+pip install --no-cache-dir tables-3.5.2-cp37-cp37m-win_amd64.whl
+
+# KEEP THESE PACKAGES OUT OF THE REQUIREMENTS.TXT FILE:
+# attrs           19.1.0
+# cftime          1.0.3.4
+# Click           7.0
+# click-plugins   1.1.1
+# cligj           0.5.0
+# cycler          0.10.0
+# Fiona           1.8.6
+# GDAL            3.0.1
+# geopandas       0.5.1
+# h5py            2.9.0
+# kiwisolver      1.1.0
+# matplotlib      3.1.1
+# mock            3.0.5
+# munch           2.3.2
+# netCDF4         1.5.1.2
+# numexpr         2.7.0
+# numpy           1.17.0+mkl
+# pandas          0.25.0
+# pip             19.2.2
+# pyparsing       2.4.2
+# pyproj          2.2.2
+# python-dateutil 2.8.0
+# pytz            2019.2
+# scipy           1.3.1
+# setuptools      41.2.0
+# Shapely         1.6.4.post2
+# six             1.12.0
+# tables          3.5.2
+# wheel           0.33.6
+# xlrd            1.2.0
