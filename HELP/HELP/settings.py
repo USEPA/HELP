@@ -136,21 +136,26 @@ MANUAL_NAME = 'user_manual.pdf'
 APP_NAME = 'HELP'
 APP_NAME_SHORT = 'Hydrologic Evaluation of Landfill Performance'
 
-APP_NAME_LONG = 'Hydrologic Evaluation of Landfill Performance (HELP)'
+APP_NAME_LONG = 'Hydrologic Evaluation of Landfill Performance (HELP) Model Software web-based application'
 
 APP_DESCRIPTION = 'HELP is developed and maintained by National Risk Management Research Laboratory Office \
                    of Research and Development U.S. Environmental Protection Agency, Cincinnati, OH 45268.'
 
 APP_VERSION = '0.0.01'
 
-APP_DISCLAIMER = 'Copyright (c) 2019. Hydrologic Evaluation of Landfill Performance (HELP) is developed \
-                  and maintained by National Risk Management Research Laboratory Office of Research and Development U.S. Environmental Protection \
-                  Agency, Cincinnati, OH 45268.The United States Environmental Protection Agency (EPA) GitHub project code is provided on an "as is" \
-                  basis and the user assumes responsibility for its use. EPA has relinquished control of the information and no longer has the responsibility \
-                  to protect the integrity, confidentiality, or availability of the information. Any reference to specific commercial products, processes, \
-                  or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or \
-                  favoring by EPA. The EPA seal and logo shall not be used in any manner to imply endorsement of any commercial product or activity by \
-                  EPA or the United States Government. https://www.epa.gov/webguide/github-guidance#open.'
+APP_DISCLAIMER = 'Copyright (c) 2019. The United States Environmental Protection Agency (USEPA), through its Office of Research and Development, \
+                  contributed to the development of the Hydrologic Evaluation of Landfill Performance (HELP) Model Software web-based application. \
+                  The simulations have not been subjected to full Agency review and no official endorsement of their use should be inferred. \
+                  Futhermore, the simulations were developed for demonstrative purposes only and have not been fully vetted according to the standards \
+                  of Sanitary Landfill Design and Operations and/or Toxic Substances Control Act of 1976 (TSCA) Landfill Inspection. The user assumes \
+                  responsibility for any application of these inventories in TSCA activities and USEPA, or its collaborators in the underlying research, \
+                  can not be held liable for any decision outcomes involving the data. The United States Environmental Protection Agency (EPA) GitHub \
+                  project code is provided on an "as is" basis and the user assumes responsibility for its use. EPA has relinquished control of the \
+                  information and no longer has the responsibility to protect theintegrity, confidentiality, or availability of the information. Any \
+                  reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not \
+                  constitute or imply their endorsement, recommendation or favoring by EPA. The EPA seal and logo shall not be used in any manner to \
+                  imply endorsement of any commercial product or activity by EPA or the United States Government. \
+                  https://www.epa.gov/webguide/github-guidance#open.'
 
 APP_ENDORSEMENT = 'Disclaimer of Endorsement. Reference on this website to any specific commercial products, process, or service by trade name, trademark, \
                    manufacturer, or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States \
