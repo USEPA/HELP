@@ -152,7 +152,7 @@ def submit_ticket(p_ticket):
     print(' from ')
     print(settings.DEFAULT_FROM_EMAIL)
     subject = p_ticket.type + ": " + p_ticket.subject
-    body = "New GEMM support message from " + p_ticket.email + "\n\n"
+    body = "New HELP support message from " + p_ticket.email + "\n\n"
     body += p_ticket.description
     email = EmailMessage(
         subject,
@@ -183,7 +183,7 @@ def ticket(request):
             temp_ticket.email = form.cleaned_data['email']
             results = submit_ticket(temp_ticket)
             # Once the ticket is submitted either all FIELDS should be cleared
-            # or USER should be redirected to the WHAT IS GEMM? Page/tab.
+            # or USER should be redirected to the WHAT IS HELP? Page/tab.
             # Check that result is OK before redirecting to about. If not okay,
             # return back to ticket page.
             if results > 0:
@@ -236,5 +236,5 @@ def download_file(response, name):
 
 @login_required
 def usermanual(request):
-    """Receives GET requests and will start download of GEMM user manual stored on the server."""
+    """Receives GET requests and will start download of HELP user manual stored on the server."""
     return download_file(request, settings.MANUAL_NAME)
