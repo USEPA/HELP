@@ -1,4 +1,7 @@
-﻿# Default taken from https://github.com/github/gitignore/blob/master/Python.gitignore
+﻿# Custom ignores
+replacements.txt
+
+# Default taken from https://github.com/github/gitignore/blob/master/Python.gitignore
 *.log
 Backup/
 temp/

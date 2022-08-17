@@ -3,8 +3,6 @@
 # coding=utf-8
 # young.daniel@epa.gov
 # pylint: skip-file
-
-
 """
 Django settings for HELP project.
 
@@ -20,11 +18,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import posixpath
 
-
 DEFAULT_FROM_EMAIL = 'dyoung11@engineering4sustainability.com'
 EMAIL_HOST = '127.0.0.1'
 EMAIL_HOST_USER = 'dyoung11'
-EMAIL_HOST_PASSWORD = '***REMOVED***'
+EMAIL_HOST_PASSWORD = 'OVERWRITE_IN_LOCAL_SETTINGS.PY'
 EMAIL_PORT = 25
 EMAIL_FILE_PATH = '/var/www/html/help/uploads'
 
@@ -101,16 +98,20 @@ WSGI_APPLICATION = 'HELP.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -129,9 +130,6 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 DOWNLOADS_DIR = os.path.join("..", "documents")
 MANUAL_NAME = 'user_manual.pdf'
-
-
-
 
 APP_NAME = 'HELP'
 APP_NAME_SHORT = 'Hydrologic Evaluation of Landfill Performance'
@@ -162,11 +160,6 @@ APP_ENDORSEMENT = 'Disclaimer of Endorsement. Reference on this website to any s
                    Government. The presence of external hyperlinks does not constitute endorsement by the EPA, its employees, or contractors, of such external \
                    websites or the information contained therein. Furthermore, the views and opinions of authors expressed herein do not necessarily state \
                    or reflect those of the United States Government, and shall not be used for advertising or product endorsement purposes.'
-
-
-
-
-
 
 try:
     from .local_settings import *
